@@ -1,0 +1,11 @@
+main {
+	//comment
+	nat x; nat x2;
+	x=0;
+	x=x+1;
+	x=x+1;
+	x=x+1;
+	x=x+1;
+	x2=null;
+	printNat(x);
+}

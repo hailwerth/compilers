@@ -1,0 +1,27 @@
+			mov 1 1
+			mov 7 10000
+
+#LOOP1:		beq 2 7 #LOOP1END
+			rdn 3
+			beq 3 0 #LOOP1END
+			str 2 0 3
+			add 2 2 1
+			jmp 0 #LOOP1
+
+#LOOP1END:	rdn 4
+			rdn 5
+			blt 5 2 #L2PREP
+			ptn 0
+			ptn 0
+			halt 0
+			
+#L2PREP:	lod 4 4 0
+			lod 5 5 0
+#LOOP2:		blt 4 5 #END
+			sub 4 4 5
+			add 6 6 1
+			jmp 0 #LOOP2
+
+#END:		ptn 6
+			ptn 4
+			hlt 0

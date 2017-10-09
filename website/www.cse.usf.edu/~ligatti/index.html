@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jay Ligatti</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="jl.css">
+    <script type="text/javascript" src="jl.js"></script>    
+</head>
+<body>
+    <div id="pageContent">
+        <header>
+            <?img id="photo" src="images/jligatti-09.JPG" alt="jay ligatti" height="200" width="160" /?>            
+            <div id="info">            
+                <b>Jay Ligatti</b><br />
+                ligatti@cse.usf.edu<br /><br />
+                Associate Professor<br />
+                <a href="http://www.cse.usf.edu/">Dept. of Computer Science & Engineering</a><br />
+                <a href="http://www.usf.edu/">University of South Florida</a><br />
+                Phone: &nbsp; +1-813-974-0908<br />
+                <br />
+                <a href="http://www.cse.usf.edu/~ligatti/CV.pdf">Curriculum Vitae</a><br />
+            </div>
+        </header>
+        <hr />
+                       
+        <section class="pageIndex">
+            <h2 class="pageIndex">Content</h2>
+            <ol class="pageIndex">
+                <li><a href="#researchInterest">Research Interests</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#currentProjects">Current Projects</a></li>
+                <li><a href="#olderProjects">Older Projects</a></li>
+                <li><a href="#teachingCourses">Teaching</a></li>
+                <li><a href="#currentStudents">Current Students</a></li>
+                <li><a href="#formerStudents">Former Students</a></li>
+                <li><a href="#talks">Talks</a></li>
+            </ol>
+        </section>                        
+        
+        <section id="researchInterest">
+            <h2>Research interests
+            </h2>
+            <p>Software security and programming languages
+                    (<a href="http://www.cse.usf.edu/~ligatti/CV.pdf">CV</a>)</p>
+            <figure>
+                <img id="wordleImg" class="anImg" src="images/wordle(24).bmp" alt="wordle image"  />
+                <figcaption>(<a href="http://www.wordle.net/">Wordle</a> of research papers)</figcaption>
+            </figure>
+        </section>
+        <section id="publications">
+           <h2>Publications, arranged by</h2>
+           
+           <div class="noJShide">
+               <p><b>Publication date:</b>
+                    <span id="y2014" class="pub">2017-2014</span>,
+                    <span id="y2010" class="pub">2013-2010</span>, 
+                    <span id="y2006" class="pub">2009-2006</span>, 
+                    <span id="y2002" class="pub">2005-2002</span>
+               </p>        
+                      
+               <div id="puby2014" class="inactive">
+                   <p class="accordion-menu">&#9654; 2017</p>
+                    <ul class="accordion-menu">
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/coauth-TR.pdf">Coauthentication</a>.
+     Jay Ligatti, Cagri Cetin, Shamaria Engram, Jean-Baptiste Subils, Dmitry Goldgof.  USF Technical Report Auth-7-17-17.  July 2017.
+     [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/coauth-TR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Collaborative authentication, or coauthentication, is a single-factor technique in which multiple registered
+devices work together to authenticate a user. Coauthentication aims to provide security benefits
+similar to those of multi-factor techniques, such as mitigating theft of any one authentication device, without
+the inconveniences of multi-factor techniques, such as having to enter passwords or scan biometrics.
+Coauthentication can provide additional security benefits, including: preventing phishing and man-in-the-middle
+attacks, basing authentications on high-entropy secrets that can be generated and updated
+automatically, and availability protections against, for example, device misplacement or denial-of-service
+(DoS) attacks. This paper introduces coauthentication and discusses and evaluates applications, example
+protocols, and implementations.
+</span>[Abstract]</span></li>
+
+<li><a href="http://dl.acm.org/citation.cfm?id=2994596">
+On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  <i> ACM Transactions on Programming
+Languages and Systems (TOPLAS)</i>, Vol 39, No 1, Article 4, Pages 1-36.  ACM Press, March 2017.
+<a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingCompleteness.pdf">Local version.</a>
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingCompleteness.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Well-known techniques exist for proving the soundness of subtyping relations with respect to type
+safety.  However, completeness has not been treated with widely applicable techniques, as far as
+we're aware.
+<br /><br />This paper develops techniques for stating and proving that a subtyping relation is
+complete with respect to type safety and applies the techniques to the study of iso-recursive
+subtyping.
+A new proof technique, induction on failing derivations, is provided that may be useful in other
+domains as well.
+<br /><br />The common subtyping rules for iso-recursive types---the "Amber rules"---are shown to be
+incomplete with respect to type safety.  That is, there exist iso-recursive types t1 and t2 such
+that t1 can safely be considered a subtype of t2, but t1<=t2 is not derivable with the Amber rules.
+<br /><br />New, algorithmic rules are defined for subtyping iso-recursive types, and the rules
+are proved sound and complete with respect to type safety.  The fully implemented
+subtyping algorithm is optimized to run in O(mn) time, where m is the number of mu-terms in the
+types being considered and n is the size of the types being considered.
+</span>[Abstract]</span></li>
+                    </ul>
+
+                   <p class="accordion-menu">&#9654; 2016</p>
+                    <ul class="accordion-menu">
+                  <li><a href="http://www.cse.usf.edu/~ligatti/papers/iotFdoJ.pdf">
+Induction on Failing Derivations</a>.  Jay Ligatti.  Technical Report PL-Sep13.
+University of South Florida, March 2016. (This is a major revision to the September 2013 version.)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iotFdoJ.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+A proof technique, called induction on failing derivations, is introduced. 
+We wish to prove properties of judgments in deductive systems.
+Standard techniques exist for proving such properties on valid judgments;
+this note defines a technique for proving such properties on invalid
+(underivable) judgments.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingTechReport.pdf">
+On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  Technical Report.
+University of South Florida, March 2016.
+(This is a major revision to the August 2014 version of the technical report, which
+itself was a major revision of technical report CSE-071012, 
+"Completely Subtyping Iso-Recursive Types", from July 2012.)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingTechReport.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Well-known techniques exist for proving the soundness of subtyping relations with respect to type
+safety.  However, completeness has not been treated with widely applicable techniques, as far as
+we're aware.
+<br /><br />This paper develops techniques for stating and proving that a subtyping relation is
+complete with respect to type safety and applies the techniques to the study of iso-recursive
+subtyping.
+A new proof technique, induction on failing derivations, is provided that may be useful in other 
+domains as well.
+<br /><br />The common subtyping rules for iso-recursive types---the "Amber rules"---are shown to be
+incomplete with respect to type safety.  That is, there exist iso-recursive types t1 and t2 such
+that t1 can safely be considered a subtype of t2, but t1<=t2 is not derivable with the Amber rules.
+<br /><br />New, algorithmic rules are defined for subtyping iso-recursive types, and the rules
+are proved sound and complete with respect to type safety.  The fully implemented
+subtyping algorithm is optimized to run in O(mn) time, where m is the number of mu-terms in the
+types being considered and n is the size of the types being considered.
+</span>[Abstract]</span></li>
+                    </ul>
+
+
+                    <p class="accordion-menu">&#9654; 2015</p>
+                    <ul class="accordion-menu">
+                             <li><a href="http://www.cse.usf.edu/~ligatti/papers/gray.pdf">
+A Theory of Gray Security Policies</a>.
+Donald Ray and Jay Ligatti.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2015.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/gray.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper generalizes traditional models of security policies, from specifications of
+whether programs are secure, to specifications of how secure programs are. This is a
+generalization from qualitative, black-and-white policies to quantitative, gray policies.
+Included are generalizations from traditional definitions of safety and liveness policies to
+definitions of gray-safety and gray-liveness policies. These generalizations preserve key
+properties of safety and liveness, including that the intersection of safety and liveness is
+a unique allow-all policy and that every policy can be written as the conjunction of a single
+safety and a single liveness policy. It is argued that the generalization provides several
+benefits, including that it serves as a unifying framework for disparate approaches to
+security metrics, and that it separates---in a practically useful way---specifications of how
+secure systems are from specifications of how secure users require their systems to be.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://dx.doi.org/10.1109/TVLSI.2014.2342034">
+Design of Adiabatic Dynamic Differential Logic for DPA-Resistant Secure Integrated Circuits</a>.
+Matthew Morrison, Nagarajan Ranganathan, and Jay Ligatti.
+<i>IEEE Transactions on Very Large Scale Integration Systems (TVLSI)</i>, Vol 23, No 8, pp 1381-1389. 
+IEEE, August 2015.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/tvlsi.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Production of cost-effective secure integrated chips, such as smart cards, requires hardware designers to consider tradeoffs in size, security, and power consumption. To design successful security-centric designs, the low-level hardware must contain built-in protection mechanisms to supplement cryptographic algorithms, such as advanced encryption standard and triple data encryption standard by preventing side-channel attacks, such as differential power analysis (DPA). Dynamic logic obfuscates the output waveforms and the circuit operation, reducing the effectiveness of the DPA attack. For stronger mitigation of DPA attacks, we propose the implementation of adiabatic dynamic differential logic (ADDL) for applications in secure integrated circuit (IC) design. Such an approach is effective in reducing power consumption, demonstrated using HSPICE simulations with 22-nm predictive technology. The benefits of our design are demonstrated by comparing instantaneous power waveforms and observing the magnitude of differential power spikes during switching events. First, simulation results for body biasing on subthreshold adiabatic inverters show an improvement in differential power up to 43.28% for similar inverters without body biasing. Then, a high-performance ADDL is presented for an implementation in high-frequency secure ICs. This method improves the differential power over previous dynamic and differential logic methods by up to 89.65%. Finally, we propose a body-biased ADDL for ultralow power applications. Simulation results show that the differential power was improved upon by a factor of 199.16.
+</span>[Abstract]</span></li>
+
+                             <li><a href="http://dx.doi.org/10.1007/s10207-014-0239-8">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+<i>International Journal of Information Security (IJIS)</i>,
+Vol 14, No 1, pp 47-60.  Springer, February 2015.
+(<a href="http://www.cse.usf.edu/~ligatti/papers/mra-jrnl.pdf">preliminary version</a>)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-jrnl.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper presents a theory of runtime enforcement based on mechanism models called MRAs
+(Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and
+their results. The operational semantics of MRAs is simple and
+enables straightforward definitions of concrete MRAs.
+Moreover, the definitions of policies and enforcement with MRAs are simple and expressive. Putting all of
+these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a
+theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the
+policies deterministic and nondeterministic MRAs can and cannot enforce.
+</span>[Abstract]</span></li>
+
+
+</ul>
+                    <p class="accordion-menu">&#9654; 2014</p>
+                    <ul class="accordion-menu">
+               
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/bronies.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Proceedings of the <i>17th International Information Security Conference (ISC)</i>, October 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/bronies.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries).
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs.
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/far-proximity-esorics.pdf">
+                   Fingerprinting Far Proximity from Radio Emissions</a>.
+Tao Wang, Yao Liu, and Jay Ligatti.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/far-proximity-esorics.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+As wireless mobile devices are more and more pervasive and adopted
+in critical applications, it is becoming increasingly important to measure the physical
+proximity of these devices in a secure way. Although various techniques have
+been developed to identify whether a device is close, the problem of identifying
+the far proximity (i.e., a target is at least a certain distance away) has been neglected
+by the research community. Meanwhile, verifying the far proximity is
+desirable and critical to enhance the security of emerging wireless applications.
+In this paper, we propose a secure far proximity identification approach that determines
+whether or not a remote device is far away. The key idea of the proposed
+approach is to estimate the far proximity from the unforgeable "fingerprint" of
+the proximity. We have validated and evaluated the effectiveness of the proposed
+far proximity identification method through experiments on real measured channel
+data. The experiment results show that the proposed approach can detect the
+far proximity with a successful rate of 0.85 for the non-Line-of-sight (NLoS) scenario,
+and the successful rate can be further increased to 0.99 for the Line-of-sight
+(LoS) scenario.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/broniesTR.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Technical Report CSE-TR-081114.
+University of South Florida, August 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/broniesTR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries). 
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and  
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs. 
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an 
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+</ul>
+</div>
+               <div id="puby2010" class="inactive">
+                    <p class="accordion-menu">&#9654; 2013</p>   
+                    <ul class="accordion-menu">      
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-full-tr.pdf">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+Technical Report USF-CSE-1213, University of South Florida, December 2013.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-full-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and their results. Because previous work could not model general security monitors transforming results, MRAs capture realistic behaviors outside the scope of previous models. MRAs also have a simple operational semantics that makes it straightforward to define concrete MRAs.  Moreover, the definitions of policies and enforcement with MRAs are simpler and more expressive than those of previous models. Putting all these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the policies deterministic and nondeterministic MRAs can and cannot enforce.
+</span>[Abstract]</span></li>  
+
+</ul>
+                    <p class="accordion-menu">&#9654; 2012</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/iosec.pdf">
+Enforcing More with Less: Formalizing Target-aware Run-time Monitors</a>.
+Yannis Mallios, Lujo Bauer, Dilsun Kaynar, and Jay Ligatti.
+Proceedings of the <i>International Workshop on Security and Trust Management (STM)</i>, 
+September 2012.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iosec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Run-time monitors ensure that untrusted software and system behavior adheres to a security policy. This paper defines an expressive formal framework, based on I/O automata, for modeling systems, policies, and run-time monitors in more detail than is typical. We explicitly model, for example, the environment, applications, and the interaction between them and monitors. The fidelity afforded by this framework allows us to explicitly formulate and study practical constraints on policy enforcement that were often only implicit in previous models, providing a more accurate view of what can be enforced by monitoring in practice. We introduce two definitions of enforcement, target-specific and generalized, that allow us to reason about practical monitoring scenarios. Finally, we provide some meta-theoretical comparison of these definitions and we apply them to investigate policy enforcement in scenarios where the monitor designer has knowledge of the target application and show how this can be exploited to make more efficient design choices.
+</span>[Abstract]</span></li>        
+               <li><a href="http://dx.doi.org/10.1016/j.pmcj.2010.11.003">
+A Location-based Policy-specification Language for Mobile Devices</a>.
+Joshua Finnis, Nalin Saigal, Adriana Iamnitchi, and Jay Ligatti.
+<i>Pervasive and Mobile Computing Journal</i>, Vol 8, No 3, pp 402-414.  Elsevier, June 2012.
+<a href="http://www.cse.usf.edu/~ligatti/papers/lopsil.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/lopsil.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    The dramatic rise in mobile applications has greatly increased threats to the security and privacy of users. Security mechanisms on mobile devices are currently limited, so users need more expressive ways to ensure that downloaded mobile applications do not act maliciously. Policy-specification languages were created for this purpose; they allow the enforcement of user-defined policies on third-party applications. We have implemented LoPSiL, a location-based policy-specification language for mobile devices. This article describes LoPSiL’s design and implementation, several example policies, and experiments that demonstrate LoPSiL’s viability for enforcing policies on mobile devices.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/code-inj.pdf">
+Defining Code-injection Attacks</a>.
+Donald Ray and Jay Ligatti.
+Proceedings of the ACM SIGPLAN-SIGACT <i>Symposium on Principles of Programming Languages (POPL)</i>,
+January 2012.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/code-inj.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper shows that existing definitions of code-injection attacks (e.g., SQL-injection attacks) are flawed. The flaws make it possible for attackers to circumvent existing mechanisms, by supplying code-injecting inputs that are not recognized as such. The flaws also make it possible for benign inputs to be treated as attacks. After describing these flaws in conventional definitions of code-injection attacks, this paper proposes a new definition, which is based on whether the symbols input to an application get used as (normal-form) values in the application’s output. Because values are already fully evaluated, they cannot be considered “code” when injected. This simple new definition of code-injection attacks avoids the problems of existing definitions, improves our understanding of how and when such attacks occur, and enables us to evaluate the effectiveness of mechanisms for mitigating such attacks.
+</span>[Abstract]</span></li>
+           </ul>           
+                    <p class="accordion-menu">&#9654; 2011</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://id.nii.ac.jp/1001/00075245/">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+<i>Journal of Information Processing</i>, Vol 19, pp 292-306,
+ Information Processing Society of Japan, July 2011.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr-jrnl.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Complex software-security policies are difficult to specify, understand, and update. The same is true for complex software in general, but while many tools and techniques exist for decomposing complex general software into simpler reusable modules (packages, classes, functions, aspects, etc.), few tools exist for decomposing complex security policies into simpler reusable modules. The tools that do exist for modularizing policies either encapsulates entire policies as atomic modules that cannot be decomposed or allow fine-grained policy modularization but require expertize to use correctly. This paper presents PoliSeer, a GUI-based tool designed to enable users who are not expert policy engineers to flexibly specify, visualize, modify, and enforce complex runtime policies on untrusted software. PoliSeer users rely on expert policy engineers to specify universally composable policy modules; PoliSeer users then build complex policies by composing those expert-written modules. This paper describes the design and implementation of PoliSeer and a case study in which we have used PoliSeer to specify and enforce a policy on PoliSeer itself.
+</span>[Abstract]</span></li>        
+           </ul> 
+                    <p class="accordion-menu">&#9654; 2010</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-conf.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-conf.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and their results. Because previous work could not model monitors transforming results, MRAs capture realistic behaviors outside the scope of previous models. MRAs also have a simple but realistic operational semantics that makes it straightforward to define concrete MRAs. Moreover, the definitions of policies and enforcement with MRAs are significantly simpler and more expressive than those of previous models. Putting all these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the policies MRAs can and cannot enforce.
+</span>[Abstract]</span></li>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/grouper-conf.pdf">
+A Packet-classification Algorithm for Arbitrary Bitmask Rules, with Automatic 
+Time-space Tradeoffs</a>.
+Jay Ligatti, Josh Kuhn, and Chris Gage.
+Proceedings of the <i>IEEE International Conference on Computer Communication Networks (ICCCN)</i>,
+August 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/grouper-conf.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We present an algorithm for classifying packets according to arbitrary (including noncontiguous) bitmask rules. As its principal novelty, the algorithm is parameterized by the amount of memory available and can customize its data structures to optimize classification time without exceeding a given memory bound. The algorithm thus automatically trades time for space efficiency as needed. The two extremes of this time-space tradeoff (linear search through the rules versus a single table that maps every possible packet to its class number) are special cases of the general algorithm we present. Additional features of the algorithm include its simplicity, its open-source prototype implementation, its good performance even with worst-case rule sets, and its extendability to handle range rules and dynamic updates to rule sets.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Proceedings of the <i>International Conference on Trust Management (IFIP-TM)</i>,
+June 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Few tools exist for decomposing complex security policies into simpler modules. The policy-engineering tools that do exist either encapsulate entire policies as atomic, indecomposable modules or allow fine-grained modularization but are complicated and lack policy-visualization capabilities. This paper briefly presents PoliSeer, the first tool we are aware of that allows complex policies to be specified, visualized, modified, and enforced as compositions of simpler policy modules.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-tr.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Technical Report USF-CSE-SS-102809, University of South Florida, October 2009,
+revised June 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and their results. Because previous work could not model monitors transforming results, MRAs capture realistic behaviors outside the scope of previous models. MRAs also have a simple but realistic operational semantics that makes it straightforward to define concrete MRAs. Moreover, the definitions of policies and enforcement with MRAs are significantly simpler and more expressive than those of previous models. Putting all these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the policies MRAs can and cannot enforce.
+</span>[Abstract]</span></li>        
+           </ul>                          
+               </div>
+               <div id="puby2006" class="inactive">
+                    <p class="accordion-menu">&#9654; 2009</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr-tr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Technical Report CSE-SSec-112509, University of South Florida, November 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Complex security policies are difficult to specify, understand, and update. The same is true for complex software in general, but while many software-engineering tools exist for decomposing complex general software into simpler reusable modules (packages, classes, functions, aspects, etc.), few policy-engineering tools exist for decomposing complex security policies into simpler reusable modules. The tools that do exist for modularizing policies either encapsulate entire policies as atomic, indescomposable modules or allow fine-grained modularization but are complicated and lack policy-visualization capabilities.
+<br /><br />This paper presents PoliSeer, the first tool we are aware of that allows engineers to specify, visualize, modify, and enforce complex as compositions of simpler policy modules. We describe the design and implementation of PoliSeer, as well as a case study in which we have bootstrapped PoliSeer by using it to specify and enforce a policy on itself.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-TR-09.pdf">
+IVCon: Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-110909-SE, University of South Florida, November 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-TR-09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. This paper describes IVCon, a tool with a novel approach for completely modularizing CCCs. IVCon enables users to create, examine, and modify their code in two different views: the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon provides an interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>        
+               <li><a href = "http://doi.acm.org/10.1145/1609956.1609960">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+<i>ACM Transactions on Information and System Security</i>,
+Vol 13, No 1, pp 1-40.  ACM Press, October 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/cfi-tissec.pdf">
+Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cfi-tissec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/IVCon09.pdf">
+Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Proceedings of the <i>ACIS International Conference on Software Engineering Research,
+Management, and Applications (SERA)</i>,
+December 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/IVCon09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. This paper describes IVCon, a tool with a novel approach for completely modularizing CCCs. IVCon enables users to create, examine, and modify their code in two different views: the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon aims to provide an easy-to-use interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MobiSec09.pdf">
+LoPSiL: A Location-based Policy-specification Language</a>.
+Jay Ligatti, Billy Rickey, and Nalin Saigal.
+Proceedings of the <i>International ICST Conference on Security and
+Privacy in Mobile Information and Communication Systems (MobiSec)</i>,
+June 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MobiSec09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper describes the design of LoPSiL, a language for specifying location-dependent security and privacy policies. Policy-specification languages like LoPSiL are domain-specific programming languages intended to simplify the tasks of specifying and enforcing sound security policies on untrusted (i.e., potentially insecure) software. As far as we are aware, LoPSiL is the first imperative policy-specification language to provide abstractions specifically tailored to location-dependent policies for mobile-device applications. We have implemented a proof-of-concept compiler that inputs a LoPSiL policy <i>P</i> and a mobile-device application program <i>A</i> and outputs a new application program <i>A’</i> equivalent to <i>A</i>, except that <i>A’</i> contains inlined enforcement code that ensures that <i>A’</i> satisfies <i>P</i> at runtime. We report our experiences using this compiler to design and implement several policies for mobile-device applications.
+</span>[Abstract]</span></li>
+               <li><a href="http://doi.acm.org/10.1145/1525880.1525882">
+Composing Expressive Runtime Security Policies</a>.
+Lujo Bauer, Jay Ligatti, and David Walker.
+<i>ACM Transactions on Software Engineering and Methodology (TOSEM)</i>,
+Vol 18, No 3, pp 1-43.  ACM Press, May 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/polymer-tosem.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer-tosem.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Program monitors enforce security policies by interposing themselves into the control flow of untrusted software whenever that software attempts to execute security-relevant actions. At the point of interposition, a monitor has authority to permit or deny (perhaps conditionally) the untrusted software’s attempted action. Program monitors are common security enforcement mechanisms and integral parts of operating systems, virtual machines, firewalls, network auditors, and anti-virus and anti-spyware tools.
+<br /><br />Unfortunately, the run-time policies we require program monitors to enforce grow more complex both as the monitored software is given new capabilities and as policies are refined in response to attacks and user feedback. We propose dealing with policy complexity by organizing policies in such a way as to make them composable, so that complex policies can be specified more simply as compositions of smaller subpolicy modules. We present a fully implemented language and system called Polymer that allows security engineers to specify and enforce composable policies on Java applications. We formalize the central workings of Polymer by defining an unambiguous semantics for our language. Using this formalization, we state and prove an uncircumventability theorem, which guarantees that monitors will intercept all security-relevant actions of untrusted software.
+</span>[Abstract]</span></li>        
+               <li><a href="http://doi.acm.org/10.1145/1455526.1455532">
+Run-Time Enforcement of Nonsafety Policies</a>.
+Jay Ligatti, Lujo Bauer, and David Walker.
+<i>ACM Transactions on Information and System Security (TISSEC)</i>, Vol 12, No 3, pp 1-41.
+ACM Press, January 2009.  
+<a href="http://www.cse.usf.edu/~ligatti/papers/nonsafety-tissec.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/nonsafety-tissec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A common mechanism for ensuring that software behaves securely is to monitor programs at run time and check that they dynamically adhere to constraints specified by a security policy. Whenever a program monitor detects that untrusted software is attempting to execute a dangerous action, it takes remedial steps to ensure that only safe code actually gets executed.
+<br /><br />This article improves our understanding of the space of policies enforceable by monitoring the run-time behaviors of programs. We begin by building a formal framework for analyzing policy enforcement: we precisely define policies, monitors, and enforcement. This framework allows us to prove that monitors enforce an interesting set of policies that we call the infinite renewal properties. We show how to construct a program monitor that provably enforces any reasonable infinite renewal property. We also show that the set of infinite renewal properties includes some nonsafety policies, i.e., that monitors can enforce some nonsafety (including some purely liveness) policies. Finally, we demonstrate concrete examples of nonsafety policies enforceable by practical run-time monitors.
+</span>[Abstract]</span></li>        
+           </ul> 
+           
+                    <p class="accordion-menu">&#9654; 2008</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-tr.pdf">
+Defining and Visualizing Many-to-many Relationships between Concerns and Code</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-090608-SE, University of South Florida, September 2008.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. In this paper, we describe IVCon, a GUI-based tool that provides a novel approach to modularization of CCCs. IVCon enables users to create, examine, and modify their code in two different views, the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon aims to provide an easy-to-use interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>
+           </ul> 
+           
+                    <p class="accordion-menu">&#9654; 2007</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ft-tal.pdf">Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2007.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ft-tal.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. Although transient faults do not permanently damage the hardware, they may corrupt computations by altering stored values and signal transfers. In this paper, we propose a new scheme for provably safe and reliable computing in the presence of transient hardware faults. In our scheme, software computations are replicated to provide redundancy while special instructions compare the independently computed results to detect errors before writing critical data. In stark contrast to any previous efforts in this area, we have analyzed our fault tolerance scheme from a formal, theoretical perspective. To be specific, first, we provide an operational semantics for our assembly language, which includes a precise formal definition of our fault model. Second, we develop an assembly-level type system designed to detect reliability problems in compiled code. Third, we provide a formal specification for program fault tolerance under the given fault model and prove that all well-typed programs are indeed fault tolerant. In addition to the formal analysis, we evaluate our detection scheme and show that it only takes 34% longer to execute than the unreliable version.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-776-07.pdf">
+Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Technical Report TR-776-07, Princeton University, April 2007.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-776-07.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. Although transient faults do not permanently damage the hardware, they may corrupt computations by altering stored values and signal transfers. In this paper, we propose a new scheme for provably safe and reliable computing in the presence of transient hardware faults. In our scheme, software computations are replicated to provide redundancy while special instructions compare the independently computed results to detect errors before writing critical data. In stark contrast to any previous efforts in this area, we have analyzed our fault tolerance scheme from a formal, theoretical perspective. To be specific, first, we provide an operational semantics for our assembly language, which includes a precise formal definition of our fault model. Second, we develop an assembly-level type system designed to detect reliability problems in compiled code. Third, we provide a formal specification for program fault tolerance under the given fault model and prove that all well-typed programs are indeed fault tolerant. In addition to the formal analysis, we evaluate our detection scheme and show that it only takes 34% longer to execute than the unreliable version.
+</span>[Abstract]</span></li>        
+           </ul> 
+           
+                    <p class="accordion-menu">&#9654; 2006</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://dx.doi.org/10.1016/j.scico.2006.01.004">
+A Type-theoretic Interpretation of Pointcuts and Advice</a>.
+Jay Ligatti, David Walker, and Steve Zdancewic.
+<i>Science of Computer Programming: Special Issue on Foundations of Aspect-Oriented Programming</i>,
+Vol 63, No 3, pp 240-266. Elsevier, December 2006.
+<a href="http://www.cse.usf.edu/~ligatti/papers/attiopaa.pdf">Local version.</a>
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/attiopaa.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This article defines the semantics of MinAML, an idealized aspect-oriented programming language, by giving a type-directed translation from a user-friendly external language to a compact, well-defined core language. We argue that our framework is an effective way to give semantics to aspect-oriented programming languages in general because the translation eliminates shallow syntactic differences between related constructs and permits definition of an elegant and extensible core language.
+<br /><br />The core language extends the simply-typed lambda calculus with two central new abstractions: explicitly labeled program points and first-class advice. The labels serve both to trigger advice and to mark continuations that the advice may return to. These constructs are defined orthogonally to the other features of the language and we show that our abstractions can be used in both functional and object-oriented contexts. We prove Preservation and Progress lemmas for our core language and show that the translation from MinAML source into core is type-preserving. Together these two results imply that the source language is type safe. We also consider several extensions to our basic framework including a general mechanism for analyzing the current call stack.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/lzap.pdf">
+Static Typing for a Faulty Lambda Calculus</a>.
+David Walker, Lester Mackey, Jay Ligatti, George Reis, and David August.
+Proceedings of the ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>,
+September 2006.  [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/lzap.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. These faults do not cause permanent damage, but may result in incorrect program execution by altering signal transfers or stored values. While the likelihood that such transient faults will cause any significant damage may seem remote, over the last several years transient faults have caused costly failures in high-end machines at America Online, eBay, and the Los Alamos Neutron Science Center, among others [6, 44, 15]. Because susceptibility to transient faults is proportional to the size and density of transistors, the problem of transient faults will become increasingly important in the coming decades.
+<br /><br />This paper defines the first formal, type-theoretic framework for studying reliable computation in the presence of transient faults. More specifically, it defines &#955;<sub>zap</sub>, a lambda calculus that exhibits intermittent data faults. In order to detect and recover from these faults, &#955;<sub>zap</sub> programs replicate intermediate computations and use majority voting, thereby modeling software-based fault tolerance techniques studied extensively, but informally [10, 20, 30, 31, 32, 33, 41].
+<br /><br />To ensure that programs maintain the proper invariants and use &#955;<sub>zap</sub> primitives correctly, the paper defines a type system for the language. This type system guarantees that well-typed programs can tolerate any single data fault. To demonstrate that &#955;<sub>zap</sub> can serve as an idealized typed intermediate language, we define a type-preserving translation from a standard simply-typed lambda calculus into &#955;<sub>zap</sub>.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/jligatti_thesis.pdf">
+Policy Enforcement via Program Monitoring</a>.  Jarred Adam Ligatti. PhD thesis, Princeton University, June 2006.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/jligatti_thesis.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    One way to guarantee that software behaves securely is to monitor programs at run time and check that they dynamically adhere to constraints specified by a security policy. Whenever a program monitor detects that untrusted software is attempting to execute a dangerous action, it takes remedial steps to ensure that only safe code actually gets executed. This thesis considers the space of policies enforceable by monitoring the run-time behaviors of programs and develops a practical language for specifying monitors’ policies.
+<br /><br />In order to delineate the space of policies that monitors can enforce, we first have to define exactly what it means for a monitor to enforce a policy. We therefore begin by building a formal framework for analyzing policy enforcement; we precisely define policies, monitors, and enforcement. Having this framework allows us to consider the enforcement powers of program monitors and prove that they enforce an interesting set of policies that we define and call the infinite renewal properties. We show how, when given any reasonable infinite renewal property, to construct a program monitor that provably enforces that policy.
+<br /><br />In practice, the security policies enforced by program monitors grow more complex both as the monitored software is given new capabilities and as policies are refined in response to attacks and user feedback. We propose dealing with policy complexity by organizing policies in such a way as to make them composeable, so that complex policies can be specified more simply as compositions of smaller subpolicy modules. We present a fully implemented language and system called Polymer that allows security engineers to specify and enforce composeable policies on Java applications. We also formalize the central workings of Polymer by defining an unambiguous semantics for our language.
+</span>[Abstract]</span></li>        
+           </ul> 
+               </div>
+               <div id="puby2002" class="inactive">
+                    <p class="accordion-menu">&#9654; 2005</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/cficcs.pdf">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the ACM SIGSAC <i>Conference on Computer and Communications
+Security (CCS)</i>, November 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cficcs.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple, and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/cfi-theory.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the <i>7th International Conference on Formal Engineering
+Methods (ICFEM)</i>, November 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cfi-theory.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Control-Flow Integrity (CFI) means that the execution of a program dynamically follows only certain paths, in accordance with a static policy. CFI can prevent attacks that, by exploiting buffer overflows and other vulnerabilities, attempt to control program behavior. This paper develops the basic theory that underlies two practical techniques for CFI enforcement, with precise formulations of hypotheses and guarantees.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/nonsafety.pdf">
+Enforcing Non-safety Security Policies with Program Monitors</a>. Jay Ligatti,
+Lujo Bauer, and David Walker.
+Proceedings of the <i>10th European Symposium on Research in Computer Security
+(ESORICS)</i>, September 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/nonsafety.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We consider the enforcement powers of <i>program monitors</i>, which intercept security-sensitive actions of a target application at run time and take remedial steps whenever the target attempts to execute a potentially dangerous action. A common belief in the security community is that program monitors, regardless of the remedial steps available to them when detecting violations, can only enforce safety properties. We formally analyze the properties enforceable by various program monitors and find that although this belief is correct when considering monitors with simple remedial options, it is incorrect for more powerful monitors that can be modeled by <i>edit automata</i>. We define an interesting set of properties called <i>infinite renewal</i> properties and demonstrate how, when given any reasonable infinite renewal property, to construct an edit automaton that provably enforces that property. We analyze the set of infinite renewal properties and show that it includes every safety property, some liveness properties, and some properties that are neither safety nor liveness.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/polymer.pdf">
+Composing Security Policies with Polymer</a>. Lujo Bauer, Jay Ligatti, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We introduce a language and system that supports definition and composition of complex run-time security policies for Java applications. Our policies are comprised of two sorts of methods. The first is <i>query</i> methods that are called whenever an untrusted application tries to execute a security-sensitive action. A query method returns a <i>suggestion</i> indicating how the security-sensitive action should be handled. The second sort of methods are those that perform state updates as the policy’s suggestions are followed.
+<br /><br />The structure of our policies facilitates composition, as policies can query other policies for suggestions. In order to give programmers control over policy composition, we have designed the system so that policies, suggestions, and application events are all first-class objects that a higher-order policy may manipulate. We show how to use these programming features by developing a library of policy combinators.
+<br /><br />Our system is fully implemented, and we have defined a formal semantics for an idealized subset of the language containing all of the key features. We demonstrate the effectiveness of our system by implementing a large-scale security policy for an email client.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MSR-TR-2005-18.pdf">
+Control-Flow Integrity</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-18, Microsoft Research, February 2005 (revised June 2005).
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MSR-TR-2005-18.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple, and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MSR-TR-2005-17.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-17, Microsoft Research, February 2005 (revised June 2005).
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MSR-TR-2005-17.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Control-Flow Integrity (CFI) means that the execution of a program dynamically follows only certain paths, in accordance with a static policy. CFI can prevent attacks that, by exploiting buffer overflows and other vulnerabilities, attempt to control program behavior. This paper develops the basic theory that underlies two practical techniques for CFI enforcement, with precise formulations of hypotheses and guarantees.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/NonSafetyTR.pdf">
+Enforcing Non-safety Security Policies with Program Monitors</a>. Jay Ligatti, Lujo Bauer,
+and David Walker. Technical Report TR-720-05, Princeton University, January
+2005 (revised June 2005).
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/NonSafetyTR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We consider the enforcement powers of <i>program monitors</i>, which intercept security-sensitive actions of a target application at run time and take remedial steps whenever the target attempts to execute a potentially dangerous action. A common belief in the security community is that program monitors, regardless of the remedial steps available to them when detecting violations, can only enforce safety properties. We formally analyze the properties enforceable by various program monitors and find that although this belief is correct when considering monitors with simple remedial options, it is incorrect for more powerful monitors that can be modeled by <i>edit automata</i>. We define an interesting set of properties called <i>infinite renewal</i> properties and demonstrate how, when given any reasonable infinite renewal property, to construct an edit automaton that provably enforces that property. We analyze the set of infinite renewal properties and show that it includes every safety property, some liveness properties, and some properties that are neither safety nor liveness.
+</span>[Abstract]</span></li>
+               <li><a href="http://link.springer.com/article/10.1007/s10207-004-0046-8">
+Edit Automata: Enforcement Mechanisms for Run-time Security Policies</a>. 
+Jay Ligatti, Lujo Bauer, and David Walker. <i>International Journal of Information Security (IJIS)</i>, 
+Vol 4, No 1-2, pp 2-16.  Springer-Verlag, Feb 2005.
+<a href="http://www.cse.usf.edu/~ligatti/papers/editauto-ijis05.pdf">Local Version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/editauto-ijis05.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring and modifying programs at run time. Our program monitors, called <i>edit automata</i>, are abstract machines that examine the sequence of application program actions and transform the sequence when it deviates from a specified policy. Edit automata have a rich set of transformational powers: They may terminate the application, thereby truncating the program action stream; they may suppress undesired or dangerous actions without necessarily terminating the program; and they may also insert additional actions into the event stream.
+<br /><br />After providing a formal definition of edit automata, we develop a rigorous framework for reasoning about them and their cousins: <i>truncation automata</i> (which can only terminate applications), <i>suppression automata</i> (which can terminate applications and suppress individual actions), and <i>insertion automata</i> (which can terminate and insert). We give a set-theoretic characterization of the policies each sort of automaton can enforce, and we provide examples of policies that can be enforced by one sort of automaton but not another.
+</span>[Abstract]</span></li>
+           </ul> 
+           
+                    <p class="accordion-menu">&#9654; 2004</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/polymer-tr-699-04.pdf">A
+Language and System for Composing Security Policies</a>. Lujo Bauer, Jay Ligatti,
+and David Walker. Technical Report TR-699-04, Princeton University, January 2004.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer-tr-699-04.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We introduce a new language and system that allows security architects to develop well-structured and easy-to-maintain security policies for Java applications. In our system, policies are first-class objects. Consequently, programmers can define parameterized meta-policies that act as policy combinators and policy modifiers, so that complex security policies can be implemented by composing simple base policies. We demonstrate the effectiveness of our design by building up a library of powerful policy combinators and showing how they can be used. We also describe some issues we encountered while implementing our system and provide performance results.
+</span>[Abstract]</span></li>        
+           </ul> 
+           
+                    <p class="accordion-menu">&#9654; 2003</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/monitors-tokyo02.pdf">
+Types and Effects for Non-interfering Program Monitors</a>. Lujo Bauer, Jarred
+Ligatti, and David Walker. In M. Okada, B. Pierce, A. Scedrov, H. Tokuda, and
+A.  Yonezawa, editors, <i>Lecture Notes in Computer Science: 
+Software Security - Theories and Systems (Revised Papers of the 2002 Mext-NSF-JSPS
+International Symposium)</i>, Vol 2609, pp 154-171. Springer-Verlag, November 2003.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/monitors-tokyo02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A run-time monitor is a program that runs in parallel with an untrusted application and examines actions from the application's instruction stream. If the sequence of program actions deviates from a specified security policy, the monitor transforms the sequence or terminates the program. We present the design and formal specification of a language for defining the policies enforced by program monitors. Our language provides a number of facilities for composing complex policies from simpler ones. We allow policies to be parameterized by values or other policies, and we define operators for forming the conjunction and disjunction of policies. Since the computations that implement these policies modify program behavior, naive composition of computations does not necessarily produce the conjunction (or disjunction) of the policies that the computations implement separately. We use a type and effect system to ensure that computations do not interfere with one another when they are composed.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/theory_of_aspects.pdf">A Theory of Aspects</a>.
+David Walker, Steve Zdancewic, and Jay Ligatti.  Proceedings of the
+ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>, August 2003.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/theory_of_aspects.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper defines the semantics of MinAML, an idealized aspect-oriented programming language, by giving a type-directed translation from its user-friendly external language to its compact, well-defined core language. We argue that our framework is an effective way to give semantics to aspect-oriented programming languages in general because the translation eliminates shallow syntactic differences between related constructs and permits definition of a clean, easy-to-understand, and easy-to-reason-about core language.
+<br /><br />The core language extends the simply-typed lambda calculus with two central new abstractions: explicitly labeled program points and first-class advice. The labels serve both to trigger advice and to mark continuations that the advice may return to. These constructs are defined orthogonally to the other features of the language and we show that our abstractions can be used in both functional and object-oriented contexts. The labels are well-scoped and the language as a whole is well-typed. Consequently, programmers can use lexical scoping in the standard way to prevent aspects from interfering with local program invariants.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-681-03.pdf">Edit
+Automata: Enforcement Mechanisms for Run-time Security Policies</a>. Jay Ligatti,
+Lujo Bauer, and David Walker. Princeton University Technical Report TR-681-03, May 2003.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-681-03.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring and modifying programs at run time. Our program monitors, called <i>edit automata</i>, are abstract machines that examine the sequence of application program actions and transform the sequence when it deviates from a specified policy. Edit automata have a rich set of transformational powers: They may terminate the application, thereby truncating the program action stream; they may suppress undesired or dangerous actions without necessarily terminating the program; and they may also insert additional actions into the event stream.
+<br /><br />After providing a formal definition of edit automata, we develop a rigorous framework for reasoning about them and their cousins: <i>truncation automata</i> (which can only terminate applications), <i>suppression automata</i> (which can terminate applications and suppress individual actions), and <i>insertion automata</i> (which can terminate and insert). We give a set-theoretic characterization of the policies each sort of automaton can enforce and we provide examples of policies that can be enforced by one sort of automaton but not another.
+</span>[Abstract]</span></li>        
+           </ul>
+                      
+                    <p class="accordion-menu">&#9654; 2002</p>        
+                    <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-655-02.pdf">A Calculus
+for Composing Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David
+Walker. Technical Report TR-655-02, Princeton University, August 2002.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-655-02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A runtime monitor is a program that runs in parallel with an untrusted application and examines actions from the application's instruction stream. If the sequence of program actions deviates from a specified security policy, the monitor transforms the sequence or terminates the program. We present the design and formal specification of a language for defining the policies enforced by program monitors.
+<br /><br />Our language provides a number of facilities for composing complex policies from simpler ones. We allow policies to be parameterized by values, or other policies. There are also operators for forming the conjunction and disjunction of policies. Since the computations that implement these policies modify program behavior, naive composition of computations does not necessarily produce the conjunction (or disjunction) of the policies that the computations implement separately. We use a type and effect system to ensure that computations do not interfere with one another when they are composed. We also present a preliminary implementation of our language.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mesp.pdf">More Enforceable
+Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker. <i>
+Foundations of Computer Security Workshop (FCS) '02 </i>(associated with LICS
+'02), July 2002. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mesp.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring programs at runtime. Our program monitors are automata that examine the sequence of program actions and transform the sequence when it deviates from the specified policy. The simplest such automaton truncates the action sequence by terminating a program. Such automata are commonly known as security automata, and they enforce Schneider's EM class of security policies. We define automata with more powerful transformational abilities, including the ability to insert a sequence of actions into the event stream and to suppress actions in the event stream without terminating the program. We give a set-theoretic characterization of the policies these new automata are able to enforce and show that they are a superset of the EM policies.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-649-02.pdf">More
+Enforceable Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker.
+Technical Report TR-649-02, Princeton University, July 2002.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-649-02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring programs at runtime. Our program monitors are automata that examine the sequence of program actions and transform the sequence when it deviates from the specified policy. The simplest such automaton truncates the action sequence by terminating a program. Such automata are commonly known as security automata, and they enforce Schneider's EM class of security policies. We define automata with more powerful transformational abilities, including the ability to insert a sequence of actions into the event stream and to suppress actions in the event stream without terminating the program. We give a set-theoretic characterization of the policies these new automata are able to enforce and show that they are a superset of the EM policies.
+</span>[Abstract]</span></li>        
+           </ul>  
+               </div>
+               
+               <p><b>Venue type:</b>
+                    <span id="journal" class="pub">Journals</span>, 
+                    <span id="confer" class="pub">Conferences</span>, 
+                    <span id="workshop" class="pub">Workshops</span>, 
+                    <span id="thesis" class="pub">Thesis</span>,                                         
+                    <span id="techrep" class="pub">Technical Reports</span>
+               </p>
+               
+               <div id="pubjournal" class="inactive">
+                    <ul>        
+<li><a href="http://dl.acm.org/citation.cfm?id=2994596">
+On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  <i> ACM Transactions on Programming
+Languages and Systems (TOPLAS)</i>, Vol 39, No 1, Article 4, Pages 1-36.  ACM Press, March 2017.
+<a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingCompleteness.pdf">Local version.</a>
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingCompleteness.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Well-known techniques exist for proving the soundness of subtyping relations with respect to type
+safety.  However, completeness has not been treated with widely applicable techniques, as far as
+we're aware.
+<br /><br />This paper develops techniques for stating and proving that a subtyping relation is
+complete with respect to type safety and applies the techniques to the study of iso-recursive
+subtyping.
+A new proof technique, induction on failing derivations, is provided that may be useful in other
+domains as well.
+<br /><br />The common subtyping rules for iso-recursive types---the "Amber rules"---are shown to be
+incomplete with respect to type safety.  That is, there exist iso-recursive types t1 and t2 such
+that t1 can safely be considered a subtype of t2, but t1<=t2 is not derivable with the Amber rules.
+<br /><br />New, algorithmic rules are defined for subtyping iso-recursive types, and the rules
+are proved sound and complete with respect to type safety.  The fully implemented
+subtyping algorithm is optimized to run in O(mn) time, where m is the number of mu-terms in the
+types being considered and n is the size of the types being considered.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://dx.doi.org/10.1109/TVLSI.2014.2342034">
+Design of Adiabatic Dynamic Differential Logic for DPA-Resistant Secure Integrated Circuits</a>.
+Matthew Morrison, Nagarajan Ranganathan, and Jay Ligatti.
+<i>IEEE Transactions on Very Large Scale Integration Systems (TVLSI)</i>, Vol 23, No 8, pp 1381-1389.
+IEEE, August 2015.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/tvlsi.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Production of cost-effective secure integrated chips, such as smart cards, requires hardware designers to consider tradeoffs in size, security, and power consumption. To design successful security-centric designs, the low-level hardware must contain built-in protection mechanisms to supplement cryptographic algorithms, such as advanced encryption standard and triple data encryption standard by preventing side-channel attacks, such as differential power analysis (DPA). Dynamic logic obfuscates the output waveforms and the circuit operation, reducing the effectiveness of the DPA attack. For stronger mitigation of DPA attacks, we propose the implementation of adiabatic dynamic differential logic (ADDL) for applications in secure integrated circuit (IC) design. Such an approach is effective in reducing power consumption, demonstrated using HSPICE simulations with 22-nm predictive technology. The benefits of our design are demonstrated by comparing instantaneous power waveforms and observing the magnitude of differential power spikes during switching events. First, simulation results for body biasing on subthreshold adiabatic inverters show an improvement in differential power up to 43.28% for similar inverters without body biasing. Then, a high-performance ADDL is presented for an implementation in high-frequency secure ICs. This method improves the differential power over previous dynamic and differential logic methods by up to 89.65%. Finally, we propose a body-biased ADDL for ultralow power applications. Simulation results show that the differential power was improved upon by a factor of 199.16.  
+</span>[Abstract]</span></li>
+
+<li><a href="http://dx.doi.org/10.1007/s10207-014-0239-8">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+<i>International Journal of Information Security</i>,
+Vol 14, No 1, pp 47-60.  Springer, February 2015.
+(<a href="http://www.cse.usf.edu/~ligatti/papers/mra-jrnl.pdf">preliminary version</a>)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-jrnl.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper presents a theory of runtime enforcement based on mechanism models called MRAs
+(Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and
+their results. The operational semantics of MRAs is simple and
+enables straightforward definitions of concrete MRAs.
+Moreover, the definitions of policies and enforcement with MRAs are simple and expressive. Putting all of
+these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a
+theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the
+policies deterministic and nondeterministic MRAs can and cannot enforce.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://dx.doi.org/10.1016/j.pmcj.2010.11.003">
+A Location-based Policy-specification Language for Mobile Devices</a>.
+Joshua Finnis, Nalin Saigal, Adriana Iamnitchi, and Jay Ligatti.
+<i>Pervasive and Mobile Computing Journal</i>, Vol 8, No 3, pp 402-414.  Elsevier, June 2012.
+<a href="http://www.cse.usf.edu/~ligatti/papers/lopsil.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/lopsil.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    The dramatic rise in mobile applications has greatly increased threats to the security and privacy of users. Security mechanisms on mobile devices are currently limited, so users need more expressive ways to ensure that downloaded mobile applications do not act maliciously. Policy-specification languages were created for this purpose; they allow the enforcement of user-defined policies on third-party applications. We have implemented LoPSiL, a location-based policy-specification language for mobile devices. This article describes LoPSiL’s design and implementation, several example policies, and experiments that demonstrate LoPSiL’s viability for enforcing policies on mobile devices.
+</span>[Abstract]</span></li>        
+               <li><a href="http://id.nii.ac.jp/1001/00075245/">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+<i>Journal of Information Processing</i>, Vol 19, pp 292-306,
+ Information Processing Society of Japan, July 2011.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr-jrnl.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Complex software-security policies are difficult to specify, understand, and update. The same is true for complex software in general, but while many tools and techniques exist for decomposing complex general software into simpler reusable modules (packages, classes, functions, aspects, etc.), few tools exist for decomposing complex security policies into simpler reusable modules. The tools that do exist for modularizing policies either encapsulates entire policies as atomic modules that cannot be decomposed or allow fine-grained policy modularization but require expertize to use correctly. This paper presents PoliSeer, a GUI-based tool designed to enable users who are not expert policy engineers to flexibly specify, visualize, modify, and enforce complex runtime policies on untrusted software. PoliSeer users rely on expert policy engineers to specify universally composable policy modules; PoliSeer users then build complex policies by composing those expert-written modules. This paper describes the design and implementation of PoliSeer and a case study in which we have used PoliSeer to specify and enforce a policy on PoliSeer itself.
+</span>[Abstract]</span></li>
+               <li><a href = "http://doi.acm.org/10.1145/1609956.1609960">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+<i>ACM Transactions on Information and System Security</i>,
+Vol 13, No 1, pp 1-40.  ACM Press, October 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/cfi-tissec.pdf">
+Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cfi-tissec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>
+               <li><a href="http://doi.acm.org/10.1145/1525880.1525882">
+Composing Expressive Runtime Security Policies</a>.
+Lujo Bauer, Jay Ligatti, and David Walker.
+<i>ACM Transactions on Software Engineering and Methodology</i>,
+Vol 18, No 3, pp 1-43.  ACM Press, May 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/polymer-tosem.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer-tosem.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Program monitors enforce security policies by interposing themselves into the control flow of untrusted software whenever that software attempts to execute security-relevant actions. At the point of interposition, a monitor has authority to permit or deny (perhaps conditionally) the untrusted software’s attempted action. Program monitors are common security enforcement mechanisms and integral parts of operating systems, virtual machines, firewalls, network auditors, and anti-virus and anti-spyware tools.
+<br /><br />Unfortunately, the run-time policies we require program monitors to enforce grow more complex both as the monitored software is given new capabilities and as policies are refined in response to attacks and user feedback. We propose dealing with policy complexity by organizing policies in such a way as to make them composable, so that complex policies can be specified more simply as compositions of smaller subpolicy modules. We present a fully implemented language and system called Polymer that allows security engineers to specify and enforce composable policies on Java applications. We formalize the central workings of Polymer by defining an unambiguous semantics for our language. Using this formalization, we state and prove an uncircumventability theorem, which guarantees that monitors will intercept all security-relevant actions of untrusted software.
+</span>[Abstract]</span></li>
+               <li><a href="http://doi.acm.org/10.1145/1455526.1455532">
+Run-Time Enforcement of Nonsafety Policies</a>.
+Jay Ligatti, Lujo Bauer, and David Walker.
+<i>ACM Transactions on Information and System Security</i>, Vol 12, No 3, pp 1-41.
+ACM Press, January 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/nonsafety-tissec.pdf">Local version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/nonsafety-tissec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A common mechanism for ensuring that software behaves securely is to monitor programs at run time and check that they dynamically adhere to constraints specified by a security policy. Whenever a program monitor detects that untrusted software is attempting to execute a dangerous action, it takes remedial steps to ensure that only safe code actually gets executed.
+<br /><br />This article improves our understanding of the space of policies enforceable by monitoring the run-time behaviors of programs. We begin by building a formal framework for analyzing policy enforcement: we precisely define policies, monitors, and enforcement. This framework allows us to prove that monitors enforce an interesting set of policies that we call the infinite renewal properties. We show how to construct a program monitor that provably enforces any reasonable infinite renewal property. We also show that the set of infinite renewal properties includes some nonsafety policies, i.e., that monitors can enforce some nonsafety (including some purely liveness) policies. Finally, we demonstrate concrete examples of nonsafety policies enforceable by practical run-time monitors.
+</span>[Abstract]</span></li>
+               <li><a href="http://dx.doi.org/10.1016/j.scico.2006.01.004">
+A Type-theoretic Interpretation of Pointcuts and Advice</a>.
+Jay Ligatti, David Walker, and Steve Zdancewic. 
+<i>Science of Computer Programming: Special Issue on Foundations of Aspect-Oriented Programming</i>,
+Vol 63, No 3, pp 240-266. Elsevier, December 2006.
+<a href="http://www.cse.usf.edu/~ligatti/papers/attiopaa.pdf">Local version.</a>
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/attiopaa.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This article defines the semantics of MinAML, an idealized aspect-oriented programming language, by giving a type-directed translation from a user-friendly external language to a compact, well-defined core language. We argue that our framework is an effective way to give semantics to aspect-oriented programming languages in general because the translation eliminates shallow syntactic differences between related constructs and permits definition of an elegant and extensible core language.
+<br /><br />The core language extends the simply-typed lambda calculus with two central new abstractions: explicitly labeled program points and first-class advice. The labels serve both to trigger advice and to mark continuations that the advice may return to. These constructs are defined orthogonally to the other features of the language and we show that our abstractions can be used in both functional and object-oriented contexts. We prove Preservation and Progress lemmas for our core language and show that the translation from MinAML source into core is type-preserving. Together these two results imply that the source language is type safe. We also consider several extensions to our basic framework including a general mechanism for analyzing the current call stack.
+</span>[Abstract]</span></li>
+               <li><a href="http://link.springer.com/article/10.1007/s10207-004-0046-8">
+Edit Automata: Enforcement Mechanisms for Run-time Security Policies</a>. 
+Jay Ligatti, Lujo Bauer, and David Walker. <i>International Journal of Information Security</i>, 
+Vol 4, No 1-2, pp 2-16.  Springer-Verlag, Feb 2005.
+<a href="http://www.cse.usf.edu/~ligatti/papers/editauto-ijis05.pdf">Local Version</a>.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/editauto-ijis05.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring and modifying programs at run time. Our program monitors, called <i>edit automata</i>, are abstract machines that examine the sequence of application program actions and transform the sequence when it deviates from a specified policy. Edit automata have a rich set of transformational powers: They may terminate the application, thereby truncating the program action stream; they may suppress undesired or dangerous actions without necessarily terminating the program; and they may also insert additional actions into the event stream.
+<br /><br />After providing a formal definition of edit automata, we develop a rigorous framework for reasoning about them and their cousins: <i>truncation automata</i> (which can only terminate applications), <i>suppression automata</i> (which can terminate applications and suppress individual actions), and <i>insertion automata</i> (which can terminate and insert). We give a set-theoretic characterization of the policies each sort of automaton can enforce, and we provide examples of policies that can be enforced by one sort of automaton but not another.
+</span>[Abstract]</span></li>
+           </ul>
+               </div>
+               <div id="pubconfer" class="inactive">
+                    <ul>        
+                             <li><a href="http://www.cse.usf.edu/~ligatti/papers/gray.pdf">
+A Theory of Gray Security Policies</a>.
+Donald Ray and Jay Ligatti.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2015.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/gray.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper generalizes traditional models of security policies, from specifications of
+whether programs are secure, to specifications of how secure programs are. This is a
+generalization from qualitative, black-and-white policies to quantitative, gray policies.
+Included are generalizations from traditional definitions of safety and liveness policies to
+definitions of gray-safety and gray-liveness policies. These generalizations preserve key
+properties of safety and liveness, including that the intersection of safety and liveness is
+a unique allow-all policy and that every policy can be written as the conjunction of a single
+safety and a single liveness policy. It is argued that the generalization provides several
+benefits, including that it serves as a unifying framework for disparate approaches to
+security metrics, and that it separates---in a practically useful way---specifications of how
+secure systems are from specifications of how secure users require their systems to be.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/bronies.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Proceedings of the <i>17th International Information Security Conference (ISC)</i>, October 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/bronies.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries).
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs.
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/far-proximity-esorics.pdf">
+                   Fingerprinting Far Proximity from Radio Emissions</a>.
+Tao Wang, Yao Liu, and Jay Ligatti.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/far-proximity-esorics.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+As wireless mobile devices are more and more pervasive and adopted
+in critical applications, it is becoming increasingly important to measure the physical
+proximity of these devices in a secure way. Although various techniques have
+been developed to identify whether a device is close, the problem of identifying
+the far proximity (i.e., a target is at least a certain distance away) has been neglected
+by the research community. Meanwhile, verifying the far proximity is
+desirable and critical to enhance the security of emerging wireless applications.
+In this paper, we propose a secure far proximity identification approach that determines
+whether or not a remote device is far away. The key idea of the proposed
+approach is to estimate the far proximity from the unforgeable "fingerprint" of
+the proximity. We have validated and evaluated the effectiveness of the proposed
+far proximity identification method through experiments on real measured channel
+data. The experiment results show that the proposed approach can detect the
+far proximity with a successful rate of 0.85 for the non-Line-of-sight (NLoS) scenario,
+and the successful rate can be further increased to 0.99 for the Line-of-sight
+(LoS) scenario.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/code-inj.pdf">
+Defining Code-injection Attacks</a>.
+Donald Ray and Jay Ligatti.
+Proceedings of the ACM SIGPLAN-SIGACT <i>Symposium on Principles of Programming Languages (POPL)</i>,
+January 2012.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/code-inj.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper shows that existing definitions of code-injection attacks (e.g., SQL-injection attacks) are flawed. The flaws make it possible for attackers to circumvent existing mechanisms, by supplying code-injecting inputs that are not recognized as such. The flaws also make it possible for benign inputs to be treated as attacks. After describing these flaws in conventional definitions of code-injection attacks, this paper proposes a new definition, which is based on whether the symbols input to an application get used as (normal-form) values in the application’s output. Because values are already fully evaluated, they cannot be considered “code” when injected. This simple new definition of code-injection attacks avoids the problems of existing definitions, improves our understanding of how and when such attacks occur, and enables us to evaluate the effectiveness of mechanisms for mitigating such attacks.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-conf.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-conf.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and their results. Because previous work could not model monitors transforming results, MRAs capture realistic behaviors outside the scope of previous models. MRAs also have a simple but realistic operational semantics that makes it straightforward to define concrete MRAs. Moreover, the definitions of policies and enforcement with MRAs are significantly simpler and more expressive than those of previous models. Putting all these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the policies MRAs can and cannot enforce.
+</span>[Abstract]</span></li>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/grouper-conf.pdf">
+A Packet-classification Algorithm for Arbitrary Bitmask Rules, with Automatic 
+Time-space Tradeoffs</a>.
+Jay Ligatti, Josh Kuhn, and Chris Gage.
+Proceedings of the <i>IEEE International Conference on Computer Communication Networks (ICCCN)</i>,
+August 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/grouper-conf.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We present an algorithm for classifying packets according to arbitrary (including noncontiguous) bitmask rules. As its principal novelty, the algorithm is parameterized by the amount of memory available and can customize its data structures to optimize classification time without exceeding a given memory bound. The algorithm thus automatically trades time for space efficiency as needed. The two extremes of this time-space tradeoff (linear search through the rules versus a single table that maps every possible packet to its class number) are special cases of the general algorithm we present. Additional features of the algorithm include its simplicity, its open-source prototype implementation, its good performance even with worst-case rule sets, and its extendability to handle range rules and dynamic updates to rule sets.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Proceedings of the <i>International Conference on Trust Management (IFIP-TM)</i>,
+June 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Few tools exist for decomposing complex security policies into simpler modules. The policy-engineering tools that do exist either encapsulate entire policies as atomic, indecomposable modules or allow fine-grained modularization but are complicated and lack policy-visualization capabilities. This paper briefly presents PoliSeer, the first tool we are aware of that allows complex policies to be specified, visualized, modified, and enforced as compositions of simpler policy modules.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/IVCon09.pdf">
+Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Proceedings of the <i>ACIS International Conference on Software Engineering Research,
+Management, and Applications (SERA)</i>,
+December 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/IVCon09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. This paper describes IVCon, a tool with a novel approach for completely modularizing CCCs. IVCon enables users to create, examine, and modify their code in two different views: the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon aims to provide an easy-to-use interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MobiSec09.pdf">
+LoPSiL: A Location-based Policy-specification Language</a>.
+Jay Ligatti, Billy Rickey, and Nalin Saigal.
+Proceedings of the <i>International ICST Conference on Security and  
+Privacy in Mobile Information and Communication Systems (MobiSec)</i>,
+June 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MobiSec09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper describes the design of LoPSiL, a language for specifying location-dependent security and privacy policies. Policy-specification languages like LoPSiL are domain-specific programming languages intended to simplify the tasks of specifying and enforcing sound security policies on untrusted (i.e., potentially insecure) software. As far as we are aware, LoPSiL is the first imperative policy-specification language to provide abstractions specifically tailored to location-dependent policies for mobile-device applications. We have implemented a proof-of-concept compiler that inputs a LoPSiL policy <i>P</i> and a mobile-device application program <i>A</i> and outputs a new application program <i>A’</i> equivalent to <i>A</i>, except that <i>A’</i> contains inlined enforcement code that ensures that <i>A’</i> satisfies <i>P</i> at runtime. We report our experiences using this compiler to design and implement several policies for mobile-device applications.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ft-tal.pdf">Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2007.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ft-tal.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. Although transient faults do not permanently damage the hardware, they may corrupt computations by altering stored values and signal transfers. In this paper, we propose a new scheme for provably safe and reliable computing in the presence of transient hardware faults. In our scheme, software computations are replicated to provide redundancy while special instructions compare the independently computed results to detect errors before writing critical data. In stark contrast to any previous efforts in this area, we have analyzed our fault tolerance scheme from a formal, theoretical perspective. To be specific, first, we provide an operational semantics for our assembly language, which includes a precise formal definition of our fault model. Second, we develop an assembly-level type system designed to detect reliability problems in compiled code. Third, we provide a formal specification for program fault tolerance under the given fault model and prove that all well-typed programs are indeed fault tolerant. In addition to the formal analysis, we evaluate our detection scheme and show that it only takes 34% longer to execute than the unreliable version.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/lzap.pdf">
+Static Typing for a Faulty Lambda Calculus</a>.
+David Walker, Lester Mackey, Jay Ligatti, George Reis, and David August.
+Proceedings of the ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>,
+September 2006.  [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/lzap.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. These faults do not cause permanent damage, but may result in incorrect program execution by altering signal transfers or stored values. While the likelihood that such transient faults will cause any significant damage may seem remote, over the last several years transient faults have caused costly failures in high-end machines at America Online, eBay, and the Los Alamos Neutron Science Center, among others [6, 44, 15]. Because susceptibility to transient faults is proportional to the size and density of transistors, the problem of transient faults will become increasingly important in the coming decades.
+<br /><br />This paper defines the first formal, type-theoretic framework for studying reliable computation in the presence of transient faults. More specifically, it defines &#955;<sub>zap</sub>, a lambda calculus that exhibits intermittent data faults. In order to detect and recover from these faults, &#955;<sub>zap</sub> programs replicate intermediate computations and use majority voting, thereby modeling software-based fault tolerance techniques studied extensively, but informally [10, 20, 30, 31, 32, 33, 41].
+<br /><br />To ensure that programs maintain the proper invariants and use &#955;<sub>zap</sub> primitives correctly, the paper defines a type system for the language. This type system guarantees that well-typed programs can tolerate any single data fault. To demonstrate that &#955;<sub>zap</sub> can serve as an idealized typed intermediate language, we define a type-preserving translation from a standard simply-typed lambda calculus into &#955;<sub>zap</sub>.
+</span>[Abstract]</span></li>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/cficcs.pdf">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the ACM SIGSAC <i>Conference on Computer and Communications
+Security (CCS)</i>, November 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cficcs.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple, and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/cfi-theory.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the <i>7th International Conference on Formal Engineering
+Methods (ICFEM)</i>, November 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/cfi-theory.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Control-Flow Integrity (CFI) means that the execution of a program dynamically follows only certain paths, in accordance with a static policy. CFI can prevent attacks that, by exploiting buffer overflows and other vulnerabilities, attempt to control program behavior. This paper develops the basic theory that underlies two practical techniques for CFI enforcement, with precise formulations of hypotheses and guarantees.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/nonsafety.pdf">
+Enforcing Non-safety Security Policies with Program Monitors</a>. Jay Ligatti,
+Lujo Bauer, and David Walker.
+Proceedings of the <i>10th European Symposium on Research in Computer Security
+(ESORICS)</i>, September 2005.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/nonsafety.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We consider the enforcement powers of <i>program monitors</i>, which intercept security-sensitive actions of a target application at run time and take remedial steps whenever the target attempts to execute a potentially dangerous action. A common belief in the security community is that program monitors, regardless of the remedial steps available to them when detecting violations, can only enforce safety properties. We formally analyze the properties enforceable by various program monitors and find that although this belief is correct when considering monitors with simple remedial options, it is incorrect for more powerful monitors that can be modeled by <i>edit automata</i>. We define an interesting set of properties called <i>infinite renewal</i> properties and demonstrate how, when given any reasonable infinite renewal property, to construct an edit automaton that provably enforces that property. We analyze the set of infinite renewal properties and show that it includes every safety property, some liveness properties, and some properties that are neither safety nor liveness.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/polymer.pdf">
+Composing Security Policies with Polymer</a>. Lujo Bauer, Jay Ligatti, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2005. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We introduce a language and system that supports definition and composition of complex run-time security policies for Java applications. Our policies are comprised of two sorts of methods. The first is <i>query</i> methods that are called whenever an untrusted application tries to execute a security-sensitive action. A query method returns a <i>suggestion</i> indicating how the security-sensitive action should be handled. The second sort of methods are those that perform state updates as the policy’s suggestions are followed.
+<br /><br />The structure of our policies facilitates composition, as policies can query other policies for suggestions. In order to give programmers control over policy composition, we have designed the system so that policies, suggestions, and application events are all first-class objects that a higher-order policy may manipulate. We show how to use these programming features by developing a library of policy combinators.
+<br /><br />Our system is fully implemented, and we have defined a formal semantics for an idealized subset of the language containing all of the key features. We demonstrate the effectiveness of our system by implementing a large-scale security policy for an email client.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/monitors-tokyo02.pdf">
+Types and Effects for Non-interfering Program Monitors</a>. Lujo Bauer, Jarred
+Ligatti, and David Walker. In M. Okada, B. Pierce, A. Scedrov, H. Tokuda, and
+A.  Yonezawa, editors, <i>Lecture Notes in Computer Science:
+Software Security - Theories and Systems (Revised Papers of the 2002 Mext-NSF-JSPS
+International Symposium)</i>, Vol 2609, pp 154-171. Springer-Verlag, November 2003.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/monitors-tokyo02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A run-time monitor is a program that runs in parallel with an untrusted application and examines actions from the application's instruction stream. If the sequence of program actions deviates from a specified security policy, the monitor transforms the sequence or terminates the program. We present the design and formal specification of a language for defining the policies enforced by program monitors. Our language provides a number of facilities for composing complex policies from simpler ones. We allow policies to be parameterized by values or other policies, and we define operators for forming the conjunction and disjunction of policies. Since the computations that implement these policies modify program behavior, naive composition of computations does not necessarily produce the conjunction (or disjunction) of the policies that the computations implement separately. We use a type and effect system to ensure that computations do not interfere with one another when they are composed.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/theory_of_aspects.pdf">A Theory of Aspects</a>. 
+David Walker, Steve Zdancewic, and Jay Ligatti.  Proceedings of the
+ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>, August 2003.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/theory_of_aspects.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper defines the semantics of MinAML, an idealized aspect-oriented programming language, by giving a type-directed translation from its user-friendly external language to its compact, well-defined core language. We argue that our framework is an effective way to give semantics to aspect-oriented programming languages in general because the translation eliminates shallow syntactic differences between related constructs and permits definition of a clean, easy-to-understand, and easy-to-reason-about core language.
+<br /><br />The core language extends the simply-typed lambda calculus with two central new abstractions: explicitly labeled program points and first-class advice. The labels serve both to trigger advice and to mark continuations that the advice may return to. These constructs are defined orthogonally to the other features of the language and we show that our abstractions can be used in both functional and object-oriented contexts. The labels are well-scoped and the language as a whole is well-typed. Consequently, programmers can use lexical scoping in the standard way to prevent aspects from interfering with local program invariants.
+</span>[Abstract]</span></li>        
+           </ul>
+               </div>
+               <div id="pubworkshop" class="inactive">
+                    <ul>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/iosec.pdf">
+Enforcing More with Less: Formalizing Target-aware Run-time Monitors</a>.
+Yannis Mallios, Lujo Bauer, Dilsun Kaynar, and Jay Ligatti.
+Proceedings of the <i>International Workshop on Security and Trust Management (STM)</i>, 
+September 2012.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iosec.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Run-time monitors ensure that untrusted software and system behavior adheres to a security policy. This paper defines an expressive formal framework, based on I/O automata, for modeling systems, policies, and run-time monitors in more detail than is typical. We explicitly model, for example, the environment, applications, and the interaction between them and monitors. The fidelity afforded by this framework allows us to explicitly formulate and study practical constraints on policy enforcement that were often only implicit in previous models, providing a more accurate view of what can be enforced by monitoring in practice. We introduce two definitions of enforcement, target-specific and generalized, that allow us to reason about practical monitoring scenarios. Finally, we provide some meta-theoretical comparison of these definitions and we apply them to investigate policy enforcement in scenarios where the monitor designer has knowledge of the target application and show how this can be exploited to make more efficient design choices.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mesp.pdf">More Enforceable
+Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker. <i>
+Foundations of Computer Security Workshop (FCS) '02 </i>(associated with LICS
+'02), July 2002. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mesp.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring programs at runtime. Our program monitors are automata that examine the sequence of program actions and transform the sequence when it deviates from the specified policy. The simplest such automaton truncates the action sequence by terminating a program. Such automata are commonly known as security automata, and they enforce Schneider's EM class of security policies. We define automata with more powerful transformational abilities, including the ability to insert a sequence of actions into the event stream and to suppress actions in the event stream without terminating the program. We give a set-theoretic characterization of the policies these new automata are able to enforce and show that they are a superset of the EM policies.
+</span>[Abstract]</span></li>       
+           </ul>
+               </div>
+               <div id="pubthesis" class="inactive">
+                    <ul>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/jligatti_thesis.pdf">
+Policy Enforcement via Program Monitoring</a>.  Jarred Adam Ligatti. PhD thesis, Princeton University, June 2006.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/jligatti_thesis.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    One way to guarantee that software behaves securely is to monitor programs at run time and check that they dynamically adhere to constraints specified by a security policy. Whenever a program monitor detects that untrusted software is attempting to execute a dangerous action, it takes remedial steps to ensure that only safe code actually gets executed. This thesis considers the space of policies enforceable by monitoring the run-time behaviors of programs and develops a practical language for specifying monitors’ policies.
+<br /><br />In order to delineate the space of policies that monitors can enforce, we first have to define exactly what it means for a monitor to enforce a policy. We therefore begin by building a formal framework for analyzing policy enforcement; we precisely define policies, monitors, and enforcement. Having this framework allows us to consider the enforcement powers of program monitors and prove that they enforce an interesting set of policies that we define and call the infinite renewal properties. We show how, when given any reasonable infinite renewal property, to construct a program monitor that provably enforces that policy.
+<br /><br />In practice, the security policies enforced by program monitors grow more complex both as the monitored software is given new capabilities and as policies are refined in response to attacks and user feedback. We propose dealing with policy complexity by organizing policies in such a way as to make them composeable, so that complex policies can be specified more simply as compositions of smaller subpolicy modules. We present a fully implemented language and system called Polymer that allows security engineers to specify and enforce composeable policies on Java applications. We also formalize the central workings of Polymer by defining an unambiguous semantics for our language.
+</span>[Abstract]</span></li>        
+           </ul>
+               </div>
+               <div id="pubtechrep" class="inactive">
+                    <ul>        
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/coauth-TR.pdf">Coauthentication</a>.
+     Jay Ligatti, Cagri Cetin, Shamaria Engram, Jean-Baptiste Subils, Dmitry Goldgof.  USF Technical Report Auth-7-17-17.  July 2017.
+     [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/coauth-TR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Collaborative authentication, or coauthentication, is a single-factor technique in which multiple registered
+devices work together to authenticate a user. Coauthentication aims to provide security benefits
+similar to those of multi-factor techniques, such as mitigating theft of any one authentication device, without
+the inconveniences of multi-factor techniques, such as having to enter passwords or scan biometrics.
+Coauthentication can provide additional security benefits, including: preventing phishing and man-in-the-middle
+attacks, basing authentications on high-entropy secrets that can be generated and updated
+automatically, and availability protections against, for example, device misplacement or denial-of-service
+(DoS) attacks. This paper introduces coauthentication and discusses and evaluates applications, example
+protocols, and implementations.
+</span>[Abstract]</span></li>
+
+                  <li><a href="http://www.cse.usf.edu/~ligatti/papers/iotFdoJ.pdf">
+Induction on Failing Derivations</a>.  Jay Ligatti.  Technical Report PL-Sep13.
+University of South Florida, March 2016. (This is a major revision to the September 2013 version.)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iotFdoJ.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+A proof technique, called induction on failing derivations, is introduced. 
+We wish to prove properties of judgments in deductive systems.
+Standard techniques exist for proving such properties on valid judgments;
+this note defines a technique for proving such properties on invalid
+(underivable) judgments.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingTechReport.pdf">
+On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  Technical Report.
+University of South Florida, March 2016.
+(This is a major revision to the August 2014 version of the technical report, which
+itself was a major revision of technical report CSE-071012,
+"Completely Subtyping Iso-Recursive Types", from July 2012.)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingTechReport.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Well-known techniques exist for proving the soundness of subtyping relations with respect to type
+safety.  However, completeness has not been treated with widely applicable techniques, as far as
+we're aware.
+<br /><br />This paper develops techniques for stating and proving that a subtyping relation is
+complete with respect to type safety and applies the techniques to the study of iso-recursive
+subtyping.
+A new proof technique, induction on failing derivations, is provided that may be useful in other
+domains as well.
+<br /><br />The common subtyping rules for iso-recursive types---the "Amber rules"---are shown to be
+incomplete with respect to type safety.  That is, there exist iso-recursive types t1 and t2 such
+that t1 can safely be considered a subtype of t2, but t1<=t2 is not derivable with the Amber rules.
+<br /><br />New, algorithmic rules are defined for subtyping iso-recursive types, and the rules
+are proved sound and complete with respect to type safety.  The fully implemented
+subtyping algorithm is optimized to run in O(mn) time, where m is the number of mu-terms in the
+types being considered and n is the size of the types being considered.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/broniesTR.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Technical Report CSE-TR-081114.
+University of South Florida, August 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/broniesTR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries). 
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and 
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs. 
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an 
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-full-tr.pdf">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+Technical Report USF-CSE-1213, University of South Florida, December 2013.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-full-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform securi
+ty-relevant actions and their results. Because previous work could not model general security monitors transforming results, MRAs capture realistic behaviors
+ outside the scope of previous models. MRAs also have a simple operational semantics that makes it straightforward to define concrete MRAs.  Moreover, the de
+finitions of policies and enforcement with MRAs are simpler and more expressive than those of previous models. Putting all these features together, we argue
+that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by c
+haracterizing the policies deterministic and nondeterministic MRAs can and cannot enforce.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-tr.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Technical Report USF-CSE-SS-102809, University of South Florida, October 2009,
+revised June 2010.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/mra-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    This paper presents a theory of runtime enforcement based on mechanism models called MRAs (Mandatory Results Automata). MRAs can monitor and transform security-relevant actions and their results. Because previous work could not model monitors transforming results, MRAs capture realistic behaviors outside the scope of previous models. MRAs also have a simple but realistic operational semantics that makes it straightforward to define concrete MRAs. Moreover, the definitions of policies and enforcement with MRAs are significantly simpler and more expressive than those of previous models. Putting all these features together, we argue that MRAs make good general models of runtime mechanisms, upon which a theory of runtime enforcement can be based. We develop some enforceability theory by characterizing the policies MRAs can and cannot enforce.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr-tr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Technical Report CSE-SSec-112509, University of South Florida, November 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/psr-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Complex security policies are difficult to specify, understand, and update. The same is true for complex software in general, but while many software-engineering tools exist for decomposing complex general software into simpler reusable modules (packages, classes, functions, aspects, etc.), few policy-engineering tools exist for decomposing complex security policies into simpler reusable modules. The tools that do exist for modularizing policies either encapsulate entire policies as atomic, indescomposable modules or allow fine-grained modularization but are complicated and lack policy-visualization capabilities.
+<br /><br />This paper presents PoliSeer, the first tool we are aware of that allows engineers to specify, visualize, modify, and enforce complex as compositions of simpler policy modules. We describe the design and implementation of PoliSeer, as well as a case study in which we have bootstrapped PoliSeer by using it to specify and enforce a policy on itself.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-TR-09.pdf">
+IVCon: Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-110909-SE, University of South Florida, November 2009.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-TR-09.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. This paper describes IVCon, a tool with a novel approach for completely modularizing CCCs. IVCon enables users to create, examine, and modify their code in two different views: the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon provides an interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-tr.pdf">
+Defining and Visualizing Many-to-many Relationships between Concerns and Code</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-090608-SE, University of South Florida, September 2008.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-tr.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Code modularization provides benefits throughout the software life cycle; however, the presence of crosscutting concerns (CCCs) in software hinders its complete modularization. In this paper, we describe IVCon, a GUI-based tool that provides a novel approach to modularization of CCCs. IVCon enables users to create, examine, and modify their code in two different views, the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code in colors that indicate which CCCs various code segments implement. The unwoven view displays code in two panels, one showing the core of the program and the other showing all the code implementing each concern in an isolated module. IVCon aims to provide an easy-to-use interface for conveniently creating, examining, and modifying code in, and translating between, the woven and unwoven views.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-776-07.pdf">
+Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Technical Report TR-776-07, Princeton University, April 2007.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-776-07.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A <i>transient hardware fault</i> occurs when an energetic particle strikes a transistor, causing it to change state. Although transient faults do not permanently damage the hardware, they may corrupt computations by altering stored values and signal transfers. In this paper, we propose a new scheme for provably safe and reliable computing in the presence of transient hardware faults. In our scheme, software computations are replicated to provide redundancy while special instructions compare the independently computed results to detect errors before writing critical data. In stark contrast to any previous efforts in this area, we have analyzed our fault tolerance scheme from a formal, theoretical perspective. To be specific, first, we provide an operational semantics for our assembly language, which includes a precise formal definition of our fault model. Second, we develop an assembly-level type system designed to detect reliability problems in compiled code. Third, we provide a formal specification for program fault tolerance under the given fault model and prove that all well-typed programs are indeed fault tolerant. In addition to the formal analysis, we evaluate our detection scheme and show that it only takes 34% longer to execute than the unreliable version.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MSR-TR-2005-18.pdf">
+Control-Flow Integrity</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-18, Microsoft Research, February 2005 (revised June 2005). 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MSR-TR-2005-18.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Current software attacks often build on exploits that subvert machine-code execution. The enforcement of a basic safety property, Control-Flow Integrity (CFI), can prevent such attacks from arbitrarily controlling program behavior. CFI enforcement is simple, and its guarantees can be established formally, even with respect to powerful adversaries. Moreover, CFI enforcement is practical: it is compatible with existing software and can be done efficiently using software rewriting in commodity systems. Finally, CFI provides a useful foundation for enforcing further security policies, as we demonstrate with efficient software implementations of a protected shadow call stack and of access control for memory regions.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MSR-TR-2005-17.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-17, Microsoft Research, February 2005 (revised June 2005). 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/MSR-TR-2005-17.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    Control-Flow Integrity (CFI) means that the execution of a program dynamically follows only certain paths, in accordance with a static policy. CFI can prevent attacks that, by exploiting buffer overflows and other vulnerabilities, attempt to control program behavior. This paper develops the basic theory that underlies two practical techniques for CFI enforcement, with precise formulations of hypotheses and guarantees.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/NonSafetyTR.pdf">
+Enforcing Non-safety Security Policies with Program Monitors</a>. Jay Ligatti, Lujo Bauer,
+and David Walker. Technical Report TR-720-05, Princeton University, January
+2005 (revised June 2005). 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/NonSafetyTR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We consider the enforcement powers of <i>program monitors</i>, which intercept security-sensitive actions of a target application at run time and take remedial steps whenever the target attempts to execute a potentially dangerous action. A common belief in the security community is that program monitors, regardless of the remedial steps available to them when detecting violations, can only enforce safety properties. We formally analyze the properties enforceable by various program monitors and find that although this belief is correct when considering monitors with simple remedial options, it is incorrect for more powerful monitors that can be modeled by <i>edit automata</i>. We define an interesting set of properties called <i>infinite renewal</i> properties and demonstrate how, when given any reasonable infinite renewal property, to construct an edit automaton that provably enforces that property. We analyze the set of infinite renewal properties and show that it includes every safety property, some liveness properties, and some properties that are neither safety nor liveness.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/polymer-tr-699-04.pdf">A
+Language and System for Composing Security Policies</a>. Lujo Bauer, Jay Ligatti,
+and David Walker. Technical Report TR-699-04, Princeton University, January 2004. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/polymer-tr-699-04.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We introduce a new language and system that allows security architects to develop well-structured and easy-to-maintain security policies for Java applications. In our system, policies are first-class objects. Consequently, programmers can define parameterized meta-policies that act as policy combinators and policy modifiers, so that complex security policies can be implemented by composing simple base policies. We demonstrate the effectiveness of our design by building up a library of powerful policy combinators and showing how they can be used. We also describe some issues we encountered while implementing our system and provide performance results.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-681-03.pdf">Edit
+Automata: Enforcement Mechanisms for Run-time Security Policies</a>. Jay Ligatti,
+Lujo Bauer, and David Walker. Princeton University Technical Report TR-681-03, May 2003. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-681-03.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring and modifying programs at run time. Our program monitors, called <i>edit automata</i>, are abstract machines that examine the sequence of application program actions and transform the sequence when it deviates from a specified policy. Edit automata have a rich set of transformational powers: They may terminate the application, thereby truncating the program action stream; they may suppress undesired or dangerous actions without necessarily terminating the program; and they may also insert additional actions into the event stream.
+<br /><br />After providing a formal definition of edit automata, we develop a rigorous framework for reasoning about them and their cousins: <i>truncation automata</i> (which can only terminate applications), <i>suppression automata</i> (which can terminate applications and suppress individual actions), and <i>insertion automata</i> (which can terminate and insert). We give a set-theoretic characterization of the policies each sort of automaton can enforce and we provide examples of policies that can be enforced by one sort of automaton but not another.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-655-02.pdf">A Calculus
+for Composing Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David
+Walker. Technical Report TR-655-02, Princeton University, August 2002. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-655-02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    A runtime monitor is a program that runs in parallel with an untrusted application and examines actions from the application's instruction stream. If the sequence of program actions deviates from a specified security policy, the monitor transforms the sequence or terminates the program. We present the design and formal specification of a language for defining the policies enforced by program monitors.
+<br /><br />Our language provides a number of facilities for composing complex policies from simpler ones. We allow policies to be parameterized by values, or other policies. There are also operators for forming the conjunction and disjunction of policies. Since the computations that implement these policies modify program behavior, naive composition of computations does not necessarily produce the conjunction (or disjunction) of the policies that the computations implement separately. We use a type and effect system to ensure that computations do not interfere with one another when they are composed. We also present a preliminary implementation of our language.
+</span>[Abstract]</span></li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-649-02.pdf">More
+Enforceable Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker.
+Technical Report TR-649-02, Princeton University, July 2002. 
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/TR-649-02.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+    We analyze the space of security policies that can be enforced by monitoring programs at runtime. Our program monitors are automata that examine the sequence of program actions and transform the sequence when it deviates from the specified policy. The simplest such automaton truncates the action sequence by terminating a program. Such automata are commonly known as security automata, and they enforce Schneider's EM class of security policies. We define automata with more powerful transformational abilities, including the ability to insert a sequence of actions into the event stream and to suppress actions in the event stream without terminating the program. We give a set-theoretic characterization of the policies these new automata are able to enforce and show that they are a superset of the EM policies.
+</span>[Abstract]</span></li>       
+           </ul>
+               </div>
+           </div>  
+               
+           <noscript>
+               <p><a href="http://www.cse.usf.edu/~ligatti/pub-date.html">Publication date</a></p>
+               <p><a href="http://www.cse.usf.edu/~ligatti/pub-venue.html">Venue type</a></p>
+           </noscript>
+        </section>  
+        <section id="currentProjects">
+           <h2>Current Research projects</h2> 
+           <table class="invTable">
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/coauthentication/">Coauthentication</a></th>
+                <td>Collaborative authentication</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/ciao/">Ciao</a></th>
+                <td>Principled definition and analysis of injection attacks</td>
+            </tr> 
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/runtime/">RunTime</a></th>
+                <td>Theory and practice of monitoring software at runtime</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/completeness/">Completeness</a></th>
+                <td>Establishing the completeness of subtyping relations</td>
+            </tr>
+            <tr>
+                <th>PoCo</th>
+                <td>Theory and practice of security-policy composition</td>
+            </tr>  
+            <tr>
+                <th>Keygen</th>
+                <td>New methods for generating symmetric-cryptographic keys</td>
+            </tr>
+           </table>             
+        </section>
+        <section id="olderProjects">
+           <h2>Older Research projects</h2>           
+           <table class="invTable">
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/grouper/">Grouper</a></th>
+                <td>A packet-classification algorithm</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/poliseer/">PoliSeer</a></th>
+                <td>Specifying and visualizing complex security policies</td>
+            </tr>              
+            <tr>
+                <th><a href="http://www.cse.usf.edu/~ligatti/projects/ivcon/">IVCon</a></th>
+                <td>Inline visualization of concerns</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cs.princeton.edu/sip/projects/polymer/">Polymer</a> </th>
+                <td>Software monitoring in theory and practice</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cs.princeton.edu/sip/projects/zap/">Project Zap</a></th>
+                <td>Trustworthy computing in the presence of transient faults</td>
+            </tr>
+            <tr>
+                <th><a href="http://www.cs.princeton.edu/sip/projects/aspectml/">AspectML</a></th>
+                <td>Foundations of aspect-oriented programming languages</td>
+            </tr>
+            <tr>
+                <th><a href="http://research.microsoft.com/research/sv/gleipnir/">Gleipnir</a></th>
+                <td>Enforcing control-flow policies on software</td>
+            </tr>      
+           </table>
+        </section>       
+        <section id="teachingCourses">
+           <h2>Teaching</h2> 
+           <table class="horTable"> <!--max 5td-->
+           <!--<tr>
+                <th class="emptyElement"></th>
+                <td class="emptyElement"></td>-->
+            <tr>
+                <th>Compilers:</th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-17">Fall'17</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-16">Fall'16</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-15">Fall'15</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-13">Fall'13</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-11">Fall'11</a></td>
+            </tr>
+            <tr>
+                <th class="emptyElement"></th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-09">Fall'09</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/compilers-07">Fall'07</a></td>
+                <th class="emptyElement"></th>
+                <th class="emptyElement"></th>
+                <td class="emptyElement"></td>
+            </tr>
+            <tr>
+                <th>Foundations of Software Security:</th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-17">Spring'17</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-16">Spring'16</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-15">Spring'15</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-14">Spring'14</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-13">Spring'13</a></td>
+            </tr>  
+            <tr>
+                <th class="emptyElement"></th>               
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-12">Spring'12</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-10">Spring'10</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-08">Spring'08</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/foss-07">Spring'07</a></td>
+                <td class="emptyElement"></td>
+            </tr>                              
+            <tr>
+                <th>Programming Languages:</th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-17">Spring'17</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-16">Spring'16</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-14">Fall'14</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-12">Fall'12</a></td>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-10">Fall'10</a></td>
+            </tr> 
+            <tr>
+                <th class="emptyElement"></th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/pl-08">Fall'08</a></td>
+                <th class="emptyElement"></th>       
+                <th class="emptyElement"></th>
+                <th class="emptyElement"></th>
+                <th class="emptyElement"></th>
+            </tr>
+            <tr>
+                <th>Advanced Programming Languages:</th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/apl-15">Spring'15</a></td>
+		<td><a href="http://www.cse.usf.edu/~ligatti/apl-11">Spring'11</a></td>
+		<td class="emptyElement"></td>
+                <td class="emptyElement"></td>
+                <td class="emptyElement"></td>
+            </tr>
+            <tr>
+                <th>Operating Systems:</th>
+                <td><a href="http://www.cse.usf.edu/~ligatti/os-06">Fall'06</a></td>
+                <td class="emptyElement"></td>
+                <td class="emptyElement"></td>
+                <td class="emptyElement"></td>
+                <td class="emptyElement"></td>
+            </tr>
+           </table>
+        </section>
+
+        <section id="currentStudents">
+           <h2>Current graduate students</h2>
+<?img src="WithSomeOfMyAwesomeStudents.JPG" alt="labgroup" height="240" width="616" /?>
+           <table class="invTable">
+               <tr>
+                    <th>Danielle Ferguson</th>
+                    <td>(PhD student 2012-present)</td>
+               </tr>
+               <tr>
+                    <th>Hernan Palombo</th>
+                    <td>(PhD student 2013-present, co-advised with Hao Zheng)</td>
+               </tr>
+               <tr>
+                    <th>Yan Albright</th>
+                    <td>(PhD student 2014-present)</td>
+               </tr>
+               <tr>
+                    <th>Cagri Cetin</th>
+                    <td>(PhD student 2014-present)</td>
+               </tr>
+               <tr>
+                    <th>Jean-Baptiste Subils</th>
+                    <td>(PhD student 2014-present)</td>
+               </tr>
+               <tr>
+                    <th>Shamaria Engram</th>
+                    <td>(PhD student 2015-present)</td>
+               </tr>
+               <tr>
+                    <th>Ivory Hernandez</th>
+                    <td>(MS student 2015-present)</td>
+               </tr>
+               <tr>
+                    <th>Joshua Winfrey</th>
+                    <td>(MS student 2015-present)</td>
+               </tr>
+               <tr>
+                    <th>Michael Quintero</th>
+                    <td>(MS student 2015-present)</td>
+               </tr>
+           </table>           
+        </section>
+        <section id="formerStudents">
+            <h2>Former graduate students</h2>          
+            <p class="accordion-menu">&#9654; Kimberly Bursum</p>
+            <ul class="accordion-menu">
+                <li>Master's student 2015-2017</li>
+                <li>Thesis title: "Initial Comparative Empirical Usability Testing for the Collaborative Authentication System"</li>
+                <li>After graduation: Patent Attorney</li>
+            </ul>
+            <p class="accordion-menu">&#9654; Jacob Venne</p>
+            <ul class="accordion-menu">
+                <li>Master's student 2016-2017</li>
+                <li>Thesis title: "Tradeoffs in Protocol Designs for Collaborative Authentication"</li>
+                <li>After graduation: Business Intelligence Software Engineer at <a href="https://bstglobal.com">BST Global</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Donald Ray</p>
+            <ul class="accordion-menu">
+                <li>PhD student 2011-2016</li>
+                <li>Thesis title: "A Quantified Model of Security Policies, with an Application for Injection-Attack Prevention"</li>
+                <li>After graduation: Software Engineer (PhD Graduate) at <a href="https://www.google.com/">Google</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Bader AlBassam</p>
+            <ul class="accordion-menu">
+                <li>Master's student 2015-2016</li>
+                <li>Thesis title: "Enforcing Security Policies on GPU Computing through the Use of Aspect-Oriented Programming Techniques"</li>
+                <li>After graduation: PhD student at <a href="https://www.cs.purdue.edu/">Purdue</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Clayton Whitelaw</p>
+            <ul class="accordion-menu">
+                <li>Master's student 2014-2015</li>
+                <li>Thesis title: "Precise Detection of Injection Attacks on Concrete Systems"</li>
+                <li>After graduation: Lead Developer at <a href="https://www.americanexpress.com/">American Express</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Cory Juhlin</p>
+            <ul class="accordion-menu">
+                <li>Master's student 2013-2015</li>
+                <li>Thesis title: "Developing a Compiler for a Regular Expression Based Policy Specification Language"</li>
+                <li>After graduation: Applications Developer at <a href="http://www.usicllc.com/">USIC</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Grant Smith</p> 
+            <ul class="accordion-menu">        
+                <li>Master's student 2013-2014</li>
+                <li>Thesis title: "Analysis and Prevention of Code-Injection Attacks on Android OS"</li>
+                <li>After graduation: Software Engineer at <a href="http://www.cybrixgroup.com/">Cybrix Group</a></li>
+            </ul>
+            <p class="accordion-menu">&#9654; Daniel Lomsak</p>        
+            <ul class="accordion-menu">        
+                <li>PhD student 2008-2013</li>
+                <li>Thesis title: "Toward More Composable Software-Security Policies: Tools and Techniques"</li>
+                <li>After graduation: Lead Quality Assurance Engineer at <a href="https://www.americanexpress.com/">American Express</a></li>
+                <li><a href="http://www.cse.usf.edu/~dlomsak/">Webpage</a></li>
+            </ul>
+                           
+            <p class="accordion-menu">&#9654; Zach Carter</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2010-2012</li>
+                <li>Thesis title: "A Principled Approach to Policy Composition for Runtime Enforcement Mechanisms"</li>
+                <li>  After graduation: Intern at <a href="http://mozillalabs.com">Mozilla Labs</a></li>
+                <li><a href="https://github.com/zaach">Webpage</a></li>
+            </ul>
+            
+            <p class="accordion-menu">&#9654; Stan Naspinski</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2010-2011</li>
+                 <li>Thesis title: "Selection and Implementation of Technologies for the Re-Engineering of an Existing Software System"</li>
+                 <li>After graduation: Crew Commander, <a href="http://www.af.mil">USAF</a>; 
+                     Software Engineer, <a href="http://www.generaldynamics.com/">General Dynamics</a>; 
+                     Lead Software Engineer, <a href="http://www.apansoftware.com/">APAN Software</a></li>
+                <li><a href="http://naspinski.net/page/Stan-Naspinski.aspx">Webpage</a></li>
+            </ul>
+                  
+            <p class="accordion-menu">&#9654; Matt Spaulding</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2010-2011</li>
+                <li>Thesis title: "A Dynamic Hierarchical Web-Based Portal"</li>
+                <li>After graduation: Software Engineer at <a href="http://www.enporion.com">Enporion</a></li>
+            </ul>
+             
+            <p class="accordion-menu">&#9654; Nalin Saigal</p>        
+            <ul class="accordion-menu">        
+                <li>PhD student 2006-2011</li>
+                <li>Thesis title: "Modularizing Crosscutting Concerns in Software"</li>
+                <li>After graduation: Software Developer at <a href="http://www.epic.com/">Epic Systems</a></li>
+                <li><a href="http://www.cse.usf.edu/~nsaigal/">Webpage</a></li>
+            </ul>
+             
+            <p class="accordion-menu">&#9654; Josh Kuhn</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2009-2011</li>
+                 <li>Thesis title: "Grouper: A Packet Classification Algorithm Allowing Time-Space Tradeoffs"</li>
+                 <li> After graduation: Programmer analyst at <a href="http://www.catalinamarketing.com/">Catalina Marketing</a></li>        
+                <li><a href="http://www.cse.usf.edu/~jakuhn2/">Webpage</a></li>
+            </ul>
+             
+            <p class="accordion-menu">&#9654; Brandy Eyers</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2009-2011</li>
+                 <li>Thesis title: "An Analysis of Remote Biometric Authentication with Windows"</li>
+                 <li>After graduation: Testing/QA at <a href="http://www.nextech.com/">NexTech</a></li>        
+            </ul>
+             
+            <p class="accordion-menu">&#9654; Srikar Reddy</p>        
+            <ul class="accordion-menu">        
+                <li>Master's student 2007-2009</li>
+                 <li> Thesis title: "Program monitoring in a mandatory-results model"</li>
+                 <li>After graduation: PhD student at <a href="http://www.cs.ucdavis.edu/">UC-Davis CS</a></li>        
+                <li><a href="http://www.csee.usf.edu/~sreddy4/">Webpage</a></li>
+            </ul>
+                                                                     
+        </section>
+        <section id="talks">
+           <h2>Talks</h2>
+           <ul>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/tldi12.pdf">A Technique for Proving 
+                        Subtyping Completeness, with an Application to Iso-recursive Types</a>,
+                        <a href="http://www.cis.upenn.edu/~bcpierce/tldi12/">TLDI</a><i> (Philadelphia, 2012)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/secauto.pdf">Modeling Enforcement Mechanisms 
+                        with Security Automata</a>, The Discrete Mathematics Seminar<i> (USF, 2010)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/esorics10.pdf">
+                        A Theory of Runtime Enforcement, with Results</a>, ESORICS<i> (Athens, 2010)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/crypto-intro.ppt">
+                     An Introduction to Cryptography for Homeland Security</a>,
+                     Institute for Safety Security Rescue Technology (iSSRt) 
+                     Distinguished Lecture<i> (USF, 2008)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/REM2007.ppt">
+                     Coping with Runtime-Policy Complexity</a>,
+                     Workshop on Run Time Enforcement for Mobile and Distributed Systems
+                     [<a href="http://www.cs.kuleuven.be/conference/ESORICS-REM2007/">link</a>] 
+                    <i> (Dresden, 2007)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/cylab-talk.ppt">
+                     Runtime Software Monitoring</a>,
+                     Carnegie Mellon University<i> (Pittsburgh, 2007)</i></li>               
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/monitors-msr-inria.ppt">
+                     Monitoring Software to Enforce Run-time Policies</a>,
+                     Microsoft Research-INRIA Joint Centre<i> (Paris, 2007)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/kul-poly.ppt">
+                      Polymer: A Language and System for Specifying Complex, Modular Run-time Policies</a>,
+                      Katholieke Universiteit Leuven<i> (Belgium, 2007)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/lang-based-sec.ppt">
+                     Intro to Language-based Security</a>,
+                     IEEE-CS and ACM student chapter meetings<i> (USF, 2007)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/NewRsr.ppt">
+                     New Research in Software Security</a>,
+                     ACM student chapter meeting<i> (USF, 2006)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/monitors.ppt">
+                       Enforcing Security Policies with
+                       Run-time Program Monitors</a>, Various colloquia 
+                      <i> (Kansas State University, University of South Florida, 
+                       Florida International University, University of Texas-Arlington, and 
+                       Reservoir Labs-NYC, 2006)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/FPO.ppt">
+                       Policy Enforcement via Program Monitoring</u>,
+                       Princeton University<i> (Princeton, 2006)</i> </li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/nonsafety.ppt">
+                       Enforcing Non-safety Security Policies with 
+                       Program Monitors</u>, ESORICS<i> (Milan, 2005)</i> </li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/polymer.ppt">
+                       Composing Security Policies with Polymer</a>,
+                       PLDI<i> (Chicago, 2005)</i></li>
+                <li><a href="http://www.cse.usf.edu/~ligatti/talks/CFI.ppt">
+                       Software Control Flow Integrity</a>,
+                       Microsoft Research Silicon Valley<i> (Mountain View, 2004)</i></li>
+            </ul>
+        </section>
+    </div>
+    <p id="updated"></p> 
+    <div id="popUpWrap"></div>
+    <div id="popUpOut">
+        <div id="popUpIn"></div>
+        <span id="popUpX">CLOSE <b>X</b></span>
+    </div>
+</body>
+</html>

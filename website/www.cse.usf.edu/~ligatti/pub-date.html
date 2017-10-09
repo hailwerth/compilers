@@ -1,0 +1,391 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Publications by Date</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="jl.css">
+    <script type="text/javascript" src="jl.js"></script>    
+</head>
+<body>
+    <div id="pageContent">
+        <header>
+            <img id="photo" src="images/jligatti-09.JPG" alt="jay ligatti" height="200" width="160" />
+            <div id="info">            
+                <b>Jay Ligatti </b><a class="imgLink" href="http://www.cse.usf.edu/~ligatti/"><img id="home" class="imgLink" src="images/home.png" alt="home button"/></a><br />
+                ligatti@cse.usf.edu<br /><br />
+                
+                Associate Professor<br />
+                <a href="http://www.cse.usf.edu/">Dept. of Computer Science & Engineering</a><br />
+                <a href="http://www.usf.edu/">University of South Florida</a><br />
+                4202 E Fowler Ave, ENB 118<br />
+                Tampa, FL 33620<br />
+                Phone: &nbsp; +1-813-974-0908<br />
+                Fax: &nbsp; +1-813-974-5456<br />                        
+            </div>
+        </header>
+        <hr />
+               
+        <section id="publicationsByDate">
+           <h2>Publications, arranged by date</h2>
+           <p class="accordion-menu">&#9654; 2012-2014</p>        
+           <ul class="accordion-menu">        
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/bronies.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Proceedings of the <i>17th International Information Security Conference (ISC)</i>, October 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/bronies.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries).
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs.
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/far-proximity-esorics.pdf">
+                   Fingerprinting Far Proximity from Radio Emissions</a>.
+Tao Wang, Yao Liu, and Jay Ligatti.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/far-proximity-esorics.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+As wireless mobile devices are more and more pervasive and adopted
+in critical applications, it is becoming increasingly important to measure the physical
+proximity of these devices in a secure way. Although various techniques have
+been developed to identify whether a device is close, the problem of identifying
+the far proximity (i.e., a target is at least a certain distance away) has been neglected
+by the research community. Meanwhile, verifying the far proximity is
+desirable and critical to enhance the security of emerging wireless applications.
+In this paper, we propose a secure far proximity identification approach that determines
+whether or not a remote device is far away. The key idea of the proposed
+approach is to estimate the far proximity from the unforgeable "fingerprint" of
+the proximity. We have validated and evaluated the effectiveness of the proposed
+far proximity identification method through experiments on real measured channel
+data. The experiment results show that the proposed approach can detect the
+far proximity with a successful rate of 0.85 for the non-Line-of-sight (NLoS) scenario,
+and the successful rate can be further increased to 0.99 for the Line-of-sight
+(LoS) scenario.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingTechReport.pdf">
+On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  Technical Report.
+University of South Florida, August 2014.
+(This is a major revision to technical report CSE-071012, "Completely Subtyping Iso-Recursive Types", from July 2012.)
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingTechReport.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+Well-known techniques exist for proving the soundness of subtyping relations with respect to type
+safety.  However, completeness has not been treated with widely applicable techniques, as far as
+we're aware.
+<br /><br />This paper develops some techniques for stating and proving that a subtyping relation is
+complete with respect to type safety and applies the techniques to the study of iso-recursive
+subtyping.
+<br /><br />The common subtyping rules for iso-recursive types---the "Amber rules"---are shown to be
+incomplete with respect to type safety.  That is, there exist iso-recursive types t1 and t2 such
+that t1 can safely be considered a subtype of t2, but t1<=t2 is not derivable with the Amber rules.
+<br /><br />This paper defines new, algorithmic rules for subtyping iso-recursive types and
+proves that the rules are sound and complete with respect to type safety.  The fully implemented
+subtyping algorithm is optimized to run in O(mn) time, where m is the number of mu-terms in the
+types being considered and n is the size of the types being considered.
+</span>[Abstract]</span></li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/broniesTR.pdf">
+Defining Injection Attacks</a>.
+Donald Ray and Jay Ligatti.  Technical Report CSE-TR-081114.
+University of South Florida, August 2014.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/broniesTR.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This paper defines and analyzes injection attacks. The definition is based on the NIE property, which states that an application's
+untrusted inputs must only produce Noncode Insertions or Expansions in output programs (e.g., SQL queries).
+That is, when applications generate output programs based on untrusted inputs, the NIE property requires
+that inputs only affect output programs by inserting or expanding noncode tokens (e.g., string and
+float literals, lambda values, pointers, etc). This paper calls attacks based on violating the NIE property
+BroNIEs (i.e., Broken NIEs) and shows that all code-injection attacks are BroNIEs.
+In addition, BroNIEs contain many malicious injections that do not involve injections of code; we call such attacks noncode-injection
+attacks. In order to mitigate both code- and noncode-injection attacks, this paper presents an
+algorithm for detecting and preventing BroNIEs.
+</span>[Abstract]</span></li>
+
+<li><a href="http://dx.doi.org/10.1007/s10207-014-0239-8">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+To appear in the <i>International Journal of Information Security</i>.
+(<a href="http://www.cse.usf.edu/~ligatti/papers/mra-jrnl.pdf">preliminary version</a>)
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/mra-jrnl.bibtex">BibTeX</a>]
+</li>
+
+<li><u>
+Design of Adiabatic Dynamic Differential Logic for DPA-Resistant Secure Integrated Circuits</u>.
+Matthew Morrison, Nagarajan Ranganathan, and Jay Ligatti.  
+To appear in the <i>IEEE Transactions on Very Large Scale Integration Systems</i>.  
+</li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-full-tr.pdf">
+Modeling Runtime Enforcement with Mandatory Results Automata</a>.
+Egor Dolzhenko, Jay Ligatti, and Srikar Reddy.
+Technical Report USF-CSE-1213, University of South Florida, December 2013.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/mra-full-tr.bibtex">BibTeX</a>]
+</li>
+
+<li><a href="http://www.cse.usf.edu/~ligatti/papers/iotFdoJ.pdf">
+Induction on Failing Derivations</a>.  Jay Ligatti.  Technical Report PL-Sep13.
+University of South Florida, September 2013.
+[<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iotFdoJ.bibtex">BibTeX</a>]
+<span class="abstract"><span class="absText">
+This brief note describes a proof technique called induction on failing
+derivations. We wish to prove properties of judgments in deductive systems.
+Standard techniques exist for proving such properties on valid judgments;
+this note defines a technique for proving such properties on invalid
+(underivable) judgments.
+</span>[Abstract]</span></li>
+
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/iosec.pdf">
+Enforcing More with Less: Formalizing Target-aware Run-time Monitors</a>.
+Yannis Mallios, Lujo Bauer, Dilsun Kaynar, and Jay Ligatti.
+Proceedings of the <i>International Workshop on Security and Trust Management (STM)</i>, 
+September 2012.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/iosec.bibtex">BibTeX</a>]</li>        
+               <li><a href="http://dx.doi.org/10.1016/j.pmcj.2010.11.003">
+A Location-based Policy-specification Language for Mobile Devices</a>.
+Joshua Finnis, Nalin Saigal, Adriana Iamnitchi, and Jay Ligatti.
+<i>Pervasive and Mobile Computing Journal</i>, Vol 8, No 3, pp 402-414.  Elsevier, June 2012.
+<a href="http://www.cse.usf.edu/~ligatti/papers/lopsil.pdf">Local version</a>.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/lopsil.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/code-inj.pdf">
+Defining Code-injection Attacks</a>.
+Donald Ray and Jay Ligatti.
+Proceedings of the ACM SIGPLAN-SIGACT <i>Symposium on Principles of Programming Languages (POPL)</i>,
+January 2012.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/code-inj.bibtex">BibTeX</a>]</li>
+           </ul>
+           
+           <p class="accordion-menu">&#9654; 2011</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://id.nii.ac.jp/1001/00075245/">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+<i>Journal of Information Processing</i>, Vol 19, pp 292-306,
+ Information Processing Society of Japan, July 2011.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/psr-jrnl.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2010</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-conf.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Proceedings of the <i>European Symposium on Research in Computer Security (ESORICS)</i>,
+September 2010.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/mra-conf.bibtex">BibTeX</a>]</li>        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/grouper-conf.pdf">
+A Packet-classification Algorithm for Arbitrary Bitmask Rules, with Automatic 
+Time-space Tradeoffs</a>.
+Jay Ligatti, Josh Kuhn, and Chris Gage.
+Proceedings of the <i>IEEE International Conference on Computer Communication Networks (ICCCN)</i>,
+August 2010.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/grouper-conf.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Proceedings of the <i>International Conference on Trust Management (IFIP-TM)</i>,
+June 2010.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/psr.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/mra-tr.pdf">
+A Theory of Runtime Enforcement, with Results</a>.
+Jay Ligatti and Srikar Reddy.
+Technical Report USF-CSE-SS-102809, University of South Florida, October 2009,
+revised June 2010.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/mra-tr.bibtex">BibTeX</a>]</li>        
+           </ul>               
+           
+           <p class="accordion-menu">&#9654; 2009</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/psr-tr.pdf">
+PoliSeer: A Tool for Managing Complex Security Policies</a>.
+Daniel Lomsak and Jay Ligatti.
+Technical Report CSE-SSec-112509, University of South Florida, November 2009.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/psr-tr.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-TR-09.pdf">
+IVCon: Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-110909-SE, University of South Florida, November 2009.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-TR-09.bibtex">BibTeX</a>]</li>        
+               <li><a href = "http://doi.acm.org/10.1145/1609956.1609960">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+<i>ACM Transactions on Information and System Security</i>,
+Vol 13, No 1, pp 1-40.  ACM Press, October 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/cfi-tissec.pdf">
+Local version</a>.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/cfi-tissec.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/IVCon09.pdf">
+Inline Visualization of Concerns</a>.
+Nalin Saigal and Jay Ligatti.
+Proceedings of the <i>ACIS International Conference on Software Engineering Research,
+Management, and Applications (SERA)</i>,
+December 2009.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/IVCon09.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/MobiSec09.pdf">
+LoPSiL: A Location-based Policy-specification Language</a>.
+Jay Ligatti, Billy Rickey, and Nalin Saigal.
+Proceedings of the <i>International ICST Conference on Security and
+Privacy in Mobile Information and Communication Systems (MobiSec)</i>,
+June 2009.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/MobiSec09.bibtex">BibTeX</a>]</li>
+               <li><a href="http://doi.acm.org/10.1145/1525880.1525882">
+Composing Expressive Runtime Security Policies</a>.
+Lujo Bauer, Jay Ligatti, and David Walker.
+<i>ACM Transactions on Software Engineering and Methodology</i>,
+Vol 18, No 3, pp 1-43.  ACM Press, May 2009.
+<a href="http://www.cse.usf.edu/~ligatti/papers/polymer-tosem.pdf">Local version</a>.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/polymer-tosem.bibtex">BibTeX</a>]</li>        
+               <li><a href="http://doi.acm.org/10.1145/1455526.1455532">
+Run-Time Enforcement of Nonsafety Policies</a>.
+Jay Ligatti, Lujo Bauer, and David Walker.
+<i>ACM Transactions on Information and System Security</i>, Vol 12, No 3, pp 1-41.
+ACM Press, January 2009.  
+<a href="http://www.cse.usf.edu/~ligatti/papers/nonsafety-tissec.pdf">Local version</a>.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/nonsafety-tissec.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2008</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-tr.pdf">
+Defining and Visualizing Many-to-many Relationships between Concerns and Code</a>.
+Nalin Saigal and Jay Ligatti.
+Technical Report CSE-090608-SE, University of South Florida, September 2008.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-tr.bibtex">BibTeX</a>]</li>
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2007</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/ft-tal.pdf">Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2007.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/ft-tal.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cse.usf.edu/~ligatti/papers/TR-776-07.pdf">
+Fault-tolerant Typed Assembly Language.</a>
+Frances Perry, Lester Mackey, George Reis, Jay Ligatti, David August, and David Walker.
+Technical Report TR-776-07, Princeton University, April 2007.
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/TR-776-07.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2006</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://dx.doi.org/10.1016/j.scico.2006.01.004">
+A Type-theoretic Interpretation of Pointcuts and Advice</a>.
+Jay Ligatti, David Walker, and Steve Zdancewic.
+<i>Science of Computer Programming: Special Issue on Foundations of Aspect-Oriented Programming</i>,
+Vol 63, No 3, pp 240-266. Elsevier, December 2006.
+<a href="http://www.cs.princeton.edu/~jligatti/papers/attiopaa.pdf">Local version.</a>
+[<a href="http://www.cse.usf.edu/~ligatti/bibtex/attiopaa.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/lzap.pdf">
+Static Typing for a Faulty Lambda Calculus</a>.
+David Walker, Lester Mackey, Jay Ligatti, George Reis, and David August.
+Proceedings of the ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>,
+September 2006.  [<a href="http://www.cs.princeton.edu/~jligatti/papers/lzap.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/jligatti_thesis.pdf">Policy
+Enforcement via Program Monitoring</a>.  Jarred Adam Ligatti. PhD thesis, Princeton University, June 2006.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/jligatti_thesis.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2005</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/cficcs.pdf">
+Control-Flow Integrity: Principles, Implementations, and Applications</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the ACM SIGSAC <i>Conference on Computer and Communications
+Security (CCS)</i>, November 2005.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/cficcs.bibtex">BibTeX</a>]</li>        
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/cfi-theory.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.
+Proceedings of the <i>7th International Conference on Formal Engineering
+Methods (ICFEM)</i>, November 2005.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/cfi-theory.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/nonsafety.pdf">
+Enforcing Non-safety Security Policies with Program Monitors</a>. Jay Ligatti,
+Lujo Bauer, and David Walker.
+Proceedings of the <i>10th European Symposium on Research in Computer Security
+(ESORICS)</i>, September 2005.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/nonsafety.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/polymer.pdf">
+Composing Security Policies with Polymer</a>. Lujo Bauer, Jay Ligatti, and David Walker.
+Proceedings of the ACM SIGPLAN <i>Conference on Programming Language Design
+and Implementation (PLDI)</i>, June 2005.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/polymer.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/MSR-TR-2005-18.pdf">
+Control-Flow Integrity</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-18, Microsoft Research, February 2005 (revised June 2005).
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/MSR-TR-2005-18.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/MSR-TR-2005-17.pdf">
+A Theory of Secure Control Flow</a>.
+Martin Abadi, Mihai Budiu, Ulfar Erlingsson, and Jay Ligatti.  Technical
+Report MSR-TR-2005-17, Microsoft Research, February 2005 (revised June 2005).
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/MSR-TR-2005-17.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/NonSafetyTR.pdf">Enforcing
+Non-safety Security Policies with Program Monitors</a>. Jay Ligatti, Lujo Bauer,
+and David Walker. Technical Report TR-720-05, Princeton University, January
+2005 (revised June 2005).
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/NonSafetyTR.bibtex">BibTeX</a>]</li>
+               <li><a href="http://springerlink.metapress.com/openurl.asp?genre=article&amp;eissn=1615-5270&amp;volume=4&amp;issue=1&amp;spage=2">
+Edit Automata: Enforcement Mechanisms for Run-time Security Policies</a>. 
+Jay Ligatti, Lujo Bauer, and David Walker. <i>International Journal of Information Security</i>, 
+Vol 4, No 1-2, pp 2-16.  Springer-Verlag, Feb 2005.
+<a href="http://www.cs.princeton.edu/~jligatti/papers/editauto-ijis05.pdf">Local Version</a>.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/editauto-ijis05.bibtex">BibTeX</a>]</li>
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2004</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/polymer-tr-699-04.pdf">A
+Language and System for Composing Security Policies</a>. Lujo Bauer, Jay Ligatti,
+and David Walker. Technical Report TR-699-04, Princeton University, January 2004.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/polymer-tr-699-04.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2003</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/monitors-tokyo02.pdf">
+Types and Effects for Non-interfering Program Monitors</a>. Lujo Bauer, Jarred
+Ligatti, and David Walker. In M. Okada, B. Pierce, A. Scedrov, H. Tokuda, and
+A.  Yonezawa, editors, <i>Lecture Notes in Computer Science: 
+Software Security - Theories and Systems (Revised Papers of the 2002 Mext-NSF-JSPS
+International Symposium)</i>, Vol 2609, pp 154-171. Springer-Verlag, November 2003.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/monitors-tokyo02.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/theory_of_aspects.pdf">A Theory of Aspects</a>.
+David Walker, Steve Zdancewic, and Jay Ligatti.  Proceedings of the
+ACM SIGPLAN <i>International Conference on Functional Programming (ICFP)</i>, August 2003.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/theory_of_aspects.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/TR-681-03.pdf">Edit
+Automata: Enforcement Mechanisms for Run-time Security Policies</a>. Jay Ligatti,
+Lujo Bauer, and David Walker. Princeton University Technical Report TR-681-03, May 2003.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/TR-681-03.bibtex">BibTeX</a>]</li>        
+           </ul> 
+           
+           <p class="accordion-menu">&#9654; 2002</p>        
+           <ul class="accordion-menu">        
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/TR-655-02.pdf">A Calculus
+for Composing Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David
+Walker. Technical Report TR-655-02, Princeton University, August 2002.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/TR-655-02.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/mesp.pdf">More Enforceable
+Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker. <i>
+Foundations of Computer Security Workshop (FCS) '02 </i>(associated with LICS
+'02), July 2002. 
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/mesp.bibtex">BibTeX</a>]</li>
+               <li><a href="http://www.cs.princeton.edu/~jligatti/papers/TR-649-02.pdf">More
+Enforceable Security Policies</a>. Lujo Bauer, Jarred Ligatti, and David Walker.
+Technical Report TR-649-02, Princeton University, July 2002.
+[<a href="http://www.cs.princeton.edu/~jligatti/papers/TR-649-02.bibtex">BibTeX</a>]</li>        
+           </ul>            
+        </section>
+    </div> 
+    <p id="updated"></p>       
+</body>
+</html>

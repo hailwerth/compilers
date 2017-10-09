@@ -1,0 +1,5 @@
+ls -l
+pwd
+echo "try it - It Should Work"
+ps -f
+

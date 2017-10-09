@@ -1,0 +1,104 @@
+//I pledge my Honor that I have not cheated, and will not cheat, on this assignment. Kevin Hicks
+
+
+//creates an array
+class LinkedList extends Object {
+
+	nat number;
+	LinkedList next;
+
+}
+
+//does the division and stores the quotient and the remainder in the class
+class Division extends Object {
+
+	nat quotient;
+	nat remainder;
+
+	//division
+	nat divide(nat i, nat j) {
+
+		//while i == j or j < i
+		while(!(!(i == j) && !(j < i)))
+		{
+			this.quotient = this.quotient + 1;
+			i = i - j;
+		};
+
+		this.remainder = i;
+	}
+}
+main {
+	
+	//variables
+	nat number;
+	nat i;
+	nat j;
+	nat arraySize;
+	LinkedList start;
+	LinkedList position;
+	Division output;
+
+	//initializing variables
+	start = new LinkedList();
+	position = start;
+	arraySize = 0;
+	output = new Division;
+
+	//starts the while loop
+	number = 42;
+
+	//fills in the array
+	while(0 < number){
+		number = readNat();
+		position.number = number;
+		position.next = new LinkedList();
+		position = position.next;
+		arraySize = arraySize + 1;
+	};
+
+	//get the variables i and j, and get the actual array size
+	i = readNat();
+	j = readNat();
+	arraySize = arraySize - 1;
+
+	//executes when i and j aren't out of bounds
+	if(i < arraySize && j < arraySize)
+	{
+		//finds the value at the i position in the array and stores it in i
+		number = 0;
+		position = start;
+
+		while(number < i){
+			position = position.next
+			number = number + 1;
+		};
+
+		i = position.number;
+
+		//finds the value at the j position in the array/linked list and stores it in j
+		number = 0;
+		position = start;
+
+		while(number < j){
+			position = position.next;
+			number = number + 1;
+		};
+
+		j = position.number;
+
+		//passes in i and j to output to get the quotient and remainder
+		output.divide(i, j);
+
+		//prints out the quotient and remainder
+		printNat(output.quotient);
+		printNat(output.remainder);
+	}
+	//executes when i or j are out of bounds
+	else
+	{
+		printNat(0);
+		printNat(0);
+	};
+
+}

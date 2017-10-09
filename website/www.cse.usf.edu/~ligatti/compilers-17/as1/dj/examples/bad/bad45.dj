@@ -1,0 +1,9 @@
+class C extends Object {
+  nat f() {0;}
+}
+main {
+  C c;
+  c = new C();
+  c.f(5);  //Too many arguments provided in method call
+}
+

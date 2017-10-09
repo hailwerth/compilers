@@ -1,0 +1,12 @@
+//prints 4
+main {
+  nat x; 
+  nat x_2;
+  x=0; 
+  x=x+1;
+  x=x+1; 
+  x=x+1;
+  x=x+1; 
+  printNat(x);
+}
+

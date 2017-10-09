@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IVCon - Inline Visualization of Concerns</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../jl.css">
+    <script type="text/javascript" src="../../jl.js"></script>    
+  </head>
+  <body>
+    <div id="pageContent">
+        <a class="imgLink" href="http://www.cse.usf.edu/~ligatti/"><img id="home" class="imgLink" src="../../images/home.png" alt="home button"/></a>
+        <h1>Inline Visualization of Concerns</h1>
+        <img id="ivconImg" class="anImg" src="../../images/IVCon.gif" alt="header image" />
+        
+        <section id="overview">
+            <h2>Overview</h2>          
+            <p>
+                Code modularization provides benefits throughout the software life cycle; however, the
+                presence of crosscutting concerns (CCCs) in software hinders its complete modularization.
+                This project introduces IVCon, a tool with a novel approach for completely modularizing
+                CCCs. IVCon enables users to create, examine, and modify their code in two different
+                views: the <i>woven view</i> and the <i>unwoven view</i>. The woven view displays program code
+                in colors that indicate which CCCs various code segments implement. The unwoven view
+                displays code in two panels, one showing the core of the program and the other showing all
+                the code implementing each concern in an isolated module. IVCon provides an interface
+                for conveniently creating, examining, and modifying code in, and translating between, the
+                woven and unwoven views.
+            </p>
+        </section>
+        <section id="contributors">  
+            <h2>Contributors</h2>
+            <p><a href="http://www.cse.usf.edu/~nsaigal">Nalin Saigal</a></p>
+            <p><a href="http://www.cse.usf.edu/~ligatti">Jay Ligatti</a></p>
+        </section>
+        <section id="publications">
+            <h2>Publications</h2>
+            <p><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-TR-09.pdf">
+                    IVCon: Inline Visualization of Concerns</a>. Nalin Saigal and Jay Ligatti.
+                    Technical Report CSE-110909-SE, University of South Florida, November 2009.
+                    [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-TR-09.bibtex">BibTeX</a>]
+            </p>
+            <p><a href="http://www.cse.usf.edu/~ligatti/papers/IVCon09.pdf">
+                    Inline Visualization of Concerns</a>.
+                    Nalin Saigal and Jay Ligatti.
+                    Proceedings of the <i>ACIS International Conference on Software Engineering Research,
+                    Management, and Applications (SERA)</i>, December 2009.
+                    [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/IVCon09.bibtex">BibTeX</a>]
+            </p>
+            <p><a href="http://www.cse.usf.edu/~ligatti/papers/ivcon-tr.pdf">
+                    Defining and Visualizing Many-to-many Relationships Between Concerns and Code</a>.
+                    Nalin Saigal and Jay Ligatti.
+                    Technical Report CSE-090608-SE, University of South Florida, September 2008.
+                    [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/ivcon-tr.bibtex">BibTeX</a>]
+            </p>
+        </section>  
+        <section id="download">
+            <h2>Download</h2>
+            <p><a href="IVCon-v.0.9.tar">IVCon version 0.9</a></p>
+            <p>Flash-based <a href="http://www.csee.usf.edu/~ligatti/projects/ivcon/tutorials/">
+                Tutorials</a> for IVCon</p>
+        </section>                            
+        <section id="acknowledgment">             
+            <h2>Acknowledgement</h2>
+                <p>
+                    This material is based upon work supported by the National Science Foundation under
+                    Grant No. CNS-0742736.  Any opinions, findings and conclusions or recomendations
+                    expressed in this material are those of the authors and do not necessarily reflect
+                    the views of the National Science Foundation (NSF).
+                </p>
+        </section>        
+    </div>
+    <p id="updated"></p>
+    <div id="popUpWrap"></div>
+    <div id="popUpOut">
+        <div id="popUpIn"></div>
+        <span id="popUpX">CLOSE <b>X</b></span>
+    </div>    
+  </body>
+</html>

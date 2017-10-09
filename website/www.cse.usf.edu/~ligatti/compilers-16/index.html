@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Compilers, Fall 2016</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="../jl.css">
+        <link rel="shortcut icon" href="../compilers.ico">
+        <script type="text/javascript" src="../jl.js"></script>
+    </head>  
+    <body>
+        <div id="pageContent">
+            <a class="imgLink" href="http://www.cse.usf.edu/~ligatti/"><img id="home" class="imgLink" src="../images/home.png" alt="home button"/></a>
+            <h1>USF COP 4620/6625 (Compilers), Fall 2016</h1>
+
+            <section id="announcements">
+                <h2>Announcements</h2>
+                <p>Final grades are posted on Canvas.</p>
+            </section>
+
+            <section id="materials">
+                <h2>Course materials</h2>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/syllabus-F16.pdf">Syllabus</a></p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/JavaNotes.pdf">Notes on the Use of Java in This Course</a></p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as1/">Assignment I</a>,
+                    handed out on 8/25 and due on 9/4</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as2/">Assignment II</a>,
+                    handed out on 9/6 and due on 9/18</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as3/">Assignment III</a>,
+                    handed out on 9/20 and due on 10/09</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/test1.pdf">Test I</a></p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as4/">Assignment IV</a>,
+                    handed out on 10/11 and due on 10/23</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as5/">Assignment V</a>,
+                    handed out on 10/25 and due on 11/13</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/test2.pdf">Test II</a></p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/as6/">Assignment VI</a>,
+                    handed out on 11/15 and due on 12/2</p>
+                <p><a href="http://www.cse.usf.edu/~ligatti/compilers-16/test3.pdf">Test III</a></p>
+            </section>
+            <section id="grades">
+                    <h2>Grades</h2>
+                    <p>Please use <a href="http://my.usf.edu">Canvas</a> to check your grades.</p>
+                </section>
+            <section id="usefulLinks">
+                    <h2>Useful Links</h2>
+                    <p><a href="http://docs.oracle.com/javase/tutorial/">The Java Tutorials</a>, particularly the
+                       <a href="http://docs.oracle.com/javase/tutorial/java/index.html">
+                        Learning the Java Language</a> tutorial</p>
+                    <p><a href="http://dinosaur.compilertools.net/">
+                        The Lex & YACC Page</a> (including manuals for Flex and Bison)</p>
+                    <p><a href="http://ds9a.nl/lex-yacc/cvs/lex-yacc-howto.html">
+                        Lex and YACC primer</a></p>
+                    <p><a href="http://www.cs.sjsu.edu/~louden/cmptext/">
+                        Textbook webpage</a> (including errata)</p>
+                    <p><a href="http://usf.jison.org">
+                        Jison, a tool for building parse tables</a> by Zach Carter (an alumnus of this course) </p>
+                    <p><a href="http://www.cse.usf.edu/~ligatti/compilers-15/">2015 course webpage</a></p>
+            </section>
+            <section id="schedule">
+                <h2>Schedule (filled in as the semester progresses)</h2>
+                <table>
+	                <tr>
+		                <th>Week</th>
+		                <th>Dates</th>
+		                <th>Topics</th>
+		                <th>Recommended Reading</th>
+	                </tr>
+	                <tr>
+		                <td>1</td>
+		                <td>08/23, 08/25</td>
+		                <td>Introduction; Phases of compilation; DJ; DISM</td>
+		                <td>1.1-1.7</td>
+	                </tr>
+	                <tr>
+		                <td>2</td>
+		                <td>08/30</td>
+		                <td>Lexical analysis</td>
+		                <td>2.1, 2.3</td>
+	                </tr>
+	                <tr>
+		                <td>3</td>
+		                <td>09/06, 09/08</td>
+		                <td>Lexical analysis</td>
+		                <td>2.2, 2.4, 2.6</td>
+	                </tr>
+	                <tr>
+		                <td>4</td>
+		                <td>09/13, 09/15</td>
+		                <td>Syntactic analysis</td>
+		                <td>3.1-3.4, 5.1-5.2</td>
+	                </tr>
+                    <tr>
+	                     <td>5</td>
+		                 <td>09/20, 09/22</td>
+		                 <td>Syntactic analysis</td>
+		                 <td>4.3.1-4.3.2, 5.3-5.5</td>
+	                </tr>
+	                <tr>
+		                <td>6</td>
+	                    <td>09/27, 09/29</td>
+	                    <td>Syntactic analysis; Abstract syntax trees</td>
+		                <td>4.1-4.2, 4.3.3</td>
+	                 </tr>
+	                <tr>
+	                   <td>7</td>
+	                   <td>10/04, 10/06</td>
+	                   <td>Test I</td>
+	                   <td>Class notes</td>
+	                 </tr>
+	                <tr>
+                       <td>8</td>
+	                   <td>10/11, 10/13</td>
+	                   <td>Semantic analysis</td>
+	                   <td>Class notes</td>
+	                 </tr>
+	                <tr>
+	                   <td>9</td>
+	                   <td>10/18, 10/20</td>
+	                   <td>Semantic analysis; Code generation</td>
+	                   <td>7.1</td>
+                     </tr>
+                    <tr>
+                       <td>10</td>
+                       <td>10/25, 10/27</td>
+                       <td>Code generation</td>
+                       <td>7.3.1, 7.4</td>
+                     </tr>
+	                <tr> 
+	                   <td>11</td>
+	                   <td>11/01, 11/03</td>
+	                   <td>Test II</td>
+	                   <td>Class notes</td>
+                     </tr>
+                    <tr>
+                       <td>12</td>
+	                   <td>11/08, 11/10</td>
+	                   <td>Code generation; Garbage collection</td>
+	                   <td>Class notes</td>
+	                 </tr>
+	                <tr> 
+	                   <td>13</td>
+	                   <td>11/15, 11/17</td>
+	                   <td>Garbage collection; Code optimizations</td>
+	                   <td>Class notes</td> 
+	                 </tr>
+	                <tr> 
+	                   <td>14</td>
+	                   <td>11/22</td>
+	                   <td>Code optimizations</td>
+	                   <td>8.9</td> 
+	                </tr>
+	                <tr> 
+	                   <td>15</td>
+	                   <td>11/29</td>
+	                   <td>Code optimizations; Bootstrapping</td>
+	                   <td><a href="http://www.cse.usf.edu/~ligatti/compilers-15/reflections.pdf">
+                               Reflections on Trusting Trust</a></td> 
+	                </tr>
+                    <tr> 
+                       <td>Final</td>
+                       <td>12/06</td>
+                       <td>Test III (Final Exam), 3-5pm</td>
+                       <td>All tests are cumulative</td>
+                    </tr>
+                </table>
+            </section>                        
+        </div> 
+        <p id="updated"></p>           
+    </body> 
+    </html>

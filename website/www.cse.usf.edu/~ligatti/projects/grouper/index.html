@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grouper</title>
+    <meta charset="utf-8" />
+    <link rel="Stylesheet" href="../../jl.css" type="text/css" />
+    <script type="text/javascript" src="../../jl.js"></script>    
+  </head>
+  <body>
+    <div id="pageContent">
+        <a class="imgLink" href="http://www.cse.usf.edu/~ligatti/"><img id="home" class="imgLink" src="../../images/home.png" alt="home button"/></a>
+        <br />         
+        <img class="anImg" alt="grouper fish" src="../../images/grouper-header.png"/>
+        
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>
+                Grouper is an algorithm for classifying network packets.  It can handle
+                policies specified as arbitrary bitmasks 
+                over packet data (extended versions can also handle ranges).
+                Grouper is flexible in the amount of memory it
+                needs and can directly trade memory for classification
+                speed. The algorithm is conceptually simple, performs well on
+                worst-case rule sets, and has an open-source prototype implementation.
+            </p>
+        </section> 
+        <section id="contributors">
+            <h2>Contributors</h2>
+            <p>Chris Gage</p>
+            <p><a href="http://www.csee.usf.edu/~jakuhn2/">Josh Kuhn</a></p>
+            <p><a href="http://www.csee.usf.edu/~ligatti/">Jay Ligatti</a></p>
+        </section>  
+        <section id="publications">            
+            <h2>Publications</h2>
+            <p>
+                <a href="http://www.cse.usf.edu/~ligatti/papers/grouper-conf.pdf">
+                A Packet-classification Algorithm for Arbitrary Bitmask Rules, with Automatic Time-space Tradeoffs</a>.
+                Jay Ligatti, Josh Kuhn, and Chris Gage.
+                Proceedings of the <em>IEEE International Conference on Computer 
+                  Communication Networks (ICCCN)</em>, August 2010.
+                [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/grouper-conf.bibtex">
+                  BibTeX</a>]
+            </p>
+        </section> 
+        <section id="slides">                    
+            <h2>Slides</h2>
+            <p>
+               <a href="http://www.cse.usf.edu/~ligatti/projects/grouper/Grouper-talk.pptx">
+               Grouper-talk.pptx</a>, by Josh Kuhn and Jay Ligatti.
+               Josh received a <a href="http://icccn.org/icccn10/grants.html">
+                Student Travel Grant</a> to attend ICCCN 2010 and present this talk.
+            </p>
+        </section>                           
+        <section id="download">        
+            <h2>Download</h2>
+            <p>
+                The Grouper prototype is written in C and is made available under the
+                <a href="http://www.gnu.org/licenses/agpl-3.0.html" title="GNU Affero General Public License v3">AGPLv3</a>. 
+                It has been tested on Arch Linux x86_64, but should compile and run on any
+                modern 64-bit Linux distribution. Instructions on compiling and using
+                Grouper and its associated utilities are included in the package.
+                <br /><br />
+                <a href="http://www.cse.usf.edu/~ligatti/projects/grouper/Grouper.v.0.5.tar.gz">
+                Grouper Source Code, version 0.5</a>
+            </p>
+        </section>       
+        <section id="acknowledgment">    
+            <h2>Acknowledgement</h2>
+            <p>This material is based upon work supported by the National Science
+                Foundation under Grant Nos. CNS-0716343 and CNS-0742736. Any opinions,
+                findings, conclusions, or recommendations expressed in this material are
+                those of the authors and do not necessarily reflect the views of the
+                National Science Foundation.
+            </p>
+        </section>
+    </div>
+    <p id="updated"></p>
+    <div id="popUpWrap"></div>
+    <div id="popUpOut">
+        <div id="popUpIn"></div>
+        <span id="popUpX">CLOSE <b>X</b></span>
+    </div>    
+  </body>
+</html>

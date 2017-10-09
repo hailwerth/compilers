@@ -1,0 +1,29 @@
+;i pledge my honor that i have not cheated, and will not cheat, on this assignment
+;Daniel Sawyer
+
+			mov 1 1     ;sets increment register
+			mov 7 10000 ;max number of entries
+
+#LOOP1:		beq 2 7 #LOOP1END ;branches to loopend if r[2] == r[7], r[2] = count
+			rdn 3             ;reads in input value to r[3]
+			beq 3 0 #LOOP1END ;branch if input = 0
+			str 2 0 3         ;stores input into memory
+			add 2 2 1         ;++r[2]
+			jmp 0 #LOOP1      ;runs loop
+
+#LOOP1END:	sub 2 2 1     ;--r[2]
+			rdn 4         ;reads in i
+			rdn 5         ;reads in j
+			blt 2 5 #END2 ;branches if r[5] >= count r[2]
+			lod 4 4 0     ;loads numerator to r[4]
+			lod 5 5 0     ;loads demoninator to r[5]
+			
+#LOOP2:		blt 4 5 #END ;branches if r[4] < r[5]
+			sub 4 4 5    ;r[4] = r[4] - r[5]
+			add 6 6 1    ;r[6] = quotient, ++r[6]
+			jmp 0 #LOOP2 ;loops
+
+#END2:		mov 4 0 ;sets r[4]=0
+#END:		ptn 6   ;prints r[6] quotient
+			ptn 4   ;prints r[4] remainder
+			hlt 0   ;ends the program

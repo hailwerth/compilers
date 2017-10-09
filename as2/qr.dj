@@ -1,0 +1,109 @@
+//i pledge my honor that i have not cheated, and will not cheat, on this assignment
+//Daniel Sawyer
+
+//Array class using linked list
+class ArrayObj extends Object {
+	
+	//vars should be zero
+	nat x;
+	ArrayObj next;
+
+	//addes object/number at end of LL/array
+	ArrayObj queue(nat num) {
+
+		this.x = num;
+		this.next = new ArrayObj();
+		this.next;
+	}
+}
+
+//object used to divied two integers
+class Divide extends Object {
+	
+	//vars and should be zero
+	nat num; nat rem;
+
+	//finds quotient and remainder for x/y
+	nat divide(nat x, nat y) {
+		
+		//while x >= y
+		while( !(!(y < x) && !(y == x)) ) {
+			this.num = this.num + 1;
+			x = x - y;
+		};
+
+		//sets remainder and returns quotient
+		this.rem = x;
+		this.num;
+	}
+}
+
+main {
+	
+	//vars
+	nat i; nat j; nat num; nat max; nat count; nat ifound; nat jfound;
+	ArrayObj start; ArrayObj current;
+	Divide div;
+
+	//initializes variables needed for first loop
+	num = 1;
+	max = 10000;
+	start = new ArrayObj();
+	current = start;
+	
+	//loops reads in numbers until 0 or 10k numbers
+	//have been entered
+	while(0 < num && count < max) {
+		num = readNat();
+		current = current.queue(num);
+		count = count + 1;
+	};
+	count = count - 1;
+
+	//reads in i and j from user
+	i = readNat();
+	j = readNat();
+
+	//if i or j >= count it prints zeros
+	//else it finds the numbers and divides them.
+	if( !((i < count) && (j < count)) ) {
+		printNat(0);
+		printNat(0);
+	}
+	else {
+
+		//sets vars for next while loop
+		current = start;
+		count = 0;
+
+		//while loop goes through LL/array until it finds i and j
+		//while !ifound or !jfound
+		while(!(ifound && jfound)) {
+
+			if(count == i) {
+				i = current.x;
+				ifound = 1;
+			}
+			else {
+				ifound = ifound;
+			};
+
+			if(count == j) {
+				j = current.x;
+				jfound = 1;
+			}
+			else {
+				jfound = jfound;
+			};
+
+			current = current.next;
+			count = count + 1;
+		};
+
+		//does the divsion, prints quotient and remainder
+		div = new Divide();
+		printNat(div.divide(i,j));
+		printNat(div.rem);
+	};
+	~
+}

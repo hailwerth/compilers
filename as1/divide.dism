@@ -1,0 +1,12 @@
+		mov 1 1
+		rdn 2
+		rdn 3
+
+#LOOP:	blt 2 3 #END
+		sub 2 2 3
+		add 7 7 1
+		jmp 0 #LOOP
+
+#END: 	ptn 7
+		ptn 2
+		hlt 0

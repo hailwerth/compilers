@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /~ligatti/compilers-15/as6</title>
+ </head>
+ <body>
+<h1>Index of /~ligatti/compilers-15/as6</h1>
+  <table>
+   <tr><th valign="top"><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr>
+   <tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[PARENTDIR]"></td><td><a href="/~ligatti/compilers-15/">Parent Directory</a>       </td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/layout.gif" alt="[   ]"></td><td><a href="assignment6.pdf">assignment6.pdf</a>        </td><td align="right">2015-10-25 23:25  </td><td align="right">151K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="ast.h">ast.h</a>                  </td><td align="right">2015-10-21 16:15  </td><td align="right">3.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="ast.o">ast.o</a>                  </td><td align="right">2015-10-25 21:35  </td><td align="right">7.8K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="codegen.h">codegen.h</a>              </td><td align="right">2015-10-19 15:07  </td><td align="right">672 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="dj.tab.o">dj.tab.o</a>               </td><td align="right">2015-10-25 22:44  </td><td align="right"> 45K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="symtbl.h">symtbl.h</a>               </td><td align="right">2015-10-21 16:26  </td><td align="right">3.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="symtbl.o">symtbl.o</a>               </td><td align="right">2015-10-25 21:35  </td><td align="right">8.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="typecheck.h">typecheck.h</a>            </td><td align="right">2015-10-21 16:29  </td><td align="right">1.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="typecheck.o">typecheck.o</a>            </td><td align="right">2015-10-25 21:36  </td><td align="right"> 26K</td><td>&nbsp;</td></tr>
+   <tr><th colspan="5"><hr></th></tr>
+</table>
+</body></html>

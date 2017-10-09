@@ -1,0 +1,15 @@
+class C extends Object {
+  nat m_1() { printNat(0); }
+  nat m_2(nat i, nat j, nat k, nat i2, nat j2, nat k2, nat i3, nat j3, nat k3) {
+    printNat( i*i2*i3 + j*j2*j3 + k*k2*k3 );
+    m_1();
+    printNat( m_3(5,5) );
+  }
+  nat m_3(nat i, nat j) { i+j; }
+}
+main {
+  C c;
+  c = new C();
+  c.m_1();
+  c.m_2(1,2,3,4,5,6,7,8,9);
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html><!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]--><!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]--><head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>USF Dept. of Computer Science &amp; Engineering </title>
+   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link type="text/css" rel="stylesheet" media="screen" href="/_resources/css/v2/global-styles.css?ver=0.2" />
+<link type="text/css" rel="stylesheet" media="screen" href="/_resources/css/v2/home.css?ver=0.4" />
+<link type="text/css" rel="stylesheet" media="print" href="/_resources/css/print.css?ver=0.1" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/_resources/js/v2/functions.js?ver=0.2"></script>
+<script type="text/javascript" src="/_resources/js/home-functions.js"></script>
+
+   
+   
+   
+   
+   <meta name="Description" content="USF Dept. of Computer Science &amp; Engineering ">
+   
+   <meta name="Keywords" content="University of South Florida, CSE, Computer Science and Engineering">
+   
+   <meta name="Author" content="USF Department of Computer Science and Engineering">
+   
+   
+   
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4290684-1']);
+  _gaq.push(['_setDomainName', 'usf.edu']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+               
+                _gaq.push(['account2._setAccount', 'UA-11918384-3']);
+                _gaq.push(['account2._setDomainName', 'usf.edu']);
+                _gaq.push(['account2._trackPageview']);
+                
+            </script><script type="text/javascript">
+        	var calURL = "#";
+        	function change_calURL(calPath, guid, recID)
+        	{
+			calURL = "http://webcal.forest.usf.edu/cal/event/eventView.do?b%3Dde%26calPath%3D" + calPath + "%26guid%3D" + guid + "%26recurrenceId%3D" + recID;
+        		calURL = decodeURIComponent(calURL);
+        	}
+       </script><script type="text/javascript">
+                  $(window).load(function() {
+          		$('.feature-rotator').flexslider({
+          			
+          			slideshow: true,
+          			
+          			touch:false
+          		});
+          		slideHeight();
+          		$(window).resize(function() { 
+          			slideHeight();	
+          	    });
+          	});
+        </script><script type="text/javascript">
+		var page_id="http://www.usf.edu/engineering/cse/index.aspx";
+		</script>
+   
+   
+   </head>
+<body>
+   <header role="banner"><a class="skipLink" href="#content">Skip to Main Content</a><div class="global u-wrapper u-clearfix">
+         <p class="global_logo"><a href="/">University of South Florida</a></p>
+         <div class="global_tools u-clearfix">
+            
+            <ul>
+	<li><a href="https://my.usf.edu/">MyUSF</a></li>
+	<li><a href="http://www.usf.edu/about-usf/web-tools.aspx">Web Tools</a></li>
+	<li><a href="http://directory.usf.edu/">Directory</a></li>
+</ul>
+<form class="global_search" method="get" action="http://search.usf.edu/search" role="search">
+	<label class="hidden" for="site-search-input">Search for: </label>
+	<input id="site-search-input" type="text" name="q" size="20" maxlength="256" value="" />
+	<input id="site-search-submit" type="image" src="/_resources/images/v2/global/search/search.png" alt="Go" />
+	<input type="hidden" name="client" value="tampa" />
+	<input type="hidden" name="proxystylesheet" value="usf-edu-cms-v2" />
+	<input type="hidden" name="site" value="tampa" />
+	<input type="hidden" name="output" value="xml_no_dtd" />
+	<input type="hidden" name="numgm" value="5" />
+</form>
+
+            
+         </div>
+      </div>
+      <div class="banner">
+         <div class="banner_interior u-wrapper">
+            <h1 class="banner_title"><a href="/engineering/cse/index.aspx">Computer Science and Engineering</a></h1>
+<p class="banner_subtitle"><a href="/engineering/index.aspx">College of Engineering</a></p>
+         </div>
+      </div>
+      <nav class="mainNav" role="navigation">
+   <div class="u-wrapper">
+      <p class="mainNav_toggle toggle">Navigation</p>
+      <ul class="mainNav_menu toggle-content mainNav--five">
+         <li class="mainNav_item"><a href="/engineering/cse/about/index.aspx">About Us</a></li>
+         <li class="mainNav_item"><a href="/engineering/cse/people/index.aspx">People</a></li>
+         <li class="mainNav_item"><a href="/engineering/cse/graduate/index.aspx">Graduate</a></li>
+         <li class="mainNav_item"><a href="/engineering/cse/undergraduate/index.aspx">Undergraduate</a></li>
+         <li class="mainNav_item"><a href="/engineering/cse/research/index.aspx">Research &amp; Innovation</a></li>
+      </ul>
+   </div>
+</nav>
+   </header>
+   <div id="content" class="content container" role="main">
+      <div class="feature">
+         <ul class="feature-text-nav feature-text-nav-5">
+            <li><a href="http://www.usf.edu/engineering/cse/people/facultyhiring2017.aspx" target="_blank">
+                  <name>
+                     					
+                     
+                     Faculty Hiring
+                     
+                     				
+                  </name></a></li>
+            <li><a href="http://www.usf.edu/engineering/cse/about/index.aspx" target="_blank">
+                  <name>
+                     					
+                     
+                     Welcome
+                     
+                     				
+                  </name></a></li>
+            <li><a href="http://www.usf.edu/engineering/cse/about/international-study.aspx" target="_blank">
+                  <name>
+                     					
+                     
+                     International Study
+                     
+                     				
+                  </name></a></li>
+            <li><a href="http://www.usf.edu/engineering/cse/about/contact-us.aspx" target="_blank">
+                  <name>
+                     					
+                     
+                     Contact Us
+                     
+                     				
+                  </name></a></li>
+            <li><a href="http://www.usf.edu/engineering/cse/about/cadence.aspx" target="_blank">
+                  <name>
+                     					
+                     
+                     Cadence
+                     
+                     				
+                  </name></a></li>
+         </ul>
+         
+         
+         
+         <div class="feature-rotator feature-small feature-caption">
+            <ul class="slides">
+               <li class="slide"><a href="http://www.usf.edu/engineering/documents/11142016-sarkar-chair.pdf"><img src="http://www.usf.edu/ldp/.private_ldp/a446/production/master/8d132f12-9562-4e57-8475-1b261e2e492a.jpg" alt="CSE rotator"></a><div class="feature-text">
+                     <p class="feature-headline"><a href="http://www.usf.edu/engineering/documents/11142016-sarkar-chair.pdf">Sudeep Sarkar Named Chairperson of CSE</a></p>
+                     <p class="feature-caption">Professor Sudeep Sarkar will be the new Chair of the Department of Computer Science
+                        and Engineering starting Spring 2017.
+                     </p>
+                  </div>
+               </li>
+               <li class="slide"><a href="http://www.usf.edu/engineering/cse/documents/10252016-nsf-cse-grant.pdf"><img src="http://www.usf.edu/ldp/.private_ldp/a446/production/master/8259606f-d389-4a57-bc1a-c06ec843280d.jpg" alt="CSE rotator"></a><div class="feature-text">
+                     <p class="feature-headline"><a href="http://www.usf.edu/engineering/cse/documents/10252016-nsf-cse-grant.pdf">Department faculty awarded NSF grant</a></p>
+                     <p class="feature-caption">Ken Christensen and Rafael Perez received $1,527,307 in funding for “Collaborative
+                        Research: Florida IT Pathways to Success (Flit-Path).”
+                     </p>
+                  </div>
+               </li>
+               <li class="slide"><a href="http://www.usf.edu/engineering/cse/documents/liu-02152016.pdf"><img src="http://www.usf.edu/ldp/.private_ldp/a446/production/master/929a1140-0cc4-4d85-b18d-75ac0813668a.png" alt="CSE rotator"></a><div class="feature-text">
+                     <p class="feature-headline"><a href="http://www.usf.edu/engineering/cse/documents/liu-02152016.pdf">Assistant Professor Yao Liu awarded NSF CAREER award</a></p>
+                     <p class="feature-caption">Yao Liu received $499,950 in funding for “CAREER: A Pathway towards Channel Camouflage
+                        and Manipulation Techniques for Wireless Security”.
+                     </p>
+                  </div>
+               </li>
+               <li class="slide"><a href="http://usf.edu/engineering/cse/newsroom/08222017-pericles.aspx"><img src="http://www.usf.edu/ldp/.private_ldp/a446/production/master/ddd5dd81-18bd-4534-8804-79dcff09d949.jpg" alt="CSE rotator"></a><div class="feature-text">
+                     <p class="feature-headline"><a href="http://usf.edu/engineering/cse/newsroom/08222017-pericles.aspx">CSE welcomes Joshua Pericles, 2017 Tillman Military Scholar</a></p>
+                     <p class="feature-caption">The CSE Department welcomes Joshua Pericles, a Computer Engineering student who is
+                        one of only 61 2017 Tillman Military Scholars.
+                     </p>
+                  </div>
+               </li>
+               <li class="slide"><a href="http://usf.edu/engineering/cse/newsroom/08052017-reu.aspx"><img src="http://www.usf.edu/ldp/.private_ldp/a446/production/master/6b256c22-3542-433b-bdcd-e2406d83c9aa.JPG" alt="CSE rotator"></a><div class="feature-text">
+                     <p class="feature-headline"><a href="http://usf.edu/engineering/cse/newsroom/08052017-reu.aspx">REU Program Travels to Oveido, Spain</a></p>
+                     <p class="feature-caption">The Research Experience for Undergraduates (REU) and Study Abroad program, traveled
+                        to Oviedo, Spain, from May 21 to July 29.
+                     </p>
+                  </div>
+               </li>
+            </ul>
+         </div>
+         
+         
+      </div>
+      <div class="widget-area container">
+         <div class="widget">
+   <h2 class="w-name"><a href="http://www.usf.edu/engineering/cse/newsroom/news-archive.aspx">
+         
+         
+         In the News
+         
+         </a></h2>
+   <ul class="w-headlines">
+      <li><a href="http://www.usf.edu/engineering/cse/newsroom/09202017-proquest.aspx">MS thesis by CSE student is in top 25 theses accessed on ProQuest</a><span class="w-meta">Wednesday, September 20, 2017</span></li>
+      <li><a href="http://www.usf.edu/engineering/cse/documents/10.13.17-event.pdf">CSE Event on October 13 for Research and Learning Opportunities</a><span class="w-meta">Tuesday, September 19, 2017</span></li>
+      <li><a href="http://www.usf.edu/engineering/cse/newsroom/09182017-weitzenfeld.aspx">Alfredo Weitzenfeld awarded $494,420 from NSF</a><span class="w-meta">Monday, September 18, 2017</span></li>
+      <li><a href="http://www.usf.edu/engineering/cse/newsroom/09012017-chellappan.aspx">Sriram Chellappan awarded $28,000 from NSF</a><span class="w-meta">Monday, September 4, 2017</span></li>
+      <li><a href="http://www.usf.edu/engineering/cse/newsroom/08312017-sun.aspx">Yu Sun receives five new patents in the last year</a><span class="w-meta">Thursday, August 31, 2017</span></li>
+   </ul>
+</div><div class="widget w-calendar">
+   <h2 class="w-name"><a href="http://www.usf.edu/engineering/cse/about/defense-seminar-archive.aspx">
+         
+         
+         Defenses and Seminars
+         
+         </a></h2>
+   <ul class="cal-events">
+      <li class="cal-event"><span class="cal-date"><span class="cal-month">
+               		    	 Oct
+               		    	</span><span class="cal-day">
+               		    	13
+               		    	</span></span><div class="cal-info"><a href="/engineering/cse/documents/farhidzadeh-defense.pdf">    
+               		    
+               
+               PhD Defense: Hamidreza Farhidzadeh
+               
+               		    </a><span class="cal-time">10:00 AM, ENB 313</span></div>
+      </li>
+      <li class="cal-event"><span class="cal-date"><span class="cal-month">
+               		    	 Aug
+               		    	</span><span class="cal-day">
+               		    	17
+               		    	</span></span><div class="cal-info"><a href="/engineering/cse/documents/eslami-major-works.jpg">    
+               		    
+               
+               Major Works: Mehrad Eslami
+               
+               		    </a><span class="cal-time">10:00 AM, ENB 313</span></div>
+      </li>
+      <li class="cal-event"><span class="cal-date"><span class="cal-month">
+               		    	 Aug
+               		    	</span><span class="cal-day">
+               		    	15
+               		    	</span></span><div class="cal-info"><a href="/engineering/cse/documents/hawkins-phd-defense.jpg">    
+               		    
+               
+               PhD Defense: Samuel Hawkins
+               
+               		    </a><span class="cal-time">1:00 PM, ENB 313</span></div>
+      </li>
+      <li class="cal-event"><span class="cal-date"><span class="cal-month">
+               		    	 July
+               		    	</span><span class="cal-day">
+               		    	11
+               		    	</span></span><div class="cal-info"><a href="/engineering/cse/documents/nouri-pres.jpg">    
+               		    
+               
+               Major Works: Zhila Nouri
+               
+               		    </a><span class="cal-time">11:00 AM, ENB 313</span></div>
+      </li>
+      <li class="cal-event"><span class="cal-date"><span class="cal-month"> 
+               		    	 June
+               		    	</span><span class="cal-day">
+               		    	19
+               		    	</span></span><div class="cal-info"><a href="/engineering/cse/documents/meng-defense.jpg">    
+               		    
+               
+               MS Defense: Jinghan Meng
+               
+               		    </a><span class="cal-time">9:30 AM, ENB 313</span></div>
+      </li>
+   </ul>
+</div><div class="widget">
+   <h2 class="w-name"><a href="https://www.youtube.com/watch?v=I4PYLHEyzl8">
+         
+         
+         USF BSIT Program
+         
+         </a></h2><a href="https://www.youtube.com/watch?v=I4PYLHEyzl8"><img class="w-feature" src="/images/engineering/cse/bsit-thumbnail.png" alt="bsit vid"></a><p></p>
+</div>
+      </div>
+   </div>
+   <footer class="footer u-wrapper">
+   <div class="grid">
+      <div class="footer_info grid-lg-1-2"><a href="/"><img class="footer_logo" src="/_resources/images/global/footer/footer-logo.png" alt="University of South Florida"></a><p class="footer-copy">Copyright <a id="ou-access" href="#" target="_blank">©</a>&nbsp;2017, University of South Florida. All rights reserved.<br>4202 E. Fowler Avenue,
+            					 ENB 118,Tampa, FL 33620, USA • 813-974-3780<br>This website is maintained by <a href="mailto:WWW@ENG.USF.EDU">Department of Computer Science and Engineering</a>.
+            					<br>
+            
+            <a href="/about-usf/about-this-site.aspx">About This Site</a> • <a href="/about-usf/contact-usf.aspx">Contact USF</a> • <a href="/about-usf/visit-usf.aspx">Visit USF</a>
+
+            </p>
+         <ul class="footer_social">
+            <li><a target="_blank" href="https://www.facebook.com/USF-Computer-Science-Engineering-124155187667902/timeline/"><img src="/_resources/images/social-icons/facebook.jpg" alt="facebook"></a></li>
+            <li><a target="_blank" href="https://twitter.com/EngineeringUSF"><img src="/_resources/images/social-icons/twitter.jpg" alt="twitter"></a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/groups?home=&amp;gid=3977225&amp;trk=anet_ug_hm"><img src="/_resources/images/social-icons/linkedin.jpg" alt="linkedin"></a></li>
+            <li><a target="_blank" href="http://itunes.usf.edu/"><img src="/_resources/images/social-icons/itunesu.jpg" alt="itunesu"></a></li>
+         </ul>
+      </div>
+      <div class="footer_nav grid-lg-1-2">
+         <div class="grid">
+            
+            <ul class="grid-sm-1-3">
+<li><a title="USF Home" href="/">USF Home</a></li>
+<li><a title="About USF" href="/about-usf/index.aspx">About USF</a></li>
+<li><a title="Academics" href="/academics/index.aspx">Academics</a></li>
+<li><a title="Admissions" href="/admission/index.aspx">Admissions</a></li>
+<li><a title="Campus Life" href="/campus-life/index.aspx">Campus Life</a></li>
+<li><a title="Research" href="/research/index.aspx">Research</a></li>
+</ul>
+<ul class="grid-sm-1-3">
+<li><a title="USF System" href="http://system.usf.edu" target="_blank">USF System</a></li>
+<li><a title="Administrative Units" href="/about-usf/administrative-units.aspx">Administrative Units</a></li>
+<li><a title="Regulations" href="http://regulationspolicies.usf.edu/regulations-and-policies/regulations-policies-procedures.asp" target="_blank">Regulations &amp; Policies</a></li>
+<li><a title="Human Resources" href="/hr/index.aspx" target="_blank">Human Resources</a></li>
+<li><a href="/work-at-usf/index.aspx">Work at USF</a></li>
+<li><a title="Emergency &amp; Safety" href="/emergencymanagement/" target="_blank">Emergency &amp; Safety</a></li>
+</ul>
+
+            
+            <ul class="grid-sm-1-3">
+               
+               <li><a href="http://health.usf.edu/">USF Health</a></li>
+<li><a href="http://www.gousfbulls.com/">USF Athletics</a></li>
+<li><a href="http://usfalumni.org/">USF Alumni</a></li>
+<li><a href="http://www.unstoppable.usf.edu/">Support USF</a></li>
+<li><a href="http://www.lib.usf.edu/">USF Libraries</a></li>
+<li><a href="/world/index.aspx">USF World</a></li>
+               
+            </ul>
+         </div>
+      </div>
+   </div>
+</footer>
+   <div id="hidden" style="display: none;">
+       <a id="de" href="http://content.usf.edu/10?skin=oucampus&amp;account=USFMainPROD&amp;site=usf_edu&amp;action=de&amp;path=/engineering/cse/index.pcf" > </a>
+   </div><script>
+        				$(document).ready(function(){
+          				var direct_edit_href = $('#de').attr('href');
+          				$('#ou-access').attr('href',direct_edit_href);
+        				});
+        			</script>
+   
+   <script type="text/javascript">
+/*<![CDATA[*/
+(function() {
+var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+sz.src = '//siteimproveanalytics.com/js/siteanalyze_1387.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+})();
+/*]]>*/
+</script>
+
+   </body></html>

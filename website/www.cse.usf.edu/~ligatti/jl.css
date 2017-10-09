@@ -1,0 +1,223 @@
+body 
+{
+    background: url(images/b.gif);
+    font-family: helvetica, Sans-Serif;
+    font-size: medium;
+    line-height: 1.3em;   
+}
+#pageContent
+{    
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    width: 66%;
+    background: #C7BD9F;
+    border: #9A8F6C solid 0.3em;
+    min-width: 470px;      
+    border-radius: 1em;
+}
+header { height: 200px; }
+#photo { float: left; }
+#info
+{
+    text-align: left;
+    float: right;    
+}
+.imgLink:link, .imgLink:visited, .imgLink:active, .imgLink:hover
+{
+    background-color: Transparent; 
+}
+#home
+{
+    float: right;
+    width: 2em;
+    height: 2em;
+    border: 0;   
+}
+a { text-decoration: none; }
+a:hover, img.imgLink:hover, #popUpX:hover, .pub:hover 
+{ 
+    background-color: #a5ebdc;
+    cursor: pointer; 
+}
+.pub  
+{
+    font-weight: bold;
+    color: #6A0000;
+}
+hr { margin: 2em auto; }
+section { margin-top: 0px; }
+section.pageIndex
+{
+    float: right;
+    padding: 1em;
+    padding-left: 2em;    
+    border: 1px #9A8F6C solid;
+    border-radius: 1em;
+    background-color: #e7dcb9;
+}
+section.pageIndex *
+{        
+    margin: 0px;
+    padding: 0px; 
+    line-height: normal;
+    list-style-type: circle; 
+}
+.pageIndex a { color: Blue;}
+p, table, .accordion-menu, figure { margin-left: 2em; }
+ul, ol { margin-left: 1em; }
+h1, h2, h3, h4, h5, h6 { line-height: 1em; }
+h1  
+{
+    text-align: center; 
+    clear: both;     
+}
+.anImg 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+#ivconImg { width: 50%; }
+#wordleImg { display: inline; }
+table 
+{
+   margin-right: 2em;
+   border-collapse: collapse; 
+}
+th, td  
+{
+    padding: 0.5em;
+    border: 1px solid black;
+}
+.invTable *, .horTable * { border: none; }
+.invTable th, .horTable th { text-align: left; }
+.horTable td  
+{
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+li  
+{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}     
+#updated
+{
+    text-align: right;    
+    font-size: x-small;
+    font-family: helvetica, Sans-Serif;
+}
+.noJShide, .inactive { display: none; }
+.abstract { cursor: default; }
+#popUpWrap
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;   
+    opacity:0.6;
+    background-color: white;
+    display: none;
+}
+#popUpOut
+{
+    position: fixed;
+    z-index: 2;  
+    top: 20%;
+    left: 30%;   
+    width: 40%;
+    height: 50%;    
+    padding: 1em 1em 2em 1em;
+
+    text-align: center;    
+    border: #9A8F6C solid 0.3em;
+    background-color: #e7dcb9;
+    border-radius: 1em;
+    display: none;
+}
+#popUpIn
+{
+    height: 100%;
+    width: 100%;  
+}
+#popUpIn * 
+{
+    max-height: 100%;
+    max-width: 100%;
+}
+.absText  
+{
+    display: none;
+    border: #9A8F6C solid 0.3em;
+    background-color: white;
+    position: absolute;
+    padding: 0.1em; 
+    border-radius: 0.5em;      
+}
+
+@media screen and (max-width: 469px)
+{
+    hr { margin: 1em; }       
+    #pageContent
+    { 
+        width: auto;
+        max-width: 469px;
+        min-width: 150px;
+        padding: 0;
+        border: none;
+        background: none;
+    }        
+    header { height: auto; }    
+    #photo, #info, section.pageIndex
+    {
+        float: none;
+        border: none;
+        padding: 0;
+    }        
+    .pageIndex li
+    {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    } 
+    table { width:100%; }    
+    .invTable th, .invTable td, .horTable th, .horTable td
+    {
+        display: block; 
+        border: none;
+        text-align:center;
+    }
+    .emptyElement
+    {
+        margin: 0;
+        padding: 0;
+    }  
+    #pageContent *, .accordion-menu
+    {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #pageContent *:not(th):not(td) { border: none; }
+    body, #info, th { text-align:center; }    
+    th, td { border: 1px solid black; }    
+    .anImg, #ivconImg { width: 100%; }    
+    img.imgLink { background: #C7BD9F; }
+    #popUpOut
+    {        
+        left: 18%;   
+        width: 60%;  
+    }
+    #pageContent .absText { border: #9A8F6C solid 0.3em; }
+    .absText { text-align: left; }
+    ul, ol, section.pageIndex * { list-style-type: none; }
+}
+
+/* Kuler colors:
+    main: #e7dcb9
+    #baad82, #a5ebdc, #b07eb4, #98749a */

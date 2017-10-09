@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Completeness</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="../../jl.css">
+    <script type="text/javascript" src="../../jl.js"></script>    
+  </head>
+  <body>
+    <div id="pageContent">
+        <a class="imgLink" href="http://www.cse.usf.edu/~ligatti/"><img id="home" class="imgLink" src="../../images/home.png" alt="home button"/></a>
+        <br />
+        <img class="anImg" src="../../images/header.png" alt="header image" />
+        
+        <section id="overview">            
+            <h2>Overview</h2>
+            <p>
+                Well-known techniques exist for proving the soundness of subtyping relations with respect to type safety. However, completeness has not been treated with widely applicable techniques, as far as we are aware.
+            </p>
+            <p>
+                This project develops some techniques for stating and proving that a subtyping relation is complete with respect to type safety and applies the techniques to the study of iso-recursive subtyping.  The common subtyping rules for iso-recursive types—the “Amber rules”—are shown to be incomplete with respect to type safety. That is, there exist iso-recursive types τ<sub>1</sub> and τ<sub>2</sub> such that τ<sub>1</sub> can safely be considered a subtype of τ<sub>2</sub> , but τ<sub>1</sub> ≤ τ<sub>2</sub> is not derivable with the Amber rules.
+            </p>
+            <p>
+                This project also defines new, algorithmic rules for subtyping iso-recursive types and proves that the rules are sound and complete with respect to type safety.
+            </p>
+        </section>  
+        <section id="contributors">  
+            <h2>Contributors</h2>
+            <p><a href="http://www.cse.usf.edu/~jhblackb">Jeremy Blackburn</a></p>
+            <p>Michael Nachtigal</p>
+            <p><a href="http://www.cse.usf.edu/~ligatti">Jay Ligatti</a></p>
+        </section>  
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <p><a href="http://dl.acm.org/citation.cfm?id=2994596">On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.
+                Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  <i> ACM Transactions on Programming Languages and Systems (TOPLAS)</i>, 
+                  Vol 39, No 1, Article 4, Pages 1-36.  ACM Press, March 2017.
+                <a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingCompleteness.pdf">Local version.</a>
+                [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingCompleteness.bibtex">BibTeX</a>]
+            </p>
+
+            <p><a href="http://www.cse.usf.edu/~ligatti/papers/iotFdoJ.pdf">Induction on Failing Derivations</a>.  Jay Ligatti.  Technical Report PL-Sep13.  
+                University of South Florida, March 2016.  (This is a major revision to the September 2013 version.)
+                [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/iotFdoJ.bibtex">BibTeX</a>]
+            </p>
+            <p><a href="http://www.cse.usf.edu/~ligatti/papers/SubtypingTechReport.pdf">On Subtyping-Relation Completeness, with an Application to Iso-Recursive Types</a>.  
+                Jay Ligatti, Jeremy Blackburn, and Michael Nachtigal.  Technical Report.  University of South Florida, March 2016. 
+                  (This is a major revision to the August 2014 version of the technical report, 
+                  which itself was a major revision of technical report CSE-071012, "Completely Subtyping Iso-Recursive Types", from July 2012.)
+                 [<a class="bib" href="http://www.cse.usf.edu/~ligatti/bibtex/SubtypingTechReport.bibtex">BibTeX</a>]
+           </p>
+            <p>SML <a href="http://www.cse.usf.edu/~ligatti/projects/completeness/sub.sml">implementation</a>
+                 of a subtyping algorithm for a language with nat, real, product, (disjoint) sum, function, variable-identifier, and iso-recursive types.
+                 This software is released under the <a href="http://www.gnu.org/licenses/gpl.html">GNU GPL</a>.
+            </p>
+        </section>  
+        <section id="acknowledgment">             
+            <h2>Acknowledgement</h2>
+            <p>This material is based upon work supported in part by the National Science Foundation under Grant No. CNS-0742736. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+        </section>                            
+    </div>
+    <p id="updated"></p> 
+    <div id="popUpWrap"></div>
+    <div id="popUpOut">
+        <div id="popUpIn"></div>
+        <span id="popUpX">CLOSE <b>X</b></span>
+    </div>     
+  </body>
+</html>
