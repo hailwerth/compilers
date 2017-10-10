@@ -22,7 +22,7 @@ Daniel Sawyer */
 
 %start pgm
 
-%right ASSIGN NOT LESS DOT COMMA
+%right ASSIGN NOT LESS DOT
 %left PLUS MINUS TIMES AND EQUALITY
 
 %%
@@ -38,24 +38,28 @@ class : class CLASS ID EXTENDS ID clexp
       |
       ;
 
+/* class expressions */
 clexp : LBRACE field RBRACE
       | LBRACE method RBRACE
       | LBRACE field method RBRACE
       | LBRACE RBRACE
       ;
 
+/* field expressions */
 field : field NATTYPE ID SEMICOLON
       | field ID ID SEMICOLON
       | NATTYPE ID SEMICOLON
       | ID ID SEMICOLON
       ;
 
+/* method expressions */
 method : method ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | method NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        ;
 
+/* parameter expressions */
 pexp : pexp NATTYPE ID
      | pexp NATTYPE ID COMMA
      | pexp ID ID
@@ -66,27 +70,33 @@ pexp : pexp NATTYPE ID
 main : MAIN LBRACE vbexp RBRACE
      ;
 
+/* variable expression block */
 vbexp : field exp SEMICOLON
       | vbexp exp SEMICOLON
       | exp SEMICOLON
       ;
 
+/* expression list */
 elist : elist exp SEMICOLON
       | exp SEMICOLON
       ;
 
+/* argument list */
 alist : alist COMMA exp
       | exp
+      |
       ;
 
-exp : NATLITERAL
-    | exp PLUS exp
+/* general expressions */
+exp : exp PLUS exp
     | exp MINUS exp
     | exp TIMES exp
     | exp EQUALITY exp
     | exp LESS exp
     | NOT exp
     | exp AND exp
+    | NATLITERAL
+    | NUL
     | IF LPAREN exp RPAREN LBRACE elist RBRACE ELSE LBRACE elist RBRACE
     | WHILE LPAREN exp RPAREN LBRACE elist RBRACE
     | NEW ID LPAREN RPAREN
@@ -100,7 +110,6 @@ exp : NATLITERAL
     | ID LPAREN alist RPAREN
     | exp DOT ID LPAREN alist RPAREN
     | LPAREN exp RPAREN
-    | NUL
     ;
 
 %%
