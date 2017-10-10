@@ -32,8 +32,8 @@ Grammar
 
    22 main: MAIN LBRACE vbexp RBRACE
 
-   23 vbexp: field exp SEMICOLON
-   24      | vbexp exp SEMICOLON
+   23 vbexp: vbexp exp SEMICOLON
+   24      | field exp SEMICOLON
    25      | exp SEMICOLON
 
    26 elist: elist exp SEMICOLON
@@ -116,7 +116,7 @@ class (36)
 clexp (37)
     on left: 5 6 7 8, on right: 3
 field (38)
-    on left: 9 10 11 12, on right: 5 7 9 10 23
+    on left: 9 10 11 12, on right: 5 7 9 10 24
 method (39)
     on left: 13 14 15 16, on right: 6 7 13 14
 pexp (40)
@@ -124,7 +124,7 @@ pexp (40)
 main (41)
     on left: 22, on right: 2
 vbexp (42)
-    on left: 23 24 25, on right: 13 14 15 16 22 24
+    on left: 23 24 25, on right: 13 14 15 16 22 23
 elist (43)
     on left: 26 27, on right: 26 40 41
 alist (44)
@@ -354,7 +354,7 @@ state 23
 
     9 field: field . NATTYPE ID SEMICOLON
    10      | field . ID ID SEMICOLON
-   23 vbexp: field . exp SEMICOLON
+   24 vbexp: field . exp SEMICOLON
 
     NATTYPE     shift, and go to state 39
     IF          shift, and go to state 12
@@ -375,7 +375,7 @@ state 23
 state 24
 
    22 main: MAIN LBRACE vbexp . RBRACE
-   24 vbexp: vbexp . exp SEMICOLON
+   23 vbexp: vbexp . exp SEMICOLON
 
     IF          shift, and go to state 12
     WHILE       shift, and go to state 13
@@ -631,7 +631,7 @@ state 40
 
 state 41
 
-   23 vbexp: field exp . SEMICOLON
+   24 vbexp: field exp . SEMICOLON
    31 exp: exp . PLUS exp
    32    | exp . MINUS exp
    33    | exp . TIMES exp
@@ -661,7 +661,7 @@ state 42
 
 state 43
 
-   24 vbexp: vbexp exp . SEMICOLON
+   23 vbexp: vbexp exp . SEMICOLON
    31 exp: exp . PLUS exp
    32    | exp . MINUS exp
    33    | exp . TIMES exp
@@ -998,16 +998,16 @@ state 65
 
 state 66
 
-   23 vbexp: field exp SEMICOLON .
+   24 vbexp: field exp SEMICOLON .
 
-    $default  reduce using rule 23 (vbexp)
+    $default  reduce using rule 24 (vbexp)
 
 
 state 67
 
-   24 vbexp: vbexp exp SEMICOLON .
+   23 vbexp: vbexp exp SEMICOLON .
 
-    $default  reduce using rule 24 (vbexp)
+    $default  reduce using rule 23 (vbexp)
 
 
 state 68
@@ -1898,7 +1898,7 @@ state 142
 state 143
 
    16 method: NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp . RBRACE
-   24 vbexp: vbexp . exp SEMICOLON
+   23 vbexp: vbexp . exp SEMICOLON
 
     IF          shift, and go to state 12
     WHILE       shift, and go to state 13
@@ -1919,7 +1919,7 @@ state 143
 state 144
 
    15 method: ID ID LPAREN pexp RPAREN LBRACE vbexp . RBRACE
-   24 vbexp: vbexp . exp SEMICOLON
+   23 vbexp: vbexp . exp SEMICOLON
 
     IF          shift, and go to state 12
     WHILE       shift, and go to state 13
@@ -2005,7 +2005,7 @@ state 149
 state 150
 
    14 method: method NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp . RBRACE
-   24 vbexp: vbexp . exp SEMICOLON
+   23 vbexp: vbexp . exp SEMICOLON
 
     IF          shift, and go to state 12
     WHILE       shift, and go to state 13
@@ -2026,7 +2026,7 @@ state 150
 state 151
 
    13 method: method ID ID LPAREN pexp RPAREN LBRACE vbexp . RBRACE
-   24 vbexp: vbexp . exp SEMICOLON
+   23 vbexp: vbexp . exp SEMICOLON
 
     IF          shift, and go to state 12
     WHILE       shift, and go to state 13

@@ -71,8 +71,8 @@ main : MAIN LBRACE vbexp RBRACE
      ;
 
 /* variable expression block */
-vbexp : field exp SEMICOLON
-      | vbexp exp SEMICOLON
+vbexp : vbexp exp SEMICOLON
+      | field exp SEMICOLON
       | exp SEMICOLON
       ;
 
