@@ -1,0 +1,80 @@
+//i pledge my honor that i have not cheated, and will not cheat, on this assignment
+//Daniel Sawyer
+
+//Array class using linked list
+class ArrayObj extends Object {
+	
+	//vars should be zero
+	nat x;
+	ArrayObj next;
+
+	//addes object/number at end of LL/array
+	ArrayObj queue(nat num) {
+
+		nat y;
+		this.x = 4;
+
+		x = 1 + y + 0 * 1 + null;
+	}
+}
+
+//object used to divied two integers
+class Divide extends Object {
+	
+	//vars and should be zero
+	nat num; nat rem;
+
+	//finds quotient and remainder for x/y
+	nat divide(nat x, nat y) {
+		
+		0;
+	}
+}
+
+main {
+	
+	nat x;
+	ArrayObj y;
+
+	x = 1;
+	!(x-1);
+	x = ((x-1)+(x+2));
+
+	if(!(x && x)) {
+		x;
+	}
+	else {
+		x;
+	};
+
+	while(x < 100) {
+
+		x = x + 1;
+	};
+
+	y = new ArrayObj();
+
+	readNat();
+	printNat(x+x*2);
+	printNat(this.x);
+	queue(x+1);
+	y.queue(x+1);
+	// nat x;
+	// nat y;
+	// ArrayObj start;
+
+	// x = null + 2;
+
+	// start = new ArrayObj();
+	// x = (1 + 2)*10;
+	// null;
+
+	// if(x) {
+	// 	x = 1;
+	// 	x = 2 + 2;
+	// }
+	// else {
+	// 	x = 1;
+	// 	x = 2+2;
+	// };
+}

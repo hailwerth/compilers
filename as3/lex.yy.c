@@ -985,7 +985,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 49 "dj.l"
+#line 48 "dj.l"
 { 
             char c = input();
             while(c!='\n' && c!=EOF) c=input();
@@ -994,16 +994,16 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 53 "dj.l"
+#line 52 "dj.l"
 { /*skip whitespace*/ }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 54 "dj.l"
+#line 53 "dj.l"
 {return scanned(ENDOFFILE);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 55 "dj.l"
+#line 54 "dj.l"
 { if(DEBUG) printf("\n");
       printf("Lex error on line %d: Illegal character %s\n",yylineno,yytext);
       exit(-1);
@@ -1011,7 +1011,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 60 "dj.l"
+#line 59 "dj.l"
 ECHO;
 	YY_BREAK
 #line 1018 "lex.yy.c"
@@ -2025,7 +2025,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 60 "dj.l"
+#line 59 "dj.l"
 
 
 

@@ -2,7 +2,7 @@
 
 
 class LexError extends Object {
-  nat i;/            //lex error
+  // nat i;/            //lex error
   nat five(nat > six) {  //lex error
     867yy;    //syntax error (not a lex error!)
     i = -9876;  //syntax error (not a lex error!)

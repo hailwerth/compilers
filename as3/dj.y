@@ -22,12 +22,85 @@ Daniel Sawyer */
 
 %start pgm
 
-%right ASSIGN
+%right ASSIGN NOT LESS DOT COMMA
+%left PLUS MINUS TIMES AND EQUALITY
 
 %%
 
-pgm : ENDOFFILE 
+pgm : instlist ENDOFFILE 
 	{ return 0; }
+    ;
+
+instlist : class main
+         ;
+
+class : class CLASS ID EXTENDS ID clexp
+      |
+      ;
+
+clexp : LBRACE field RBRACE
+      | LBRACE method RBRACE
+      | LBRACE field method RBRACE
+      | LBRACE RBRACE
+      ;
+
+field : field NATTYPE ID SEMICOLON
+      | field ID ID SEMICOLON
+      | NATTYPE ID SEMICOLON
+      | ID ID SEMICOLON
+      ;
+
+method : method ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
+       | method NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
+       | ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
+       | NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
+       ;
+
+pexp : pexp NATTYPE ID
+     | pexp NATTYPE ID COMMA
+     | pexp ID ID
+     | pexp ID ID COMMA
+     | 
+     ;
+
+main : MAIN LBRACE vbexp RBRACE
+     ;
+
+vbexp : field exp SEMICOLON
+      | vbexp exp SEMICOLON
+      | exp SEMICOLON
+      ;
+
+elist : elist exp SEMICOLON
+      | exp SEMICOLON
+      ;
+
+alist : alist COMMA exp
+      | exp
+      ;
+
+exp : NATLITERAL
+    | exp PLUS exp
+    | exp MINUS exp
+    | exp TIMES exp
+    | exp EQUALITY exp
+    | exp LESS exp
+    | NOT exp
+    | exp AND exp
+    | IF LPAREN exp RPAREN LBRACE elist RBRACE ELSE LBRACE elist RBRACE
+    | WHILE LPAREN exp RPAREN LBRACE elist RBRACE
+    | NEW ID LPAREN RPAREN
+    | THIS
+    | PRINTNAT LPAREN exp RPAREN
+    | READNAT LPAREN RPAREN
+    | ID
+    | exp DOT ID
+    | ID ASSIGN exp
+    | exp DOT ID ASSIGN exp
+    | ID LPAREN alist RPAREN
+    | exp DOT ID LPAREN alist RPAREN
+    | LPAREN exp RPAREN
+    | NUL
     ;
 
 %%
