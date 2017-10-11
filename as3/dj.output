@@ -574,13 +574,7 @@ state 37
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
 
-    PLUS      shift, and go to state 44
-    MINUS     shift, and go to state 45
-    TIMES     shift, and go to state 46
-    EQUALITY  shift, and go to state 47
-    LESS      shift, and go to state 48
-    AND       shift, and go to state 49
-    DOT       shift, and go to state 50
+    DOT  shift, and go to state 50
 
     $default  reduce using rule 36 (exp)
 
@@ -1023,6 +1017,9 @@ state 68
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
 
+    TIMES  shift, and go to state 46
+    DOT    shift, and go to state 50
+
     $default  reduce using rule 31 (exp)
 
 
@@ -1038,6 +1035,9 @@ state 69
    47    | exp . DOT ID
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
+
+    TIMES  shift, and go to state 46
+    DOT    shift, and go to state 50
 
     $default  reduce using rule 32 (exp)
 
@@ -1055,6 +1055,8 @@ state 70
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
 
+    DOT  shift, and go to state 50
+
     $default  reduce using rule 33 (exp)
 
 
@@ -1070,6 +1072,14 @@ state 71
    47    | exp . DOT ID
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
+
+    PLUS   shift, and go to state 44
+    MINUS  shift, and go to state 45
+    TIMES  shift, and go to state 46
+    DOT    shift, and go to state 50
+
+    EQUALITY  error (nonassociative)
+    LESS      error (nonassociative)
 
     $default  reduce using rule 34 (exp)
 
@@ -1087,13 +1097,13 @@ state 72
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
 
-    PLUS      shift, and go to state 44
-    MINUS     shift, and go to state 45
-    TIMES     shift, and go to state 46
-    EQUALITY  shift, and go to state 47
-    LESS      shift, and go to state 48
-    AND       shift, and go to state 49
-    DOT       shift, and go to state 50
+    PLUS   shift, and go to state 44
+    MINUS  shift, and go to state 45
+    TIMES  shift, and go to state 46
+    DOT    shift, and go to state 50
+
+    EQUALITY  error (nonassociative)
+    LESS      error (nonassociative)
 
     $default  reduce using rule 35 (exp)
 
@@ -1110,6 +1120,13 @@ state 73
    47    | exp . DOT ID
    49    | exp . DOT ID ASSIGN exp
    51    | exp . DOT ID LPAREN alist RPAREN
+
+    PLUS      shift, and go to state 44
+    MINUS     shift, and go to state 45
+    TIMES     shift, and go to state 46
+    EQUALITY  shift, and go to state 47
+    LESS      shift, and go to state 48
+    DOT       shift, and go to state 50
 
     $default  reduce using rule 37 (exp)
 

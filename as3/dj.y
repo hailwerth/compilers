@@ -22,44 +22,51 @@ Daniel Sawyer */
 
 %start pgm
 
-%right ASSIGN NOT LESS DOT
-%left PLUS MINUS TIMES AND EQUALITY
+%right ASSIGN
+%left AND     /*ASK ABOUT THIS PRECEDENCE and left/right but def seems left from the ast*/
+%nonassoc EQUALITY LESS /*ASK about precedence*/
+%left PLUS MINUS
+%left TIMES
+%right NOT
+%left DOT /*ask if left or right AND WHY*/
+
 
 %%
 
 pgm : instlist ENDOFFILE 
 	{ return 0; }
     ;
-
+/* what it needs, class* & main */
 instlist : class main
          ;
 
+/* class declarations 1 */
 class : class CLASS ID EXTENDS ID clexp
       |
       ;
 
-/* class expressions */
+/* class declarations 2 */
 clexp : LBRACE field RBRACE
       | LBRACE method RBRACE
       | LBRACE field method RBRACE
       | LBRACE RBRACE
       ;
 
-/* field expressions */
+/* field/var declarations */
 field : field NATTYPE ID SEMICOLON
       | field ID ID SEMICOLON
       | NATTYPE ID SEMICOLON
       | ID ID SEMICOLON
       ;
 
-/* method expressions */
+/* method declarations */
 method : method ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | method NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        | NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
        ;
 
-/* parameter expressions */
+/* parameter declarations */
 pexp : pexp NATTYPE ID
      | pexp NATTYPE ID COMMA
      | pexp ID ID
@@ -67,6 +74,7 @@ pexp : pexp NATTYPE ID
      | 
      ;
 
+/* main declaration */
 main : MAIN LBRACE vbexp RBRACE
      ;
 
@@ -81,13 +89,13 @@ elist : elist exp SEMICOLON
       | exp SEMICOLON
       ;
 
-/* argument list */
+/* argument expression list */
 alist : alist COMMA exp
       | exp
       |
       ;
 
-/* general expressions */
+/* expressions */
 exp : exp PLUS exp
     | exp MINUS exp
     | exp TIMES exp
