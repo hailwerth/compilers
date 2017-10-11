@@ -546,11 +546,12 @@ char *yytext;
 #line 1 "dj.l"
 /* i pledge my honor that i have not cheated, and will not cheat, on this assignment
 Daniel Sawyer */
-#line 8 "dj.l"
+/* DJ LEXER */
+#line 10 "dj.l"
   #define DEBUG 0
   typedef YYTOKENTYPE Token;
   Token scanned(Token t);
-#line 554 "lex.yy.c"
+#line 555 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -768,10 +769,10 @@ YY_DECL
 		}
 
 	{
-#line 17 "dj.l"
+#line 19 "dj.l"
 
 
-#line 775 "lex.yy.c"
+#line 776 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -840,152 +841,152 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 19 "dj.l"
+#line 21 "dj.l"
 {return scanned(MAIN);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 20 "dj.l"
+#line 22 "dj.l"
 {return scanned(CLASS);} 
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 21 "dj.l"
+#line 23 "dj.l"
 {return scanned(EXTENDS);}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 22 "dj.l"
+#line 24 "dj.l"
 {return scanned(NATTYPE);}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 23 "dj.l"
+#line 25 "dj.l"
 {return scanned(IF);}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 24 "dj.l"
+#line 26 "dj.l"
 {return scanned(ELSE);}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 25 "dj.l"
+#line 27 "dj.l"
 {return scanned(WHILE);}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 26 "dj.l"
+#line 28 "dj.l"
 {return scanned(PRINTNAT);}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 27 "dj.l"
+#line 29 "dj.l"
 {return scanned(READNAT);}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 28 "dj.l"
+#line 30 "dj.l"
 {return scanned(THIS);}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 29 "dj.l"
+#line 31 "dj.l"
 {return scanned(NEW);}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 30 "dj.l"
+#line 32 "dj.l"
 {return scanned(NUL);}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 31 "dj.l"
+#line 33 "dj.l"
 {return scanned(ASSIGN);}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 32 "dj.l"
+#line 34 "dj.l"
 {return scanned(PLUS);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 33 "dj.l"
+#line 35 "dj.l"
 {return scanned(MINUS);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 34 "dj.l"
+#line 36 "dj.l"
 {return scanned(TIMES);}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 35 "dj.l"
+#line 37 "dj.l"
 {return scanned(EQUALITY);}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 36 "dj.l"
+#line 38 "dj.l"
 {return scanned(LESS);}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 37 "dj.l"
+#line 39 "dj.l"
 {return scanned(AND);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 38 "dj.l"
+#line 40 "dj.l"
 {return scanned(NOT);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 39 "dj.l"
+#line 41 "dj.l"
 {return scanned(DOT);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 40 "dj.l"
+#line 42 "dj.l"
 {return scanned(COMMA);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 41 "dj.l"
+#line 43 "dj.l"
 {return scanned(LBRACE);}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 42 "dj.l"
+#line 44 "dj.l"
 {return scanned(RBRACE);}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 43 "dj.l"
+#line 45 "dj.l"
 {return scanned(LPAREN);}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 44 "dj.l"
+#line 46 "dj.l"
 {return scanned(RPAREN);}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 45 "dj.l"
+#line 47 "dj.l"
 {return scanned(SEMICOLON);}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 46 "dj.l"
+#line 48 "dj.l"
 {return scanned(NATLITERAL);}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 47 "dj.l"
+#line 49 "dj.l"
 {return scanned(ID);}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 48 "dj.l"
+#line 50 "dj.l"
 { 
             char c = input();
             while(c!='\n' && c!=EOF) c=input();
@@ -994,16 +995,16 @@ YY_RULE_SETUP
 case 31:
 /* rule 31 can match eol */
 YY_RULE_SETUP
-#line 52 "dj.l"
+#line 54 "dj.l"
 { /*skip whitespace*/ }
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 53 "dj.l"
+#line 55 "dj.l"
 {return scanned(ENDOFFILE);}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 54 "dj.l"
+#line 56 "dj.l"
 { if(DEBUG) printf("\n");
       printf("Lex error on line %d: Illegal character %s\n",yylineno,yytext);
       exit(-1);
@@ -1011,10 +1012,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 59 "dj.l"
+#line 61 "dj.l"
 ECHO;
 	YY_BREAK
-#line 1018 "lex.yy.c"
+#line 1019 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -2025,7 +2026,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 59 "dj.l"
+#line 61 "dj.l"
 
 
 

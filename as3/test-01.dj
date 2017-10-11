@@ -33,7 +33,7 @@ class Divide extends Object {
 	nat num; nat rem;
 
 	//finds quotient and remainder for x/y
-	nat divide(nat x, nat y) {
+	nat divide(nat x, nat y, nat z) {
 		
 		0;
 	}

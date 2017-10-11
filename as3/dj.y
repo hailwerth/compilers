@@ -1,5 +1,6 @@
 /* i pledge my honor that i have not cheated, and will not cheat, on this assignment
 Daniel Sawyer */
+
 /* DJ PARSER */
 
 %code provides {
@@ -22,103 +23,84 @@ Daniel Sawyer */
 
 %start pgm
 
+/* operator association */
 %right ASSIGN
-%left AND     /*ASK ABOUT THIS PRECEDENCE and left/right but def seems left from the ast*/
-%nonassoc EQUALITY LESS /*ASK about precedence*/
+%left AND
+%nonassoc EQUALITY LESS
 %left PLUS MINUS
 %left TIMES
 %right NOT
-%left DOT /*ask if left or right AND WHY*/
-
+%left DOT
 
 %%
 
-pgm : instlist ENDOFFILE 
-	{ return 0; }
+/* program start */
+pgm : cdec MAIN LBRACE vardec elist RBRACE ENDOFFILE 
+      { return 0; }
     ;
-/* what it needs, class* & main */
-instlist : class main
-         ;
 
-/* class declarations 1 */
-class : class CLASS ID EXTENDS ID clexp
-      |
-      ;
+/* class declarations */
+cdec : cdec CLASS ID EXTENDS ID LBRACE vardec methdec RBRACE
+     | cdec CLASS ID EXTENDS ID LBRACE vardec RBRACE
+     |
+     ;
 
-/* class declarations 2 */
-clexp : LBRACE field RBRACE
-      | LBRACE method RBRACE
-      | LBRACE field method RBRACE
-      | LBRACE RBRACE
-      ;
+/* variable */
+var : NATTYPE ID
+    | ID ID
+    ;
 
-/* field/var declarations */
-field : field NATTYPE ID SEMICOLON
-      | field ID ID SEMICOLON
-      | NATTYPE ID SEMICOLON
-      | ID ID SEMICOLON
-      ;
-
-/* method declarations */
-method : method ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
-       | method NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
-       | ID ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
-       | NATTYPE ID LPAREN pexp RPAREN LBRACE vbexp RBRACE
+/* var declarations */
+vardec : vardec var SEMICOLON
+       |
        ;
 
+/* method declarations */
+methdec : methdec var LPAREN pdec RPAREN LBRACE vardec elist RBRACE
+        | var LPAREN pdec RPAREN LBRACE vardec elist RBRACE
+        ;
+
 /* parameter declarations */
-pexp : pexp NATTYPE ID
-     | pexp NATTYPE ID COMMA
-     | pexp ID ID
-     | pexp ID ID COMMA
-     | 
+pdec : pdec COMMA var
+     | var
+     |
      ;
-
-/* main declaration */
-main : MAIN LBRACE vbexp RBRACE
-     ;
-
-/* variable expression block */
-vbexp : vbexp exp SEMICOLON
-      | field exp SEMICOLON
-      | exp SEMICOLON
-      ;
 
 /* expression list */
-elist : elist exp SEMICOLON
-      | exp SEMICOLON
+elist : elist expr SEMICOLON
+      | expr SEMICOLON
       ;
 
 /* argument expression list */
-alist : alist COMMA exp
-      | exp
+alist : alist COMMA expr
+      | expr
       |
       ;
 
 /* expressions */
-exp : exp PLUS exp
-    | exp MINUS exp
-    | exp TIMES exp
-    | exp EQUALITY exp
-    | exp LESS exp
-    | NOT exp
-    | exp AND exp
-    | NATLITERAL
-    | NUL
-    | IF LPAREN exp RPAREN LBRACE elist RBRACE ELSE LBRACE elist RBRACE
-    | WHILE LPAREN exp RPAREN LBRACE elist RBRACE
-    | NEW ID LPAREN RPAREN
-    | THIS
-    | PRINTNAT LPAREN exp RPAREN
-    | READNAT LPAREN RPAREN
-    | ID
-    | exp DOT ID
-    | ID ASSIGN exp
-    | exp DOT ID ASSIGN exp
-    | ID LPAREN alist RPAREN
-    | exp DOT ID LPAREN alist RPAREN
-    | LPAREN exp RPAREN
-    ;
+expr : expr PLUS expr
+     | expr MINUS expr
+     | expr TIMES expr
+     | expr EQUALITY expr
+     | expr LESS expr
+     | NOT expr
+     | expr AND expr
+     | NATLITERAL
+     | NUL
+     | IF LPAREN expr RPAREN LBRACE elist RBRACE ELSE LBRACE elist RBRACE
+     | WHILE LPAREN expr RPAREN LBRACE elist RBRACE
+     | NEW ID LPAREN RPAREN
+     | THIS
+     | PRINTNAT LPAREN expr RPAREN
+     | READNAT LPAREN RPAREN
+     | ID
+     | expr DOT ID
+     | ID ASSIGN expr
+     | expr DOT ID ASSIGN expr
+     | ID LPAREN alist RPAREN
+     | expr DOT ID LPAREN alist RPAREN
+     | LPAREN expr RPAREN
+     ;
 
 %%
 
@@ -135,4 +117,3 @@ int main(int argc, char **argv) {
   /* parse the input program */
   return yyparse();
 }
-

@@ -1,6 +1,8 @@
 /* i pledge my honor that i have not cheated, and will not cheat, on this assignment
 Daniel Sawyer */
 
+/* DJ LEXER */
+
 %option yylineno
 %option noyywrap
 
