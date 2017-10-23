@@ -69,6 +69,7 @@ main {
 	y.queue(x+1);
 	queue();
 	y.queue();
+	y.first.second = 1;
 
 	// nat x;
 	// nat y;

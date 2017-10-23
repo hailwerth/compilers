@@ -1,0 +1,3 @@
+main{
+  printNat(!!!!0);  //prints 0
+}

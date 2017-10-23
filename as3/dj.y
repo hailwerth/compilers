@@ -23,7 +23,7 @@ Daniel Sawyer */
 
 %start pgm
 
-/* operator association */
+/* operator association and precedence */
 %right ASSIGN
 %left AND
 %nonassoc EQUALITY LESS
