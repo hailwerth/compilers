@@ -7,6 +7,8 @@ Daniel Sawyer */
   #include <stdio.h>
   #include "lex.yy.c"
   #include "ast.h"
+  #include "symtbl.h"
+  #include "typecheck.h"
 
   /* Symbols in this grammar are represented as ASTs */ 
   #define YYSTYPE ASTree *
@@ -220,8 +222,8 @@ int main(int argc, char **argv) {
     exit(-1);
   }
   
-  int debug=1;
-  /*if(argc==3) debug=1;*/
+  int debug=0;
+  if(argc==3) debug=1;
 
   /* parse and interpret the program */
   yyparse();
@@ -230,6 +232,8 @@ int main(int argc, char **argv) {
     printAST(pgmAST);
     /*printf("******* end abstract syntax tree for DISM program *********\n\n");*/
   }
+  setupSymbolTables(pgmAST);
+  typecheckProgram();
 
   /*interpret(pgmAST);*/
   return 0;
