@@ -1,0 +1,11 @@
+class C extends Object {
+
+}
+
+class C extends Object {
+	
+}
+
+main {
+	0;
+}

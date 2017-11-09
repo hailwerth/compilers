@@ -35,10 +35,7 @@ ASTree *newAST(ASTNodeType t, ASTree *child, unsigned int natAttribute,
   toReturn->lineNumber = lineNum;
 
   //sets attribute nat
-  if(natAttribute == (unsigned int)NULL)
-    toReturn->natVal = (unsigned int)NULL;
-  else
-    toReturn->natVal = (unsigned int)natAttribute;
+  toReturn->natVal = natAttribute;
     
   //sets attribute id
   if(idAttribute == NULL)
