@@ -1,11 +1,26 @@
-class C extends Object {
+class C extends Object {}
+//class C extends Object {}
 
-}
+//class D extends E {}
+class D extends C {}
 
-class C extends Object {
-	
-}
 
 main {
-	0;
+	
+	nat x;
+	nat y;
+	nat z;
+	//nat x;
+
+	C o1;
+	//Z o2;
+	Object o3;
+
+
+	//expressions
+	a = 0;
+
+	// x = 1;
+	// y = 2;
+	// z = x + y;
 }
