@@ -3,6 +3,13 @@ class C extends Object {}
 
 //class D extends E {}
 class D extends C {}
+//class E extends E {}
+class F extends E {}
+class E extends D {} 
+
+//class X extends X {}
+class X extends Y {}
+class Y extends X {}
 
 
 main {
