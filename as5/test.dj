@@ -1,15 +1,54 @@
-class C extends Object {}
-//class C extends Object {}
+class C extends Object {
+	nat n;
+	C o1;
+	D d1;
+	nat getn(){
+		C n;
+		geto1(this.n);
+		o1 = new C();
+		o1.geto1(this.n);
+		this.n;
+		//n;
+	}
+	nat geto1(nat n) {
+		0;
+	}
+	nat foo(Z o) {
+		0;
+	}
+}
 
-//class D extends E {}
-class D extends C {}
+class D extends C {
+	nat x;
+	//nat x;
+	D c1;
+	Z z1;
+
+	C getc(nat x) {
+		C n;
+		C c1;
+		Z z1;
+		//C x;
+		//nat n;
+
+		c1.foo(z1);
+		c1 = new C();
+		
+		//this.n;
+		this.d1;
+		//this.z1;
+		//this.n;
+	}
+}
 //class E extends E {}
 class F extends E {}
-class E extends D {} 
+class E extends D {}
+class Z extends Object {}
 
-//class X extends X {}
-class X extends Y {}
-class Y extends X {}
+// class X extends X {}
+// class X extends Y {}
+// class Z extends X {}
+// class Y extends Z {}
 
 
 main {
@@ -20,14 +59,62 @@ main {
 	//nat x;
 
 	C o1;
-	//Z o2;
+	D o2;
 	Object o3;
 
 
 	//expressions
-	a = 0;
+	x = 10;
+	!x;
+	//!o1;
+	o1 = new C();
+	o1 = new D();
+	o2 = new D();
+	
+	// x = o1.n;
+	// //x = o1.o;
+
+	// x = readNat();
+	// //o1 = readNat();
+	// o1.n = readNat();
+	// o1.o1 = o2;
+
+	// printNat(o1.n);
+
+	// while(o1.n < x && y) {
+	// 	0;
+	// };
+
+	// if(o1.n) {
+	// 	o1.n;
+	// }
+	// else {
+	// 	o2.n;
+	// };
+	o2.c1.n;
+
+	o2.getc(x);
+	o2 = new D();
+	// o1.getn();
+	// o1.geto1();
+	// o2.geto1();
+	// o2.getn();
+	// o1.o1 = new D();
+	// x = o1.getn();
+
+	
+	//o1.getn(x);
+
+	//o1 = new C();
+	//o1.getn(x);
+	//o1.foo(o1);
+
+	//o1.n = x;
+	// o1.y = x;
 
 	// x = 1;
 	// y = 2;
 	// z = x + y;
+
+	null;
 }
