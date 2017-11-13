@@ -35,7 +35,7 @@ void semerror(SemError er, int l) {
         case ID_DNE: printf("ID never declared\n"); break;
         case NOT: printf("Non-nat type in NOT expression\n"); break;
         case NEW: printf("Invalid class for new expression\n"); break;
-        case THIS_MAIN: printf("This used in main\n"); break;
+        case THIS_MAIN: printf("This cant be used in main\n"); break;
         case PLUS: printf("Plus expression using non-nat types\n"); break;
         case MINUS: printf("Minus expression using non-nat types\n"); break;
         case TIMES: printf("Times expression using non-nat types\n"); break;
@@ -161,6 +161,7 @@ int methUnique(int c, MethodDecl meth) {
     for(i=0; i < classesST[c].numMethods; i++) {
         if(!strcmp(classesST[c].methodList[i].methodName, meth.methodName)) {
             k = 0;
+            if(classesST[c].methodList[i].returnType == meth.returnType)
             if(classesST[c].methodList[i].numParams == meth.numParams) {
                 k = 1;
                 for(j=0; j < meth.numParams; j++) {
@@ -458,6 +459,9 @@ void typecheckProgram() {
 int isSubtype(int sub, int super) {
 
     //printf("\nSub = %d, Super = %d\n", sub, super);
+    if(super == -1)
+        return 0;
+
     if(sub == -2)
         return 1;
 
