@@ -1,49 +1,49 @@
-class C extends Object {
-	nat n;
-	C o1;
-	D d1;
-	nat getn(){
-		C n;
-		geto1(this.n);
-		o1 = new C();
-		o1.geto1(this.n);
-		this.n;
-		//n;
-	}
-	nat geto1(nat n) {
-		0;
-	}
-	nat foo(Z o) {
-		0;
-	}
-}
+// class C extends Object {
+// 	nat n;
+// 	C o1;
+// 	D d1;
+// 	nat getn(){
+// 		C n;
+// 		geto1(this.n);
+// 		o1 = new C();
+// 		o1.geto1(this.n);
+// 		this.n;
+// 		//n;
+// 	}
+// 	nat geto1(nat n) {
+// 		0;
+// 	}
+// 	nat foo(Z o) {
+// 		0;
+// 	}
+// }
 
-class D extends C {
-	nat x;
-	//nat x;
-	D c1;
-	Z z1;
+// class D extends C {
+// 	nat x;
+// 	//nat x;
+// 	D c1;
+// 	Z z1;
 
-	C getc(nat x) {
-		C n;
-		C c1;
-		Z z1;
-		//C x;
-		//nat n;
+// 	C getc(nat x) {
+// 		C n;
+// 		C c1;
+// 		Z z1;
+// 		//C x;
+// 		//nat n;
 
-		c1.foo(z1);
-		c1 = new C();
+// 		c1.foo(z1);
+// 		c1 = new C();
 		
-		//this.n;
-		this.d1;
-		//this.z1;
-		//this.n;
-	}
-}
-//class E extends E {}
-class F extends E {}
-class E extends D {}
-class Z extends Object {}
+// 		//this.n;
+// 		this.d1;
+// 		//this.z1;
+// 		//this.n;
+// 	}
+// }
+// //class E extends E {}
+// class F extends E {}
+// class E extends D {}
+// class Z extends Object {}
 
 // class X extends X {}
 // class X extends Y {}
@@ -53,48 +53,48 @@ class Z extends Object {}
 
 main {
 	
-	nat x;
-	nat y;
-	nat z;
-	//nat x;
+	// nat x;
+	// nat y;
+	// nat z;
+	// //nat x;
 
-	C o1;
-	D o2;
-	Object o3;
+	// C o1;
+	// D o2;
+	// Object o3;
 
 
-	//expressions
-	x = 10;
-	!x;
-	//!o1;
-	o1 = new C();
-	o1 = new D();
-	o2 = new D();
+	// //expressions
+	// x = 10;
+	// !x;
+	// //!o1;
+	// o1 = new C();
+	// o1 = new D();
+	// o2 = new D();
 	
-	// x = o1.n;
-	// //x = o1.o;
+	// // x = o1.n;
+	// // //x = o1.o;
 
-	// x = readNat();
-	// //o1 = readNat();
-	// o1.n = readNat();
-	// o1.o1 = o2;
+	// // x = readNat();
+	// // //o1 = readNat();
+	// // o1.n = readNat();
+	// // o1.o1 = o2;
 
-	// printNat(o1.n);
+	// // printNat(o1.n);
 
-	// while(o1.n < x && y) {
-	// 	0;
-	// };
+	// // while(o1.n < x && y) {
+	// // 	0;
+	// // };
 
-	// if(o1.n) {
-	// 	o1.n;
-	// }
-	// else {
-	// 	o2.n;
-	// };
-	o2.c1.n;
+	// // if(o1.n) {
+	// // 	o1.n;
+	// // }
+	// // else {
+	// // 	o2.n;
+	// // };
+	// o2.c1.n;
 
-	o2.getc(x);
-	o2 = new D();
+	// o2.getc(x);
+	// o2 = new D();
 	// o1.getn();
 	// o1.geto1();
 	// o2.geto1();
@@ -116,5 +116,17 @@ main {
 	// y = 2;
 	// z = x + y;
 
-	null;
+	//null;
+
+	//1 == (new Object());
+	//(new Object()) == 1;
+	// Object myObj;
+	// nat k;
+	// k == myObj;
+	// Object o1;
+	// o1 = 5;
+
+	Object o;
+	o = new Object();
+	o = null;
 }

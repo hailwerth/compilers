@@ -73,6 +73,13 @@ int *mainInits;
 int **classInits;
 
 //my helper functions
+int join(int t1, int t2) {
+    if(isSubtype(t1, t2))
+        return t2;
+    if(isSubtype(t2,t1))
+        return t1;
+    return join(classesST[t1].superclass, t2);
+}
 int inMainST(char *var, int l) {
     int i;
     for(i=0; i < numMainBlockLocals; i++) {
@@ -459,7 +466,7 @@ void typecheckProgram() {
 int isSubtype(int sub, int super) {
 
     //printf("\nSub = %d, Super = %d\n", sub, super);
-    if(super == -1)
+    if(super == -1 || sub == -1 || super == -2)
         return 0;
 
     if(sub == -2)
@@ -541,6 +548,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
 
         case EQUALITY_EXPR: lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
                             rhs = typeExpr(t->children->next->data, classContainingExpr, methodContainingExpr);
+                            //printf("\nequality lhs = %d, rhs = %d\n", lhs, rhs);
                             if(lhs == -1 && rhs == -1)
                                 return lhs;
                             if(isSubtype(lhs, rhs) || isSubtype(rhs, lhs))
@@ -602,17 +610,24 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                                 rhs = typeExprs(t->childrenTail->data, classContainingExpr, methodContainingExpr);
                                 if(mid == -1 && rhs == -1)
                                     return rhs;
+                                if(mid == -1 || rhs == -1)
+                                    semerror(IF_EL, t->lineNumber);
                                 if(mid == rhs)
                                     return rhs;
-                                if(isSubtype(mid, rhs))
-                                    return mid;
-                                if(isSubtype(rhs, mid))
-                                    return rhs;
-                                if(mid > -1 && rhs == -2)
-                                    return mid;
-                                if(rhs > -1 && mid == -2)
-                                    return rhs;
-                                semerror(IF_EL, t->lineNumber);
+                                // if(isSubtype(mid, rhs))
+                                //     return rhs;
+                                // if(isSubtype(rhs, mid))
+                                //     return mid;
+                                // if(mid > -1 && rhs == -2)
+                                //     return mid;
+                                // if(rhs > -1 && mid == -2)
+                                //     return rhs;
+                                
+                                if(mid < -2 || rhs < -2)
+                                    semerror(IF_EL, t->lineNumber);
+                                lhs = join(mid, rhs);
+                                //printf("\nite join = %d mid = %d, rhs = %d\n", lhs, mid, rhs);
+                                return lhs;
 
 
 
@@ -622,6 +637,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
 
         case NEW_EXPR: rhs = inClassST(t->children->data->idVal);
                        if(rhs > -1) {
+                        //printf("\nnew rhs = %d\n", rhs);
                         return rhs;
                        }
                        semerror(NEW, t->lineNumber);

@@ -1,0 +1,183 @@
+
+bad1
+Lex error on line 5: Illegal character /
+
+bad2
+Semantic analysis error on line 4:
+Class variable duplicate
+
+bad3
+Semantic analysis error on line 7:
+Class variable duplicate of a superclass
+
+bad4
+Semantic analysis error on line 3:
+Class variable duplicate
+
+bad5
+Semantic analysis error on line 4:
+Duplicate method names in class
+
+bad6
+Syntax error on line 4 at token ;
+(This version of the compiler exits after finding the first syntax error.)
+
+bad7
+Semantic analysis error on line 2:
+Method parameter type does not exist
+
+bad8
+Semantic analysis error on line 2:
+Class field type does not exist
+
+bad9
+Semantic analysis error on line 3:
+Method return type does not exist
+
+bad10
+Semantic analysis error on line 3:
+Parameter variable name in method is a duplicate
+
+bad11
+Semantic analysis error on line 6:
+Variable declared multiple times
+
+bad12
+Semantic analysis error on line 4:
+Method local variable is a duplicate
+
+bad13
+Syntax error on line 9 at token nat
+(This version of the compiler exits after finding the first syntax error.)
+
+bad14
+Semantic analysis error on line 9:
+printNat() argument invalid type, must be nat
+
+bad15
+Semantic analysis error on line 10:
+printNat() argument invalid type, must be nat
+
+bad16
+Semantic analysis error on line 9:
+While conditional isnt type nat
+
+bad17
+Semantic analysis error on line 9:
+If conditional doesn evaluate to a nat type
+
+bad18
+Semantic analysis error on line 10:
+If then-else expr list type mismatch
+
+bad19
+Semantic analysis error on line 10:
+And expression using non-nat types
+
+bad20
+Semantic analysis error on line 10:
+Non-nat type in NOT expression
+
+bad21
+Semantic analysis error on line 10:
+Less expression using non-nat types
+
+bad22
+Semantic analysis error on line 9:
+Equality expression type mismatch
+
+bad23
+Semantic analysis error on line 10:
+Times expression using non-nat types
+
+bad24
+Semantic analysis error on line 9:
+Plus expression using non-nat types
+
+bad25
+Semantic analysis error on line 7:
+Class cant be superclass of itself
+
+bad26
+Semantic analysis error on line 7:
+Class has cycle with its super
+
+bad27
+Semantic analysis error on line 11:
+Class variable duplicate of a superclass
+
+bad28
+Semantic analysis error on line 20:
+Invalid dot-method call
+
+bad29
+Semantic analysis error on line 20:
+Assignment to incompatible types
+
+bad30
+Semantic analysis error on line 27:
+If then-else expr list type mismatch
+
+bad31
+Semantic analysis error on line 12:
+Last method expression is not compatible with its return type
+
+bad32
+Semantic analysis error on line 5:
+ID never declared
+
+bad33
+Syntax error on line 2 at token ==
+(This version of the compiler exits after finding the first syntax error.)
+
+bad34
+Semantic analysis error on line 8:
+Equality expression type mismatch
+
+bad35
+Semantic analysis error on line 8:
+Last method expression is not compatible with its return type
+
+bad36
+Syntax error on line 8 at token }
+(This version of the compiler exits after finding the first syntax error.)
+
+bad37
+Semantic analysis error on line 2:
+Class declared multiple times
+
+bad38
+Semantic analysis error on line 1:
+Class declared multiple times
+
+bad39
+Semantic analysis error on line 4:
+Invalid class for new expression
+
+bad40
+Semantic analysis error on line 5:
+Invalid dot-method call
+
+bad41
+Semantic analysis error on line 4:
+Class/Object variable is not valid
+
+bad42
+Semantic analysis error on line 8:
+Duplicate method name with different signature somewhere in superclass
+
+bad43
+Semantic analysis error on line 12:
+Duplicate method name with different signature somewhere in superclass
+
+bad44
+Semantic analysis error on line 6:
+This cant be used in main
+
+bad45
+Semantic analysis error on line 7:
+Invalid dot-method call
+
+bad46
+Semantic analysis error on line 7:
+Invalid dot-method call
