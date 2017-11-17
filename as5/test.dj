@@ -129,4 +129,6 @@ main {
 	Object o;
 	o = new Object();
 	o = null;
+
+	null==null;
 }

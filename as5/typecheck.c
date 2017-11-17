@@ -466,7 +466,7 @@ void typecheckProgram() {
 int isSubtype(int sub, int super) {
 
     //printf("\nSub = %d, Super = %d\n", sub, super);
-    if(super == -1 || sub == -1 || super == -2)
+    if(super == -1 || sub == -1)
         return 0;
 
     if(sub == -2)
