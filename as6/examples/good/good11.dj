@@ -1,0 +1,43 @@
+class C extends Object{
+  nat n;
+}
+main{
+  nat n;
+  C c;
+  c = new C();
+  printNat(5+2*6);  //prints 17
+  printNat(5+(2*6)); //prints 17 and has same AST as previous expression
+  printNat((5+2)*6); //prints 42
+  n = n<6+3 && !2+3 && n = !c.n*!3 && 1+3==4; //Important to check AST here!
+//AST for previous line should be:
+//2:    ASSIGN_EXPR   (ends on line 11)
+//3:      AST_ID(n)   (ends on line 11)
+//3:      AND_EXPR   (ends on line 11)
+//4:        AND_EXPR   (ends on line 11)
+//5:          LESS_THAN_EXPR   (ends on line 11)
+//6:            ID_EXPR   (ends on line 11)
+//7:              AST_ID(n)   (ends on line 11)
+//6:            PLUS_EXPR   (ends on line 11)
+//7:              NAT_LITERAL_EXPR(6)   (ends on line 11)
+//7:              NAT_LITERAL_EXPR(3)   (ends on line 11)
+//5:          PLUS_EXPR   (ends on line 11)
+//6:            NOT_EXPR   (ends on line 11)
+//7:              NAT_LITERAL_EXPR(2)   (ends on line 11)
+//6:            NAT_LITERAL_EXPR(3)   (ends on line 11)
+//4:        ASSIGN_EXPR   (ends on line 11)
+//5:          AST_ID(n)   (ends on line 11)
+//5:          AND_EXPR   (ends on line 11)
+//6:            TIMES_EXPR   (ends on line 11)
+//7:              NOT_EXPR   (ends on line 11)
+//8:                DOT_ID_EXPR   (ends on line 11)
+//9:                  ID_EXPR   (ends on line 11)
+//10:                    AST_ID(c)   (ends on line 11)
+//9:                  AST_ID(n)   (ends on line 11)
+//7:              NOT_EXPR   (ends on line 11)
+//8:                NAT_LITERAL_EXPR(3)   (ends on line 11)
+//6:            EQUALITY_EXPR   (ends on line 11)
+//7:              PLUS_EXPR   (ends on line 11)
+//8:                NAT_LITERAL_EXPR(1)   (ends on line 11)
+//8:                NAT_LITERAL_EXPR(3)   (ends on line 11)
+//7:              NAT_LITERAL_EXPR(4)   (ends on line 11)
+}

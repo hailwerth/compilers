@@ -1,54 +1,59 @@
-// class C extends Object {
-// 	nat n;
-// 	C o1;
-// 	D d1;
-// 	nat getn(){
-// 		C n;
-// 		geto1(this.n);
-// 		o1 = new C();
-// 		o1.geto1(this.n);
-// 		this.n;
-// 		//n;
-// 	}
-// 	nat geto1(nat n) {
-// 		0;
-// 	}
-// 	nat foo(Z o) {
-// 		0;
-// 	}
-// }
+class C extends Object {
+	nat n;
+	C o1;
+	D d1;
+	nat getn(){
+		C n;
+		nat d;
+		geto1(this.n);
+		o1 = new C();
+		o1.geto1(this.n);
+		this.n;
+		//n;
+	}
+	nat geto1(nat n) {
+		nat x;
+		0;
+	}
+	// nat foo(Z o) {
+	// 	0;
+	// }
+}
 
-// class D extends C {
-// 	nat x;
-// 	//nat x;
-// 	D c1;
-// 	Z z1;
+class D extends C {
+	nat x;
+	//nat x;
+	D c1;
+	// Z z1;
 
-// 	C getc(nat x) {
-// 		C n;
-// 		C c1;
-// 		Z z1;
-// 		//C x;
-// 		//nat n;
+	C getc(nat x) {
+		C n;
+		C c1;
+		nat y;
+		// Z z1;
+		//C x;
+		//nat n;
 
-// 		c1.foo(z1);
-// 		c1 = new C();
+		// c1.foo(z1);
+		c1 = new C();
 		
-// 		//this.n;
-// 		this.d1;
-// 		//this.z1;
-// 		//this.n;
-// 	}
-// }
-// //class E extends E {}
-// class F extends E {}
-// class E extends D {}
-// class Z extends Object {}
+		//this.n;
+		this.d1;
+		//this.z1;
+		//this.n;
+	}
+}
 
-// class X extends X {}
-// class X extends Y {}
-// class Z extends X {}
-// class Y extends Z {}
+class E extends Object {}
+
+class F extends Object {
+	C o1;
+}
+
+class G extends Object {
+
+	F o1;
+}
 
 
 main {
@@ -123,12 +128,16 @@ main {
 	// Object myObj;
 	// nat k;
 	// k == myObj;
+	
 	// Object o1;
 	// o1 = 5;
 
-	Object o;
-	o = new Object();
-	o = null;
+	// Object o;
+	// o = new Object();
+	// o = null;
 
-	null==null;
+	// null==null;
+
+	// G o1;
+	// o1.o1.o1 = new C();
 }
