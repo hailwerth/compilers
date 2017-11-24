@@ -227,11 +227,15 @@ int main(int argc, char **argv) {
 
   /* parse and interpret the program */
   yyparse();
-  if(debug)
-    printAST(pgmAST);
+  
   
   setupSymbolTables(pgmAST);
   typecheckProgram();
+
+  if(debug)
+    printAST(pgmAST);
+
+  
 
   /*interpret(pgmAST);*/
   return 0;

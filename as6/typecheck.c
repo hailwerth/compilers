@@ -267,6 +267,25 @@ void updateST(int classContainingExpr, int methodContainingExpr, int rhs, char *
         }
     }
 }
+pair findVarInSuper(char *var, int c) {
+
+    int i;
+    pair cm;
+    cm.c = -1;
+    cm.m = -1;
+    while(c != 0) {
+
+        for(i = 0; i < classesST[c].numVars; i++) {
+            if(!strcmp(classesST[c].varList[i].varName, var)) {
+                cm.c = c;
+                cm.m = i;
+                return cm;
+            }
+        }
+        c = classesST[c].superclass;
+    }
+    return cm;
+}
 
 /* This method performs all typechecking for the entire DJ program. 
    This method assumes setupSymbolTables(), declared in symtbl.h,
@@ -541,25 +560,27 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
 
     switch(t->typ) {
 
-        case ASSIGN_EXPR: 
-                          // if(t->children->next->data->typ == NEW_EXPR) {
-                          //   lhs = typeExpr(t->children->data, -5, rhs);
-                          // }
+        case ASSIGN_EXPR: if(classContainingExpr < 0) {
+                            t->staticClassNum = 0;
+                            t->staticMemberNum = 0;
+                          }
+
+                          else {
+                            t->staticClassNum = classContainingExpr;
+                            cm = findVarInSuper(t->children->data->idVal, classContainingExpr);
+                            if(cm.c == -1) {
+                                t->staticClassNum = 0;
+                                t->staticMemberNum = 0;
+                            }
+                            else {
+                                t->staticClassNum = cm.c;
+                                t->staticMemberNum = cm.m;
+                            }
+                          }
                           
                           rhs = typeExpr(t->children->next->data, classContainingExpr, methodContainingExpr);
-
-                          // if(t->children->next->data->typ == NEW_EXPR) {
-                          //   updateST(classContainingExpr, methodContainingExpr, rhs, t->children->data->idVal);
-                          //   //t->children->data->natVal = 69;
-                          //   mid = varHash(t->children->data->idVal, classContainingExpr);
-                          //   if(mid > -1) { 
-                          //       if(classContainingExpr < 0)
-                          //           mainInits[mid] = 1;
-                          //       if(classContainingExpr > 0)
-                          //           classInits[classContainingExpr][mid] = 1;
-                          //   }
-                          // }
                           lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
+
                           if(lhs == rhs || isSubtype(rhs, lhs)) return lhs;
                           semerror(ASSIGN, t->lineNumber);
 
@@ -605,8 +626,20 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
         case DOT_ID_EXPR: //printf("\nIN DOT_ID_EXPR\n");
                           lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
                           if(lhs < 0) semerror(DOT_ID_L, t->lineNumber);
-                          if(t->children->data->typ == THIS_EXPR) rhs = typeExpr(t->children->next->data, lhs, -1);
+                          t->staticClassNum = lhs;
+                          if(t->children->data->typ == THIS_EXPR) { 
+                            rhs = typeExpr(t->children->next->data, lhs, -1);
+                            t->staticMemberNum = varHash(t->idVal, lhs);
+                          }
                           else rhs = typeExpr(t->children->next->data, lhs, methodContainingExpr);
+                          
+                          t->staticMemberNum = varHash(t->childrenTail->data->idVal, lhs);
+                          if(t->staticMemberNum == -1) {
+                            cm = findVarInSuper(t->childrenTail->data->idVal, classesST[lhs].superclass);
+                            t->staticClassNum = cm.c;
+                            t->staticMemberNum = cm.m;
+                          }
+
                           if(rhs > -2)
                             return rhs;
                           semerror(DOT_ID_R, t->lineNumber);
@@ -615,6 +648,11 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                               if(lhs < 0) semerror(DOT_ASSIGN_L, t->lineNumber);
                               mid = typeExpr(t->children->next->data, lhs, methodContainingExpr);
                               rhs = typeExpr(t->childrenTail->data, classContainingExpr, methodContainingExpr);
+
+                              cm = findVarInSuper(t->children->next->data->idVal, lhs);
+                              t->staticClassNum = cm.c;
+                              t->staticMemberNum = cm.m;
+
                               if(mid == rhs || isSubtype(rhs, mid)) return rhs;
                               semerror(DOT_ASSIGN_R, t->lineNumber);
 
@@ -644,6 +682,8 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                                if(lhs < 0) semerror(-1, t->lineNumber);
                                rhs = typeExpr(t->childrenTail->data, classContainingExpr, methodContainingExpr);
                                cm = methInClass(lhs, t->children->data->idVal, t->childrenTail->data, classContainingExpr, methodContainingExpr);
+                               t->staticMemberNum = cm.m;
+                               t->staticClassNum - cm.c;
                                if(cm.c == -1) semerror(-1, t->lineNumber);
                                return getMethRet(cm.c, cm.m);
                                    
@@ -703,17 +743,8 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                         return classContainingExpr;
 
 
-        case AST_ID: //printf("\nIN AST_ID\n");
-                     // if(classContainingExpr >= 0 ) {
-                     //    updateST()
-                     // }
-                     if(classContainingExpr < 0) {
-                        //mid = inMainST(t->idVal, t->lineNumber);
-                        //if(mid < 0) return mid;
-                        //rhs = varHash(t->idVal, classContainingExpr);
-                        //if(mid >= 0 && mainInits[rhs] == 1)
-                            //return mid;
-                       //semerror(OBJ_INIT, t->lineNumber);
+        case AST_ID: if(classContainingExpr < 0) {
+
                         return inMainST(t->idVal, t->lineNumber);
                      }
                      if(methodContainingExpr < 0) {
@@ -741,7 +772,28 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                          if(lhs == -1) return lhs;
                          semerror(PRINT, t->lineNumber);
         case NAT_LITERAL_EXPR: return -1;
-        case ID_EXPR: return typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
+        
+        case ID_EXPR: if(classContainingExpr < 0) {
+                        t->staticClassNum = 0;
+                        t->staticMemberNum = 0;
+                      } 
+
+                      else {
+
+                        cm = findVarInSuper(t->children->data->idVal, classContainingExpr);
+                        if(cm.c == -1) {
+                            t->staticClassNum = 0;
+                            t->staticMemberNum = 0;
+                        }
+                        else {
+                            t->staticMemberNum = cm.m;
+                            t->staticClassNum = cm.c;
+                        }
+                      }
+
+                      return typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
+
+
         case EXPR_LIST: return typeExprs(t, classContainingExpr, methodContainingExpr);
 
         default: semerror(-1, t->lineNumber);

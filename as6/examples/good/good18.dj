@@ -14,5 +14,6 @@ main {
   c = new C1();
   printNat(11);
   c.foo(33);
+  c.bar(69);
   printNat(16);
 }

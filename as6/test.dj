@@ -1,0 +1,20 @@
+class C1 extends Object { 
+	nat m; 
+	C2 o1;
+
+	nat foo() {
+		this.m = 10;
+	}
+}
+class C2 extends C1 { nat n; C2 o2;} 
+main {
+	
+	C1 oc1;
+
+	oc1.m;
+	oc1.m = 69;
+	oc1.o1.o2.n = 20;
+
+	new C2().m; 
+	new C2().n;
+}

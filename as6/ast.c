@@ -92,17 +92,17 @@ void printNodeTypeAndAttribute(ASTree *t) {
     case METHOD_DECL: printf("METHOD_DECL   (ends on line %u)", t->lineNumber); break;
     case PARAM_DECL_LIST: printf("PARAM_DECL_LIST   (ends on line %u)", t->lineNumber); break;
     case PARAM_DECL: printf("PARAM_DECL   (ends on line %u)", t->lineNumber); break;
-    case NAT_TYPE: printf("NAT_TYPE   (ends on line %u)",t->lineNumber); break;
-    case AST_ID: printf("AST_ID(%s)   (ends on line %u)",t->idVal, t->lineNumber); break;
+    case NAT_TYPE: printf("NAT_TYPE   (ends on line %u)", t->lineNumber); break;
+    case AST_ID: printf("AST_ID(%s)   (ends on line %u)", t->idVal, t->lineNumber); break;
     case EXPR_LIST: printf("EXPR_LIST   (ends on line %u)", t->lineNumber); break;
 
     //id expressions
-    case DOT_METHOD_CALL_EXPR: printf("DOT_METHOD_CALL_EXPR   (ends on line %u)", t->lineNumber); break;
-    case METHOD_CALL_EXPR: printf("METHOD_CALL_EXPR   (ends on line %u)", t->lineNumber); break;
-    case DOT_ID_EXPR: printf("DOT_ID_EXPR   (ends on line %u)", t->lineNumber); break;
-    case ID_EXPR: printf("ID_EXPR   (ends on line %u)", t->lineNumber); break;
-    case DOT_ASSIGN_EXPR: printf("DOT_ASSIGN_EXPR   (ends on line %u)", t->lineNumber); break;
-    case ASSIGN_EXPR: printf("ASSIGN_EXPR   (ends on line %u)", t->lineNumber); break;
+    case DOT_METHOD_CALL_EXPR: printf("DOT_METHOD_CALL_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
+    case METHOD_CALL_EXPR: printf("METHOD_CALL_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
+    case DOT_ID_EXPR: printf("DOT_ID_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
+    case ID_EXPR: printf("ID_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
+    case DOT_ASSIGN_EXPR: printf("DOT_ASSIGN_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
+    case ASSIGN_EXPR: printf("ASSIGN_EXPR   (ends on line %u) ### %d, %d", t->lineNumber, t->staticClassNum, t->staticMemberNum); break;
 
     case PLUS_EXPR: printf("PLUS_EXPR   (ends on line %u)", t->lineNumber); break;
     case MINUS_EXPR: printf("MINUS_EXPR   (ends on line %u)", t->lineNumber); break;
