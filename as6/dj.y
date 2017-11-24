@@ -9,6 +9,8 @@ Daniel Sawyer */
   #include "ast.h"
   #include "symtbl.h"
   #include "typecheck.h"
+  #include "codegen.h"
+  #include <string.h>
 
   /* Symbols in this grammar are represented as ASTs */ 
   #define YYSTYPE ASTree *
@@ -228,16 +230,52 @@ int main(int argc, char **argv) {
   /* parse and interpret the program */
   yyparse();
   
-  
+  // if(debug)
+  //   printAST(pgmAST);
   setupSymbolTables(pgmAST);
   typecheckProgram();
 
   if(debug)
     printAST(pgmAST);
 
+
+  //sets up output dism file bullshit, just changes extension
+  FILE *fp;
+  int len, i, period = -1, extlen;
+  char *newFileName;
+
+  len = strlen(argv[1]);
+  for(i = 0; i < len; i++) {
+    if(argv[1][i] == '.')
+      period = i;
+  }
+  if(period == -1){
+    printf("File %s does not have an extension, must be *.dj file\n", argv[1]);
+    return -1;
+  }
+  extlen = len - period - 1;
+  if(extlen != 2) {
+    printf("File %s must have .dj extension\n", argv[1]);
+    return -1;
+  }
   
+  newFileName = (char*)calloc(len + 3, 1);
+  for(i = 0; i < len; i++) {
+    newFileName[i] = argv[1][i];
+  }
+
+  newFileName[period + 1] = 'd';
+  newFileName[period + 2] = 'i';
+  newFileName[period + 3] = 's';
+  newFileName[period + 4] = 'm';
+  newFileName[period + 5] = '\0';
+  //printf("\nDEBUG\n");
+  fp = fopen(newFileName, "w");
+
+  generateDISM(fp);
 
   /*interpret(pgmAST);*/
+  fclose(fp);
   return 0;
 
 

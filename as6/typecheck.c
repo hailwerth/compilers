@@ -66,11 +66,11 @@ void semerror(SemError er, int l) {
 
     exit(-1);
 }
+
+//pair type for static and method stuff
 typedef struct pair{
     int c, m;
 }pair;
-int *mainInits;
-int **classInits;
 
 //my helper functions
 int join(int t1, int t2) {
@@ -242,31 +242,8 @@ pair methInClass(int c, char *var, ASTree* argl, int ogclass, int ogmeth) {
 
     return methInClass(classesST[c].superclass, var, argl, ogclass, ogmeth);
 }
-int getMethRet(int c, int m) {
-    return classesST[c].methodList[m].returnType;
-}
-void updateST(int classContainingExpr, int methodContainingExpr, int rhs, char *var) {
 
-    int i;
-    if(classContainingExpr < 0) {
-
-        for(i=0; i < numMainBlockLocals; i++) {
-            if(!strcmp(mainBlockST[i].varName, var)) {
-                mainBlockST[i].type = rhs;
-                //printf("\nvar = %s\n", var);
-            }
-        }
-    }
-
-    if(classContainingExpr > 0) {
-        for(i = 0; i < classesST[classContainingExpr].numVars; i++) {
-            if(!strcmp(classesST[classContainingExpr].varList[i].varName, var)) {
-                classesST[classContainingExpr].varList[i].type = rhs;
-                //printf("\nvar = %s\n", var);
-            }
-        }
-    }
-}
+//checks if var is in class or super class
 pair findVarInSuper(char *var, int c) {
 
     int i;
@@ -301,18 +278,8 @@ void typecheckProgram() {
     int i, j, k, l;
     char *si, *sj;
     
-    mainInits = (int*)malloc(sizeof(int)*numMainBlockLocals);
-    memset(mainInits, 0, sizeof(int)*numMainBlockLocals);
-
-    classInits = (int**)malloc(sizeof(int*)*numClasses);
-    for(i=0; i < numClasses; i++) {
-        j = classesST[i].numVars;
-        classInits[i] = (int*)malloc(sizeof(int)*j);
-        memset(classInits[i], 0 , sizeof(int)*j);
-    }
-
     //checks class names are unique, superclasses exist,
-    //class and super arent the same, cycles, 
+    //class and super arent the same. checks for cycles 
     for(i = 0; i < numClasses; i++) {
 
         si = classesST[i].className;
@@ -409,9 +376,9 @@ void typecheckProgram() {
             if(k)
                 semerror(METH_SIG, classesST[i].methodList[j].methodNameLineNumber);
             
-            //checks if method return types match with end of elist and method exprs
-            //DEBUG         
+            //checks if method return types match with end of elist and method exprs    
             k = typeExprs(classesST[i].methodList[j].bodyExprs, i, j);
+            //DEBUG
             //printf("\nreturn type = %d, k = %d\n", classesST[i].methodList[j].returnType, k);
             if(classesST[i].methodList[j].returnType != k && !(isSubtype(k, classesST[i].methodList[j].returnType)))
                 semerror(METH_RET_MIS, classesST[i].methodList[j].bodyExprs->childrenTail->data->lineNumber);
@@ -469,60 +436,12 @@ void typecheckProgram() {
                 return semerror(MULTI_VAR_DECL, mainBlockST[j].varNameLineNumber);
         }
     }
-
-    // printf("\nObject Info:\n");
-    // printf("name = %s\n", classesST[0].className);
-    // printf("line = %d\n", classesST[0].classNameLineNumber);
-    // printf("super = %d\n", classesST[0].superclass);
-    // printf("super line = %d\n", classesST[0].superclassLineNumber);
-    // printf("vars = %d\n", classesST[0].numVars);
-    // printf("meths = %d\n", classesST[0].numMethods);
-    // if(classesST[0].varList)
-    //     printf("varList != NULL\n");
-    // else
-    //     printf("varList == NULL\n");
-    // if(classesST[0].methodList)
-    //     printf("methList != NULL\n");
-    // else
-    //     printf("methList == NULL\n");
-    // return;
-
-    //printf("\nDEBUG\n");
-    //mainExprs
-    //return;
+    
     typeExprs(mainExprs, -1, -1);
-    //printf("\nReturn type = %d\n", temp);
-
-
-    //debug
-    // printAST(mainExprs->children->data->children->data);
-    // for(i = 0; i < numClasses; i++) {
-    //  printf("Class %d = %s\n", i, classesST[i].className);
-    // }
 }
 
 
 /* HELPER METHODS FOR typecheckProgram(): */
-
-/* Returns nonzero iff sub is a subtype of super */
-// int isSubtype(int sub, int super) {
-
-//     //printf("\nSub = %d, Super = %d\n", sub, super);
-//     if(super == -1 || sub == -1)
-//         return 0;
-
-//     if(sub == -2)
-//         return 1;
-
-//     if(sub == super)
-//         return 1;
-
-//     if(sub == 0)
-//         return 0;
-
-//     return isSubtype(classesST[sub].superclass, super);
-// }
-
 int isSubtype(int sub, int super) {
 
     if(sub == -1 || super == -1)
@@ -627,13 +546,19 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                           lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
                           if(lhs < 0) semerror(DOT_ID_L, t->lineNumber);
                           t->staticClassNum = lhs;
-                          if(t->children->data->typ == THIS_EXPR) { 
+                          if(t->children->data->typ == THIS_EXPR) {
+
                             rhs = typeExpr(t->children->next->data, lhs, -1);
-                            t->staticMemberNum = varHash(t->idVal, lhs);
+                            
+                            t->staticMemberNum = varHash(t->childrenTail->data->idVal, lhs);
+                            //printf("\nIN DOT_ID_EXPR\n");
                           }
-                          else rhs = typeExpr(t->children->next->data, lhs, methodContainingExpr);
+                          else { 
+                            rhs = typeExpr(t->children->next->data, lhs, methodContainingExpr);
                           
-                          t->staticMemberNum = varHash(t->childrenTail->data->idVal, lhs);
+                            t->staticMemberNum = varHash(t->childrenTail->data->idVal, lhs);
+                          }
+
                           if(t->staticMemberNum == -1) {
                             cm = findVarInSuper(t->childrenTail->data->idVal, classesST[lhs].superclass);
                             t->staticClassNum = cm.c;
@@ -670,12 +595,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                                    t->staticClassNum = cm.c;
                                    t->staticMemberNum = cm.m;
 
-                                   //debug
-                                   // if(classContainingExpr == -1) {
-
-                                   // }
-
-                                   return getMethRet(cm.c, cm.m);
+                                   return classesST[cm.c].methodList[cm.m].returnType;
                                    //return lhs;
 
         case METHOD_CALL_EXPR: lhs = classContainingExpr;
@@ -685,7 +605,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                                t->staticMemberNum = cm.m;
                                t->staticClassNum - cm.c;
                                if(cm.c == -1) semerror(-1, t->lineNumber);
-                               return getMethRet(cm.c, cm.m);
+                               return classesST[cm.c].methodList[cm.m].returnType;
                                    
         case ARG_LIST: p = t->children;
                        while(p && p->data) {
@@ -710,14 +630,6 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                                     semerror(IF_EL, t->lineNumber);
                                 if(mid == rhs)
                                     return rhs;
-                                // if(isSubtype(mid, rhs))
-                                //     return rhs;
-                                // if(isSubtype(rhs, mid))
-                                //     return mid;
-                                // if(mid > -1 && rhs == -2)
-                                //     return mid;
-                                // if(rhs > -1 && mid == -2)
-                                //     return rhs;
                                 
                                 if(mid < -2 || rhs < -2)
                                     semerror(IF_EL, t->lineNumber);
@@ -738,7 +650,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                        }
                        semerror(NEW, t->lineNumber);
 
-        case THIS_EXPR: if(classContainingExpr < 0) semerror(THIS_MAIN, t->lineNumber);
+        case THIS_EXPR:  if(classContainingExpr < 0) semerror(THIS_MAIN, t->lineNumber);
 
                         return classContainingExpr;
 
@@ -750,7 +662,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                      if(methodContainingExpr < 0) {
                         lhs = varInClass(classContainingExpr, t->idVal);
                         if(lhs == -4) semerror(CLASS_VAR_DNE, t->lineNumber);
-                        rhs = varHash(t->idVal, classContainingExpr);
+                        //rhs = varHash(t->idVal, classContainingExpr);
 
                         return lhs;
                      }
@@ -769,6 +681,7 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
         case NULL_EXPR: return -2;
         case READ_EXPR: return -1;
         case PRINT_EXPR: lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
+                         //DEBUG
                          if(lhs == -1) return lhs;
                          semerror(PRINT, t->lineNumber);
         case NAT_LITERAL_EXPR: return -1;

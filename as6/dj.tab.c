@@ -148,6 +148,8 @@ typedef int YYSTYPE;
   #include "ast.h"
   #include "symtbl.h"
   #include "typecheck.h"
+  #include "codegen.h"
+  #include <string.h>
 
   /* Symbols in this grammar are represented as ASTs */ 
   #define YYSTYPE ASTree *
@@ -166,13 +168,13 @@ typedef int YYSTYPE;
 
 
 /* Line 261 of yacc.c  */
-#line 170 "dj.tab.c"
+#line 172 "dj.tab.c"
 
 /* Copy the second part of user declarations.  */
 
 
 /* Line 264 of yacc.c  */
-#line 176 "dj.tab.c"
+#line 178 "dj.tab.c"
 
 #ifdef short
 # undef short
@@ -481,11 +483,11 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    48,    48,    56,    61,    67,    71,    74,    78,    81,
-      85,    90,    96,   102,   108,   117,   120,   123,   126,   130,
-     134,   136,   141,   143,   146,   150,   153,   156,   159,   162,
-     165,   167,   170,   172,   174,   178,   181,   183,   185,   187,
-     189,   191,   194,   197,   201,   204,   208
+       0,    50,    50,    58,    63,    69,    73,    76,    80,    83,
+      87,    92,    98,   104,   110,   119,   122,   125,   128,   132,
+     136,   138,   143,   145,   148,   152,   155,   158,   161,   164,
+     167,   169,   172,   174,   176,   180,   183,   185,   187,   189,
+     191,   193,   196,   199,   203,   206,   210
 };
 #endif
 
@@ -1526,7 +1528,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 49 "dj.y"
+#line 51 "dj.y"
     { (yyval) = newAST(PROGRAM,(yyvsp[(1) - (7)]),0,NULL,yylineno); pgmAST = (yyval); 
         appendToChildrenList((yyval), (yyvsp[(4) - (7)]));
         appendToChildrenList((yyval), (yyvsp[(5) - (7)]));
@@ -1536,7 +1538,7 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 57 "dj.y"
+#line 59 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (9)]), newAST(CLASS_DECL, (yyvsp[(3) - (9)]), 0, NULL, yylineno)); 
          appendToChildrenList((yyvsp[(1) - (9)])->childrenTail->data, (yyvsp[(5) - (9)]));
          appendToChildrenList((yyvsp[(1) - (9)])->childrenTail->data, (yyvsp[(7) - (9)]));
@@ -1546,7 +1548,7 @@ yyreduce:
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 62 "dj.y"
+#line 64 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (8)]), newAST(CLASS_DECL, (yyvsp[(3) - (8)]), 0, NULL, yylineno)); 
          appendToChildrenList((yyvsp[(1) - (8)])->childrenTail->data, (yyvsp[(5) - (8)]));
          appendToChildrenList((yyvsp[(1) - (8)])->childrenTail->data, (yyvsp[(7) - (8)]));
@@ -1556,14 +1558,14 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 67 "dj.y"
+#line 69 "dj.y"
     { (yyval) = newAST(CLASS_DECL_LIST, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 72 "dj.y"
+#line 74 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (4)]), newAST(VAR_DECL, (yyvsp[(2) - (4)]), 0, NULL, yylineno)); 
            appendToChildrenList((yyvsp[(1) - (4)])->childrenTail->data, (yyvsp[(3) - (4)]));;}
     break;
@@ -1571,7 +1573,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 75 "dj.y"
+#line 77 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (4)]), newAST(VAR_DECL, (yyvsp[(2) - (4)]), 0, NULL, yylineno));
            appendToChildrenList((yyvsp[(1) - (4)])->childrenTail->data, (yyvsp[(3) - (4)]));;}
     break;
@@ -1579,28 +1581,28 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 78 "dj.y"
+#line 80 "dj.y"
     { (yyval) = newAST(VAR_DECL_LIST, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 82 "dj.y"
+#line 84 "dj.y"
     { (yyval) = newAST(NAT_TYPE, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 86 "dj.y"
+#line 88 "dj.y"
     { (yyval) = newAST(AST_ID, NULL, 0, yytext, yylineno); ;}
     break;
 
   case 11:
 
 /* Line 1455 of yacc.c  */
-#line 91 "dj.y"
+#line 93 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (10)]), newAST(METHOD_DECL, (yyvsp[(2) - (10)]), 0, NULL, yylineno));
             appendToChildrenList((yyvsp[(1) - (10)])->childrenTail->data, (yyvsp[(3) - (10)]));
             appendToChildrenList((yyvsp[(1) - (10)])->childrenTail->data, (yyvsp[(5) - (10)]));
@@ -1611,7 +1613,7 @@ yyreduce:
   case 12:
 
 /* Line 1455 of yacc.c  */
-#line 97 "dj.y"
+#line 99 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (10)]), newAST(METHOD_DECL, (yyvsp[(2) - (10)]), 0, NULL, yylineno));
             appendToChildrenList((yyvsp[(1) - (10)])->childrenTail->data, (yyvsp[(3) - (10)]));
             appendToChildrenList((yyvsp[(1) - (10)])->childrenTail->data, (yyvsp[(5) - (10)]));
@@ -1622,7 +1624,7 @@ yyreduce:
   case 13:
 
 /* Line 1455 of yacc.c  */
-#line 103 "dj.y"
+#line 105 "dj.y"
     { (yyval) = newAST(METHOD_DECL_LIST, newAST(METHOD_DECL, (yyvsp[(1) - (9)]), 0, NULL, yylineno), 0, NULL, yylineno);
             appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(2) - (9)]));
             appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(4) - (9)]));
@@ -1633,7 +1635,7 @@ yyreduce:
   case 14:
 
 /* Line 1455 of yacc.c  */
-#line 109 "dj.y"
+#line 111 "dj.y"
     { (yyval) = newAST(METHOD_DECL_LIST, newAST(METHOD_DECL, (yyvsp[(1) - (9)]), 0, NULL, yylineno), 0, NULL, yylineno);
             appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(2) - (9)]));
             appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(4) - (9)]));
@@ -1644,7 +1646,7 @@ yyreduce:
   case 15:
 
 /* Line 1455 of yacc.c  */
-#line 118 "dj.y"
+#line 120 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (4)]), newAST(PARAM_DECL, (yyvsp[(3) - (4)]), 0, NULL, yylineno)); 
          appendToChildrenList((yyvsp[(1) - (4)])->childrenTail->data, (yyvsp[(4) - (4)])); ;}
     break;
@@ -1652,7 +1654,7 @@ yyreduce:
   case 16:
 
 /* Line 1455 of yacc.c  */
-#line 121 "dj.y"
+#line 123 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (4)]), newAST(PARAM_DECL, (yyvsp[(3) - (4)]), 0, NULL, yylineno)); 
          appendToChildrenList((yyvsp[(1) - (4)])->childrenTail->data, (yyvsp[(4) - (4)])); ;}
     break;
@@ -1660,7 +1662,7 @@ yyreduce:
   case 17:
 
 /* Line 1455 of yacc.c  */
-#line 124 "dj.y"
+#line 126 "dj.y"
     { (yyval) = newAST(PARAM_DECL_LIST, newAST(PARAM_DECL, (yyvsp[(1) - (2)]), 0, NULL, yylineno), 0, NULL, yylineno); 
          appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(2) - (2)])); ;}
     break;
@@ -1668,7 +1670,7 @@ yyreduce:
   case 18:
 
 /* Line 1455 of yacc.c  */
-#line 127 "dj.y"
+#line 129 "dj.y"
     { (yyval) = newAST(PARAM_DECL_LIST, newAST(PARAM_DECL, (yyvsp[(1) - (2)]), 0, NULL, yylineno), 0, NULL, yylineno); 
          appendToChildrenList((yyval)->childrenTail->data, (yyvsp[(2) - (2)])); ;}
     break;
@@ -1676,49 +1678,49 @@ yyreduce:
   case 19:
 
 /* Line 1455 of yacc.c  */
-#line 130 "dj.y"
+#line 132 "dj.y"
     { (yyval) = newAST(PARAM_DECL_LIST, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 20:
 
 /* Line 1455 of yacc.c  */
-#line 135 "dj.y"
+#line 137 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (3)]), (yyvsp[(2) - (3)])); ;}
     break;
 
   case 21:
 
 /* Line 1455 of yacc.c  */
-#line 137 "dj.y"
+#line 139 "dj.y"
     { (yyval) = newAST(EXPR_LIST, (yyvsp[(1) - (2)]), 0, NULL, yylineno); ;}
     break;
 
   case 22:
 
 /* Line 1455 of yacc.c  */
-#line 142 "dj.y"
+#line 144 "dj.y"
     { appendToChildrenList((yyvsp[(1) - (3)]), (yyvsp[(3) - (3)])); ;}
     break;
 
   case 23:
 
 /* Line 1455 of yacc.c  */
-#line 144 "dj.y"
+#line 146 "dj.y"
     { (yyval) = newAST(ARG_LIST, (yyvsp[(1) - (1)]), 0, NULL, yylineno); ;}
     break;
 
   case 24:
 
 /* Line 1455 of yacc.c  */
-#line 146 "dj.y"
+#line 148 "dj.y"
     { (yyval) = newAST(ARG_LIST, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 25:
 
 /* Line 1455 of yacc.c  */
-#line 151 "dj.y"
+#line 153 "dj.y"
     { (yyval) = newAST(PLUS_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1726,7 +1728,7 @@ yyreduce:
   case 26:
 
 /* Line 1455 of yacc.c  */
-#line 154 "dj.y"
+#line 156 "dj.y"
     { (yyval) = newAST(MINUS_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1734,7 +1736,7 @@ yyreduce:
   case 27:
 
 /* Line 1455 of yacc.c  */
-#line 157 "dj.y"
+#line 159 "dj.y"
     { (yyval) = newAST(TIMES_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1742,7 +1744,7 @@ yyreduce:
   case 28:
 
 /* Line 1455 of yacc.c  */
-#line 160 "dj.y"
+#line 162 "dj.y"
     { (yyval) = newAST(EQUALITY_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1750,7 +1752,7 @@ yyreduce:
   case 29:
 
 /* Line 1455 of yacc.c  */
-#line 163 "dj.y"
+#line 165 "dj.y"
     { (yyval) = newAST(LESS_THAN_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1758,14 +1760,14 @@ yyreduce:
   case 30:
 
 /* Line 1455 of yacc.c  */
-#line 166 "dj.y"
+#line 168 "dj.y"
     {(yyval) = newAST(NOT_EXPR, (yyvsp[(2) - (2)]), 0, NULL, yylineno);}
     break;
 
   case 31:
 
 /* Line 1455 of yacc.c  */
-#line 168 "dj.y"
+#line 170 "dj.y"
     { (yyval) = newAST(AND_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1773,21 +1775,21 @@ yyreduce:
   case 32:
 
 /* Line 1455 of yacc.c  */
-#line 171 "dj.y"
+#line 173 "dj.y"
     { (yyval) = newAST(NAT_LITERAL_EXPR, NULL, atoi(yytext), NULL, yylineno); ;}
     break;
 
   case 33:
 
 /* Line 1455 of yacc.c  */
-#line 173 "dj.y"
+#line 175 "dj.y"
     { (yyval) = newAST(NULL_EXPR, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 34:
 
 /* Line 1455 of yacc.c  */
-#line 175 "dj.y"
+#line 177 "dj.y"
     { (yyval) = newAST(IF_THEN_ELSE_EXPR, (yyvsp[(3) - (11)]), 0, NULL, yylineno);
          appendToChildrenList((yyval), (yyvsp[(6) - (11)]));
          appendToChildrenList((yyval), (yyvsp[(10) - (11)])); ;}
@@ -1796,7 +1798,7 @@ yyreduce:
   case 35:
 
 /* Line 1455 of yacc.c  */
-#line 179 "dj.y"
+#line 181 "dj.y"
     { (yyval) = newAST(WHILE_EXPR, (yyvsp[(3) - (7)]), 0, NULL, yylineno);
          appendToChildrenList((yyval), (yyvsp[(6) - (7)])); ;}
     break;
@@ -1804,42 +1806,42 @@ yyreduce:
   case 36:
 
 /* Line 1455 of yacc.c  */
-#line 182 "dj.y"
+#line 184 "dj.y"
     { (yyval) = newAST(NEW_EXPR, (yyvsp[(2) - (4)]), 0, NULL, yylineno); ;}
     break;
 
   case 37:
 
 /* Line 1455 of yacc.c  */
-#line 184 "dj.y"
+#line 186 "dj.y"
     { (yyval) = newAST(THIS_EXPR, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 38:
 
 /* Line 1455 of yacc.c  */
-#line 186 "dj.y"
+#line 188 "dj.y"
     { (yyval) = newAST(PRINT_EXPR, (yyvsp[(3) - (4)]), 0, NULL, yylineno); ;}
     break;
 
   case 39:
 
 /* Line 1455 of yacc.c  */
-#line 188 "dj.y"
+#line 190 "dj.y"
     { (yyval) = newAST(READ_EXPR, NULL, 0, NULL, yylineno); ;}
     break;
 
   case 40:
 
 /* Line 1455 of yacc.c  */
-#line 190 "dj.y"
+#line 192 "dj.y"
     { (yyval) = newAST(ID_EXPR, (yyvsp[(1) - (1)]), 0, NULL, yylineno); ;}
     break;
 
   case 41:
 
 /* Line 1455 of yacc.c  */
-#line 192 "dj.y"
+#line 194 "dj.y"
     {(yyval) = newAST(DOT_ID_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno) ;
         appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1847,7 +1849,7 @@ yyreduce:
   case 42:
 
 /* Line 1455 of yacc.c  */
-#line 195 "dj.y"
+#line 197 "dj.y"
     { (yyval) = newAST(ASSIGN_EXPR, (yyvsp[(1) - (3)]), 0, NULL, yylineno);
          appendToChildrenList((yyval), (yyvsp[(3) - (3)])); ;}
     break;
@@ -1855,7 +1857,7 @@ yyreduce:
   case 43:
 
 /* Line 1455 of yacc.c  */
-#line 198 "dj.y"
+#line 200 "dj.y"
     { (yyval) = newAST(DOT_ASSIGN_EXPR, (yyvsp[(1) - (5)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (5)])); 
          appendToChildrenList((yyval), (yyvsp[(5) - (5)])); ;}
@@ -1864,7 +1866,7 @@ yyreduce:
   case 44:
 
 /* Line 1455 of yacc.c  */
-#line 202 "dj.y"
+#line 204 "dj.y"
     { (yyval) = newAST(METHOD_CALL_EXPR, (yyvsp[(1) - (4)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (4)])); ;}
     break;
@@ -1872,7 +1874,7 @@ yyreduce:
   case 45:
 
 /* Line 1455 of yacc.c  */
-#line 205 "dj.y"
+#line 207 "dj.y"
     { (yyval) = newAST(DOT_METHOD_CALL_EXPR, (yyvsp[(1) - (6)]), 0, NULL, yylineno); 
          appendToChildrenList((yyval), (yyvsp[(3) - (6)]));
          appendToChildrenList((yyval), (yyvsp[(5) - (6)])); ;}
@@ -1881,14 +1883,14 @@ yyreduce:
   case 46:
 
 /* Line 1455 of yacc.c  */
-#line 209 "dj.y"
+#line 211 "dj.y"
     { (yyval) = (yyvsp[(2) - (3)]); ;}
     break;
 
 
 
 /* Line 1455 of yacc.c  */
-#line 1892 "dj.tab.c"
+#line 1894 "dj.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -2100,7 +2102,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 212 "dj.y"
+#line 214 "dj.y"
 
 
 int main(int argc, char **argv) {
@@ -2120,14 +2122,52 @@ int main(int argc, char **argv) {
   /* parse and interpret the program */
   yyparse();
   
-  
+  // if(debug)
+  //   printAST(pgmAST);
   setupSymbolTables(pgmAST);
   typecheckProgram();
 
   if(debug)
     printAST(pgmAST);
 
+
+  //sets up output dism file bullshit, just changes extension
+  FILE *fp;
+  int len, i, period = -1, extlen;
+  char *newFileName;
+
+  len = strlen(argv[1]);
+  for(i = 0; i < len; i++) {
+    if(argv[1][i] == '.')
+      period = i;
+  }
+  if(period == -1){
+    printf("File %s does not have an extension, must be *.dj file\n", argv[1]);
+    return -1;
+  }
+  extlen = len - period - 1;
+  if(extlen != 2) {
+    printf("File %s must have .dj extension\n", argv[1]);
+    return -1;
+  }
+  
+  newFileName = (char*)calloc(len + 3, 1);
+  for(i = 0; i < len; i++) {
+    newFileName[i] = argv[1][i];
+  }
+
+  newFileName[period + 1] = 'd';
+  newFileName[period + 2] = 'i';
+  newFileName[period + 3] = 's';
+  newFileName[period + 4] = 'm';
+  newFileName[period + 5] = '\0';
+  //printf("\nDEBUG\n");
+  fp = fopen(newFileName, "w");
+
+  generateDISM(fp);
+
   /*interpret(pgmAST);*/
+  fclose(fp);
   return 0;
 
 

@@ -8,7 +8,7 @@ class C extends Object {
 
 main {
   C c;
-  printNat(  (new C()).n=5 );  
+  //printNat(  (new C()).n=5 );  
   c = (new C()).identity(c).identity(c).identity(c);
   printNat(c.n);  
   c.identity(c).identity(null).identity(c).identity(null).n = 6;
