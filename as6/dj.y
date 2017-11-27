@@ -227,58 +227,56 @@ int main(int argc, char **argv) {
   int debug=0;
   if(argc==3) debug=1;
 
-  /* parse and interpret the program */
+  /* parse, symtbl, typecheck, codegen */
   yyparse();
-  
-  // if(debug)
-  //   printAST(pgmAST);
   setupSymbolTables(pgmAST);
   typecheckProgram();
-
   if(debug)
     printAST(pgmAST);
-
 
   //sets up output dism file bullshit, just changes extension
   FILE *fp;
   int len, i, period = -1, extlen;
   char *newFileName;
 
+  //finds index of last period in filename
   len = strlen(argv[1]);
   for(i = 0; i < len; i++) {
     if(argv[1][i] == '.')
       period = i;
   }
+
+  //if period not there, filename error
   if(period == -1){
     printf("File %s does not have an extension, must be *.dj file\n", argv[1]);
     return -1;
   }
+
+  //error if extension is wrong size or not type .dj
   extlen = len - period - 1;
-  if(extlen != 2) {
+  if(extlen != 2 || argv[1][period+1] != 'd' || argv[1][period+2] != 'j') {
     printf("File %s must have .dj extension\n", argv[1]);
     return -1;
   }
   
+  //copies everything up until the last period
   newFileName = (char*)calloc(len + 3, 1);
   for(i = 0; i < len; i++) {
     newFileName[i] = argv[1][i];
   }
 
+  //changes extension to dism and opens it for writing
   newFileName[period + 1] = 'd';
   newFileName[period + 2] = 'i';
   newFileName[period + 3] = 's';
   newFileName[period + 4] = 'm';
   newFileName[period + 5] = '\0';
-  //printf("\nDEBUG\n");
   fp = fopen(newFileName, "w");
 
+  //runs codegen shit
   generateDISM(fp);
 
-  /*interpret(pgmAST);*/
+  //closes output file and quits
   fclose(fp);
   return 0;
-
-
-  /* parse the input program */
-  /*return yyparse();*/
 }

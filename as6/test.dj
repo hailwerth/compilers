@@ -1,20 +1,16 @@
-class C1 extends Object { 
-	nat m; 
-	C2 o1;
-
-	nat foo() {
-		this.m = 10;
-	}
-}
-class C2 extends C1 { nat n; C2 o2;} 
 main {
-	
-	C1 oc1;
+	nat x;
+	nat y;
+	nat z;
 
-	oc1.m;
-	oc1.m = 69;
-	oc1.o1.o2.n = 20;
+	x = readNat();
+	y = readNat();
+	z = 1;
 
-	new C2().m; 
-	new C2().n;
+	while(0 < y) {
+		z = z * x;
+		y = y - 1;
+	};
+
+	printNat(z);
 }
