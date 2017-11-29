@@ -1,0 +1,26 @@
+#INITPTRS: mov 0 0
+mov 5 0  ;sets HP
+mov 6 65535  ;sets SP
+mov 7 65535  ;sets FP
+
+#INITMAIN: mov 0 0
+str 6 0 0  ;sets main var 0 to zero
+mov 1 1  ;DECSP
+sub 6 6 1  ;DECSP
+blt 6 5 #END  ;DECSP
+beq 6 5 #END  ;DECSP
+
+str 6 0 0  ;sets main var 1 to zero
+mov 1 1  ;DECSP
+sub 6 6 1  ;DECSP
+blt 6 5 #END  ;DECSP
+beq 6 5 #END  ;DECSP
+
+str 6 0 0  ;sets main var 2 to zero
+mov 1 1  ;DECSP
+sub 6 6 1  ;DECSP
+blt 6 5 #END  ;DECSP
+beq 6 5 #END  ;DECSP
+
+
+#END: hlt 0  ;END OF PROGRAM

@@ -1,0 +1,235 @@
+#INITPTRS: mov 0 0
+mov 5 0  ;sets HP
+mov 6 65535  ;sets SP
+mov 7 65535  ;sets FP
+
+#INITMAIN: mov 0 0
+str 6 0 0  ;sets main var 0 to zero
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+str 6 0 0  ;sets main var 1 to zero
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+
+#MAINEXPRS: mov 0 0
+mov 0 0    ;READ-START
+rdn 1      ;reads in
+str 6 0 1  ;READ-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+mov 0 0    ;READ-START
+rdn 1      ;reads in
+str 6 0 1  ;READ-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;ASSIGN-START
+mov 1 65534    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;ID-START-LOCAL
+mov 1 65534    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;TIMES-START
+lod 1 6 2  ;times-load e1
+lod 2 6 1  ;times-load e2
+mul 1 1 2  ;times-times e1+e2
+str 6 2 1  ;TIMES-END
+
+mov 1 1   ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 0 0    ;NATLIT-START
+mov 1 6    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+#LOOP0: mov 0 0  ;WHILE-START
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 1    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;MINUS-START
+lod 1 6 2  ;minus-load e1
+lod 2 6 1  ;minus-load e2
+sub 1 1 2  ;minus-minus e1+e2
+str 6 2 1  ;MINUS-END
+
+mov 1 1   ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+mov 1 1  ;while-cond-start
+lod 2 6 1  ;while-load-conditional-outcomemov 1 1   ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+blt 2 1 #LOOPEND0  ;while-cond-end
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+jmp 0 #LOOP0
+#LOOPEND0: str 6 1 0  ;WHILE-END
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+#LOOP1: mov 0 0  ;WHILE-START
+mov 1 1  ;while-cond-start
+lod 2 6 1  ;while-load-conditional-outcomemov 1 1   ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+blt 2 1 #LOOPEND1  ;while-cond-end
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 1    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1   ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+jmp 0 #LOOP1
+#LOOPEND1: str 6 1 0  ;WHILE-END
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+
+#END: hlt 0  ;END OF PROGRAM

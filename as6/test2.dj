@@ -1,0 +1,21 @@
+main {
+	nat x;
+	nat y;
+
+	x = readNat();
+	y = readNat();
+	printNat(x * y);
+
+	x = 6;
+	while(x = x - 1) {
+		printNat(x);
+		// x = x - 1;
+	};
+	printNat(x);
+
+	while(x < 5) {
+		printNat(x);
+		x = x + 1;
+	};
+	printNat(x);
+}
