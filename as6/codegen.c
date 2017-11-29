@@ -153,7 +153,7 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 						 fprintf(fout, "#LOOP%d: mov 0 0  ;WHILE-START\n", temp);
 						 codeGenExpr(t->children->data, classNumber, methodNumber);
 						 fprintf(fout, "mov 1 1  ;while-cond-start\n");
-						 fprintf(fout, "lod 2 6 1  ;while-load-conditional-outcome");
+						 fprintf(fout, "lod 2 6 1  ;while-load-conditional-outcome\n");
 						 incSP();
 						 fprintf(fout, "blt 2 1 #LOOPEND%d  ;while-cond-end\n", temp);
 						 codeGenExprs(t->childrenTail->data, classNumber, methodNumber);
