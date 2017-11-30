@@ -117,10 +117,10 @@ lod 1 6 2           ;LESS-START-load-e1
 lod 2 6 1           ;less-load-e2
 blt 1 2 #LESS0      ;less-cond-check
 str 6 2 0           ;less-stores-zero
-jmp 0 #LESSEND0    ;less-jmp-to-end
-#LESS0: mov 1 1    ;less-sets-1
+jmp 0 #LESSEND0     ;less-jmp-to-end
+#LESS0: mov 1 1     ;less-sets-1
 str 6 2 1           ;less-store-1
-#LESSEND0: mov 0 0 ;less-end-noop
+#LESSEND0: mov 0 0  ;less-end-noop
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 
@@ -267,10 +267,10 @@ lod 1 6 2           ;LESS-START-load-e1
 lod 2 6 1           ;less-load-e2
 blt 1 2 #LESS1      ;less-cond-check
 str 6 2 0           ;less-stores-zero
-jmp 0 #LESSEND1    ;less-jmp-to-end
-#LESS1: mov 1 1    ;less-sets-1
+jmp 0 #LESSEND1     ;less-jmp-to-end
+#LESS1: mov 1 1     ;less-sets-1
 str 6 2 1           ;less-store-1
-#LESSEND1: mov 0 0 ;less-end-noop
+#LESSEND1: mov 0 0  ;less-end-noop
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 
@@ -726,6 +726,8 @@ blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
 
 mov 0 0    ;NULL-END
+lod 1 6 1
+str 6 2 1
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 
@@ -773,6 +775,8 @@ blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
 
 mov 0 0    ;NULL-END
+lod 1 6 1
+str 6 2 1
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 

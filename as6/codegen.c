@@ -9,11 +9,14 @@ Daniel Sawyer */
 FILE *fout;
 unsigned int SP = 0, FP = 0, HP = 0;
 int loopCount = 0, lessCount = 0, equalityCount = 0, andCount = 0, notCount = 0, ifCount = 0;
+int methCount = 0;
 
 //my helper funcs
 void codeGenExpr(ASTree *t, int classNumber, int methodNumber);
 void codeGenExprs(ASTree *expList, int classNumber, int methodNumber);
+void codeGenExprsLeave(ASTree *expList, int classNumber, int methodNumber);
 int getNumObjectFields(int type);
+void genPrologue(int class, int meth);
 void decSP() {
 	--SP;
 	fprintf(fout, "mov 1 1       ;DECSP-START\n");
@@ -26,9 +29,10 @@ void incSP() {
 	fprintf(fout, "mov 1 1    ;INCSP-START\n");
 	fprintf(fout, "add 6 6 1  ;INCSP-END\n\n");
 }
-void incHP() {
-
-}
+// void incHP() {
+// 	++HP;
+// 	fprintf(fout, "")
+// }
 int varNumMain(char *var) {
 	int i = 0;
 	while(i < numMainBlockLocals) {
@@ -36,6 +40,22 @@ int varNumMain(char *var) {
 			return i;
 		i++;
 	}
+}
+int getObjType(char *var) {
+	int i = 0;
+	while(i < numClasses) {
+		if(!strcmp(var, classesST[i].className))
+			return i;
+		i++;
+	}
+}
+int numFields(int type) {
+	int count = 0;
+	while(type > 0) {
+		count += classesST[type].numVars;
+		type = classesST[type].superclass;
+	}
+	return count;
 }
 
 void generateDISM(FILE *fp) {
@@ -64,19 +84,58 @@ void generateDISM(FILE *fp) {
 	fprintf(fout, "#MAINEXPRS: mov 0 0\n");
 	codeGenExprs(mainExprs, 0, 0);
 
-	//MAIN END... NIGGA
-	fprintf(fout, "mov 1 69\n");
-	fprintf(fout, "ptn 1\n");
+	//MAIN END
 	fprintf(fout, "ptn 6\n");
 	fprintf(fout, "#END: hlt 0  ;END OF PROGRAM\n");
+
+	//setup methods
+	int j;
+	for(i = 0; i < numClasses; i++) {
+
+		for(j = 0; j < classesST[i].numMethods; j++) {
+			fprintf(fout, "#Class%dMethod%d: mov 0 0  ;c%dm%d-setup\n", i, j, i, j);
+			genPrologue(i, j);
+		}
+	}
 }
 
 //code gen shit
 void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 
-	int temp;
+	int temp, type, n;
 
 	switch(t->typ) {
+
+		case DOT_METHOD_CALL_EXPR: fprintf(fout, "mov 0 0  ;METH-DOT-START\n");
+
+								   fprintf(fout, "#METHRET%d: mov 0 0  ;METH-DOT-END\n", methCount++);
+								   break;
+
+		case DOT_ASSIGN_EXPR: fprintf(fout, "mov 0 0  ;DOT-ASSIGN-START\n");
+							  codeGenExpr(t->childrenTail->data, classNumber, methodNumber);
+							  codeGenExpr(t->children->data, classNumber, methodNumber);
+							  //checks for null
+							  fprintf(fout, "lod 1 6 1  ;dot-assign-null-check\n");
+							  fprintf(fout, "beq 1 0 #END  ;dot-assign-halt-if-null\n");
+							  fprintf(fout, "lod 2 6 2  ;dot-assign-load-value2store\n");
+							  fprintf(fout, "mov 3 %d    ;dot-assign-offset\n", t->staticMemberNum + 1);
+							  fprintf(fout, "sub 1 1 3  ;dot-assign-heap-address2store\n");
+							  fprintf(fout, "str 1 0 2  ;dot-assign-store-val\n");
+							  incSP();
+							  fprintf(fout, "mov 0 0  ;DOT-ASSIGN-END\n");
+							  break;
+
+		case DOT_ID_EXPR: fprintf(fout, "mov 0 0  ;DOT-ID-START\n");
+						  codeGenExpr(t->children->data, classNumber, methodNumber);
+						  fprintf(fout, "lod 1 6 1  ;dot-id-null-check\n");
+						  fprintf(fout, "beq 1 0 #END  ;dot-id-halt-if-null\n");
+						  fprintf(fout, "mov 2 %d  ;dot-id-sub-num\n", t->staticMemberNum + 1);
+						  fprintf(fout, "sub 1 1 2  ;dot-id-heap-address2read\n");
+						  //fprintf(fout, "ptn 1\n"); //DEBUG
+						  fprintf(fout, "lod 1 1 0   ;dot-id-loads-val\n");
+						  fprintf(fout, "str 6 1 1  ;dot-id-push-val-stack\n");
+						  fprintf(fout, "mov 0 0  ;DOT-ID-END\n");
+						  break;
 
 		case ASSIGN_EXPR: //printf("\nIN ASSIGN\n");	
 						  if(t->staticClassNum <= 0) {
@@ -96,8 +155,10 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 						fprintf(fout, "lod 1 1 0  ;id-load-from-stack\n");
 						fprintf(fout, "str 6 0 1  ;ID-END\n\n");
 						decSP();
+						break;
 					  }
-					  break;
+
+					  
 
 		case PRINT_EXPR: //printf("\nIN PRINT\n");
 						 codeGenExpr(t->children->data, classNumber, methodNumber);
@@ -207,11 +268,17 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 								fprintf(fout, "lod 1 6 1      ;IF-START\n");
 								fprintf(fout, "beq 1 0 #IF%d   ;if-cond\n", temp);
 								//incSP();
-								codeGenExprs(t->children->next->data, classNumber, methodNumber);
+								codeGenExprsLeave(t->children->next->data, classNumber, methodNumber);
+								fprintf(fout, "lod 1 6 1\n");
+								fprintf(fout, "str 6 2 1\n");
+								incSP();
 								fprintf(fout, "jmp 0 #IFEND%d  ;if-jmp-end\n", temp);
 								fprintf(fout, "#IF%d: mov 0 0  ;if-else-start\n", temp);
 								//incSP();
-								codeGenExprs(t->childrenTail->data, classNumber, methodNumber);
+								codeGenExprsLeave(t->childrenTail->data, classNumber, methodNumber);
+								fprintf(fout, "lod 1 6 1\n");
+								fprintf(fout, "str 6 2 1\n");
+								incSP();
 								fprintf(fout, "#IFEND%d: mov 0 0 ;IF-END\n", temp);
 								break;
 
@@ -229,12 +296,33 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 						 break;
 
 		case NEW_EXPR: //lvl3
-					   NULL;
-					   //lvl2, basically does nothing
 					   fprintf(fout, "mov 0 0  ;NEW-START\n");
-					   fprintf(fout, "str 6 0 0  ;new-push-0\n");
+					   type = getObjType(t->children->data->idVal);
+					   n = numFields(type);
+					   if(!(HP + temp + 1 < SP)) {
+					   		printf("\nError, ran out of memory HP >= SP\n");
+					   		exit(-1);
+					   }
+					   fprintf(fout, "mov 1 1  ;new-set-1\n");
+					   temp = 0;
+					   while(temp < n) {
+					   		fprintf(fout, "str 5 0 0  ;new-alloc-%d\n", temp);
+					   		fprintf(fout, "add 5 5 1  ;new-incHP-%d\n", temp);
+					   		HP++;
+					   		temp++;
+					   }
+					   fprintf(fout, "mov 2 %d    ;new-r2=type\n", type);
+					   fprintf(fout, "str 5 0 2  ;new-store-type\n");
+					   fprintf(fout, "str 6 0 5  ;new-push-stack\n");
+					   //fprintf(fout, "ptn 5\n"); //DEBUG
+					   fprintf(fout, "add 5 5 1  ;new-incHP\n");
+					   HP++;
 					   decSP();
-					   fprintf(fout, "mov 0 0  ;NEW-END\n");
+					   //lvl2, basically does nothing
+					   // fprintf(fout, "mov 0 0  ;NEW-START\n");
+					   // fprintf(fout, "str 6 0 0  ;new-push-0\n");
+					   // decSP();
+					   // fprintf(fout, "mov 0 0  ;NEW-END\n");
 					   break;
 
 		case NULL_EXPR: fprintf(fout, "mov 0 0    ;NULL-START\n");
@@ -248,14 +336,31 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 	}
 }
 
+//pops the last expr of elist off of stack
 void codeGenExprs(ASTree *expList, int classNumber, int methodNumber) {
 
 	ASTList *p = expList->children;
 
 	while(p && p->data) {
 		codeGenExpr(p->data, classNumber, methodNumber);
-		//if(p->next && p->next->data)
+		incSP();
+		p = p->next;
+	}
+}
+
+//leaves last expr of elist on the stack
+void codeGenExprsLeave(ASTree *expList, int classNumber, int methodNumber) {
+
+	ASTList *p = expList->children;
+
+	while(p && p->data) {
+		codeGenExpr(p->data, classNumber, methodNumber);
+		if(p->next && p->next->data)
 			incSP();
 		p = p->next;
 	}
+}
+
+void genPrologue(int class, int meth) {
+
 }

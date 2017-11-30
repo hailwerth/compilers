@@ -1,0 +1,10 @@
+The algorithm goes:
+1. int returnAddr = labelNumber
+2. push #returnAddr (note: preprocessing for DISM will resolve the value) onto the stack
+3. push the caller onto the stack (e.g.,"this" or "e" of e.id)
+4. Null-dereference check for  e IF it exists (e.id case)
+5. find and push class and method #'s (for "id")
+6. CG @ arg
+7. push #args
+8. jump to Vtable
+9. *#returnAddr: mov 0 0

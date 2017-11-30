@@ -692,7 +692,12 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                       } 
 
                       else {
-
+                        lhs = varInMethNum(classContainingExpr, methodContainingExpr, t->children->data->idVal);
+                        if(lhs != -4) {
+                            t->staticClassNum = 0;
+                            t->staticMemberNum = 0;
+                            return typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
+                        }
                         cm = findVarInSuper(t->children->data->idVal, classContainingExpr);
                         if(cm.c == -1) {
                             t->staticClassNum = 0;

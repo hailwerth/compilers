@@ -1,27 +1,55 @@
-// class C extends Object {
-// 	nat x;
-// 	nat y;
-// }
+class C extends Object {
+	nat x;
+	nat y;
+	C o1;
 
-// main {
-// 	nat n;
-// 	C o;
-
-// 	o = new C();
-// 	o.x = 69;
-// 	printNat(o.x);
-// }
+	nat printXplusY() {
+		//nat y;
+		printNat(x + y);
+	}
+}
+class D extends C {
+	nat printXplusY() {
+		printNat(999);
+	}
+}
 
 main {
-	nat a;
-	nat b;
+	nat n;
+	C o;
 
-	a = 0;
-	b = 1;
+	o = new C();
+	o.x = 69;
+	n = 5;
+	printNat(o.x);
+	o.y = 169;
+	printNat(o.y);
 
-	while(if(a < b) {printNat(b);} else {printNat(a);}) {
-		printNat(69);
-		a = 1;
-		b = 0;
-	};
+	o.o1 = new C();
+	o.o1.x = 6969;
+	printNat(o.o1.x);
+
+	o.o1.o1 = new C();
+	o.o1.o1.x = 100;
+	printNat(o.o1.o1.x);
+
+	n = o.o1.x && o.o1.o1.y;
+	printNat(n);
+
+	o.printXplusY();
+	o.o1 = new D();
+	o.o1.printXplusY();
 }
+
+// main {
+// 	nat a;
+// 	nat b;
+
+// 	a = 0;
+// 	b = 5;
+
+// 	while(if(a < b) {printNat(b);} else {printNat(0);}) {
+// 		printNat(69);
+// 		a = a + 1;
+// 	};
+// }
