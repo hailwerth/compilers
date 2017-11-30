@@ -7,9 +7,8 @@ Daniel Sawyer */
 //GLOBALS
 #define MAX_DISM_ADDR 65535
 FILE *fout;
-unsigned int labelNumber = 0;
 unsigned int SP = 0, FP = 0, HP = 0;
-unsigned int loopCount = 0;
+int loopCount = 0, lessCount = 0, equalityCount = 0, andCount = 0, notCount = 0, ifCount = 0;
 
 //my helper funcs
 void codeGenExpr(ASTree *t, int classNumber, int methodNumber);
@@ -24,7 +23,7 @@ void decSP() {
 }
 void incSP() {
 	++SP;
-	fprintf(fout, "mov 1 1   ;INCSP-START\n");
+	fprintf(fout, "mov 1 1    ;INCSP-START\n");
 	fprintf(fout, "add 6 6 1  ;INCSP-END\n\n");
 }
 void incHP() {
@@ -46,7 +45,7 @@ void generateDISM(FILE *fp) {
 	SP = FP = MAX_DISM_ADDR;
 	HP = 0;
 
-	//puts main locals on the stack, sets sp, hp, fp
+	//sets sp, hp, fp
 	fprintf(fout, "#INITPTRS: mov 0 0\n");
 	fprintf(fout, "mov 5 %d  ;sets HP\n", HP);
 	fprintf(fout, "mov 6 %d  ;sets SP\n", SP);
@@ -62,11 +61,14 @@ void generateDISM(FILE *fp) {
 	}
 
 	//main exprs
-	fprintf(fout, "\n#MAINEXPRS: mov 0 0\n");
+	fprintf(fout, "#MAINEXPRS: mov 0 0\n");
 	codeGenExprs(mainExprs, 0, 0);
 
-	//END
-	fprintf(fout, "\n#END: hlt 0  ;END OF PROGRAM\n");
+	//MAIN END... NIGGA
+	fprintf(fout, "mov 1 69\n");
+	fprintf(fout, "ptn 1\n");
+	fprintf(fout, "ptn 6\n");
+	fprintf(fout, "#END: hlt 0  ;END OF PROGRAM\n");
 }
 
 //code gen shit
@@ -146,20 +148,100 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
 						 incSP();
 						 break;
 
-		case LESS_THAN_EXPR: //start
+		case LESS_THAN_EXPR: temp = lessCount++;
+							 codeGenExpr(t->children->data, classNumber, methodNumber);
+							 codeGenExpr(t->childrenTail->data, classNumber, methodNumber);
+							 fprintf(fout, "lod 1 6 2           ;LESS-START-load-e1\n");
+							 fprintf(fout, "lod 2 6 1           ;less-load-e2\n");
+							 fprintf(fout, "blt 1 2 #LESS%d      ;less-cond-check\n", temp);
+							 fprintf(fout, "str 6 2 0           ;less-stores-zero\n");
+							 fprintf(fout, "jmp 0 #LESSEND%d     ;less-jmp-to-end\n", temp);
+							 fprintf(fout, "#LESS%d: mov 1 1     ;less-sets-1\n", temp);
+							 fprintf(fout, "str 6 2 1           ;less-store-1\n");
+							 fprintf(fout, "#LESSEND%d: mov 0 0  ;less-end-noop\n", temp);
+							 incSP();
 							 break;
 
+		case EQUALITY_EXPR: temp = equalityCount++;
+							codeGenExpr(t->children->data, classNumber, methodNumber);
+							codeGenExpr(t->childrenTail->data, classNumber, methodNumber);
+							fprintf(fout, "lod 1 6 2            ;EQUAL-START-load-e1\n");
+							fprintf(fout, "lod 2 6 1            ;equal-load-e2\n");
+							fprintf(fout, "beq 1 2 #EQUAL%d      ;equal-cond-check\n", temp);
+							fprintf(fout, "str 6 2 0            ;equal-stores-zero\n");
+							fprintf(fout, "jmp 0 #EQUALEND%d     ;equal-jmp-to-end\n", temp);
+							fprintf(fout, "#EQUAL%d: mov 1 1     ;equal-sets-1\n", temp);
+							fprintf(fout, "str 6 2 1            ;equal-store-1\n");
+							fprintf(fout, "#EQUALEND%d: mov 0 0  ;equal-end-noop\n", temp);
+							incSP();
+							break;
+
+		case AND_EXPR: temp = andCount++;
+					   codeGenExpr(t->children->data, classNumber, methodNumber);
+					   codeGenExpr(t->childrenTail->data, classNumber, methodNumber);
+					   fprintf(fout, "lod 1 6 2            ;AND-START-load-e1\n");
+					   fprintf(fout, "lod 2 6 1            ;and-load-e2\n");
+					   fprintf(fout, "mov 3 1              ;and-mov-1-into-r3\n");
+					   fprintf(fout, "blt 1 3 #ANDZERO%d    ;and-check-1\n", temp);
+					   fprintf(fout, "blt 2 3 #ANDZERO%d    ;and-check-1\n", temp);
+					   fprintf(fout, "str 6 2 3            ;and-set-1\n");
+					   fprintf(fout, "jmp 0 #ANDEND%d       ;and-jmp-end\n", temp);
+					   fprintf(fout, "#ANDZERO%d: str 6 2 0 ;and-set-zero\n", temp);
+					   fprintf(fout, "#ANDEND%d: mov 0 0    ;AND-END\n", temp);
+					   incSP();
+					   break;
+
+		case NOT_EXPR: temp = notCount++;
+					   codeGenExpr(t->children->data, classNumber, methodNumber);
+					   fprintf(fout, "lod 1 6 1            ;NOT-START-load-expr\n");
+					   fprintf(fout, "beq 1 0 #NOT%d        ;not-cond\n", temp);
+					   fprintf(fout, "str 6 1 0            ;not-set-zero\n");
+					   fprintf(fout, "jmp 0 #NOTEND%d       ;not-jmp-end\n", temp);
+					   fprintf(fout, "#NOT%d: mov 1 1       ;not-set-r1=1\n", temp);
+					   fprintf(fout, "str 6 1 1            ;not-set-1\n");
+					   fprintf(fout, "#NOTEND%d: mov 0 0    ;NOT-END\n", temp);
+					   break;
+
+		case IF_THEN_ELSE_EXPR: temp = ifCount++;
+								codeGenExpr(t->children->data, classNumber, methodNumber);
+								fprintf(fout, "lod 1 6 1      ;IF-START\n");
+								fprintf(fout, "beq 1 0 #IF%d   ;if-cond\n", temp);
+								//incSP();
+								codeGenExprs(t->children->next->data, classNumber, methodNumber);
+								fprintf(fout, "jmp 0 #IFEND%d  ;if-jmp-end\n", temp);
+								fprintf(fout, "#IF%d: mov 0 0  ;if-else-start\n", temp);
+								//incSP();
+								codeGenExprs(t->childrenTail->data, classNumber, methodNumber);
+								fprintf(fout, "#IFEND%d: mov 0 0 ;IF-END\n", temp);
+								break;
+
 		case WHILE_EXPR: temp = loopCount++;
-						 fprintf(fout, "#LOOP%d: mov 0 0  ;WHILE-START\n", temp);
+						 fprintf(fout, "#LOOP%d: mov 0 0       ;WHILE-START\n", temp);
 						 codeGenExpr(t->children->data, classNumber, methodNumber);
-						 fprintf(fout, "mov 1 1  ;while-cond-start\n");
-						 fprintf(fout, "lod 2 6 1  ;while-load-conditional-outcome\n");
+						 fprintf(fout, "mov 1 1               ;while-cond-start\n");
+						 fprintf(fout, "lod 2 6 1             ;while-load-conditional-outcome\n");
+						 //incSP();
+						 fprintf(fout, "blt 2 1 #LOOPEND%d     ;while-cond-end\n", temp);
 						 incSP();
-						 fprintf(fout, "blt 2 1 #LOOPEND%d  ;while-cond-end\n", temp);
 						 codeGenExprs(t->childrenTail->data, classNumber, methodNumber);
-						 fprintf(fout, "jmp 0 #LOOP%d\n", temp);
+						 fprintf(fout, "jmp 0 #LOOP%d          ;loop-jmp-end\n", temp);
 						 fprintf(fout, "#LOOPEND%d: str 6 1 0  ;WHILE-END\n", temp);
 						 break;
+
+		case NEW_EXPR: //lvl3
+					   NULL;
+					   //lvl2, basically does nothing
+					   fprintf(fout, "mov 0 0  ;NEW-START\n");
+					   fprintf(fout, "str 6 0 0  ;new-push-0\n");
+					   decSP();
+					   fprintf(fout, "mov 0 0  ;NEW-END\n");
+					   break;
+
+		case NULL_EXPR: fprintf(fout, "mov 0 0    ;NULL-START\n");
+						fprintf(fout, "str 6 0 0  ;null-push-zero\n");
+						decSP();
+						fprintf(fout, "mov 0 0    ;NULL-END\n");
+						break;
 
 		default: printf("\nSOMETHING IS FUCKED UP!!! line#%d\n", t->lineNumber);
 				 exit(-1);
@@ -170,8 +252,10 @@ void codeGenExprs(ASTree *expList, int classNumber, int methodNumber) {
 
 	ASTList *p = expList->children;
 
-	while(p) {
+	while(p && p->data) {
 		codeGenExpr(p->data, classNumber, methodNumber);
+		//if(p->next && p->next->data)
+			incSP();
 		p = p->next;
 	}
 }

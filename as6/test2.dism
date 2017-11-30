@@ -128,7 +128,8 @@ lod 2 6 1  ;assign-expr-load
 str 1 0 2  ;ASSIGN-END
 
 mov 1 1  ;while-cond-start
-lod 2 6 1  ;while-load-conditional-outcomemov 1 1   ;INCSP-START
+lod 2 6 1  ;while-load-conditional-outcome
+mov 1 1   ;INCSP-START
 add 6 6 1  ;INCSP-END
 
 blt 2 1 #LOOPEND0  ;while-cond-end
@@ -164,7 +165,8 @@ ptn 1      ;PRINT-END
 
 #LOOP1: mov 0 0  ;WHILE-START
 mov 1 1  ;while-cond-start
-lod 2 6 1  ;while-load-conditional-outcomemov 1 1   ;INCSP-START
+lod 2 6 1  ;while-load-conditional-outcome
+mov 1 1   ;INCSP-START
 add 6 6 1  ;INCSP-END
 
 blt 2 1 #LOOPEND1  ;while-cond-end

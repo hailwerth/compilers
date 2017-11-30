@@ -1,0 +1,51 @@
+main {
+	nat x;
+	nat y;
+	nat z;
+
+	x = readNat();
+	y = readNat();
+	z = z + 1;
+
+	while(0 < y) {
+		z = z * x;
+		y = y - 1;
+	};
+	printNat(z);
+	
+	z = 0;
+	while(z < x) {
+		z = z + 1;
+	};
+	printNat(z);
+
+	z = x == y;
+	printNat(z);
+	z = 0 == 0;
+	printNat(z);
+
+	z = x && y;
+	printNat(z);
+	z = 1 && 1;
+	printNat(z);
+
+	//printNat(y);
+	z = !x;
+	printNat(z);
+	z = !y;
+	printNat(z);
+
+	new Object();
+	x = 0;
+	if(x) {
+		x = 0;
+		y = 1;
+		null;
+	}
+	else {
+		x = 1;
+		y = 0;
+		null;
+	};
+	printNat(x);
+}

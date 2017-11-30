@@ -522,10 +522,10 @@ int typeExpr(ASTree *t, int classContainingExpr, int methodContainingExpr) {
                          semerror(TIMES, t->lineNumber);
 
         case AND_EXPR: lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
-                         rhs = typeExpr(t->children->next->data, classContainingExpr, methodContainingExpr);
-                         if(lhs == -1 && rhs == -1)
-                             return lhs;
-                         semerror(AND, t->lineNumber);
+                       rhs = typeExpr(t->children->next->data, classContainingExpr, methodContainingExpr);
+                       if(lhs == -1 && rhs == -1)
+                          return lhs;
+                       semerror(AND, t->lineNumber);
 
         case LESS_THAN_EXPR: lhs = typeExpr(t->children->data, classContainingExpr, methodContainingExpr);
                          rhs = typeExpr(t->children->next->data, classContainingExpr, methodContainingExpr);
