@@ -4,10 +4,10 @@ class C extends Object {
 	nat n;
 	C o1;
 
-	nat first(nat a) {
+	nat first(nat a, nat b) {
 
 		o1 = new C();
-		o1.x = a;
+		o1.x = a + b;
 		printNat(o1.x);
 		printXplusY();
 	}
@@ -39,7 +39,7 @@ main {
 	o = new D();
 	x = 666;
 	//printNat(n);
-	o.first(x);
+	o.first(x, 1);
 	//o.printXplusY();
 	//o.printXplusY();
 

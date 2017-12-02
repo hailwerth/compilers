@@ -21,20 +21,26 @@ class ArrayObj extends Object {
 class Divide extends Object {
 	
 	//vars and should be zero
-	nat num; nat rem;
+	nat num; nat rem; nat x;
 
 	//finds quotient and remainder for x/y
-	nat divide(nat x, nat y) {
+	nat divide(nat a, nat y) {
 		
 		//while x >= y
-		while( !(!(y < x) && !(y == x)) ) {
+		x = a;
+		printNat(x);
+		printNat(y);
+		while((!(y < x) && !(y == x))) {
 			this.num = this.num + 1;
 			x = x - y;
+			//printNat(x);
+			//printNat(777);
+			//printNat(y);
 		};
 
 		//sets remainder and returns quotient
 		this.rem = x;
-		this.num;
+		printNat(this.num);
 	}
 }
 
@@ -100,9 +106,12 @@ main {
 			count = count + 1;
 		};
 
+
 		//does the divsion, prints quotient and remainder
 		div = new Divide();
-		printNat(div.divide(i,j));
+		div.divide(i,j);
+		//printNat(i);
+		//printNat(div.divide(i,j));
 		printNat(div.rem);
 	};
 }

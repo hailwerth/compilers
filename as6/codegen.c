@@ -11,7 +11,7 @@ FILE *fout;
 unsigned int SP = 0, FP = 0, HP = 0, FPOld = 0;
 int loopCount = 0, lessCount = 0, equalityCount = 0, andCount = 0, notCount = 0, ifCount = 0;
 int methCount = 0;
-int **vt;
+// int **vt;
 
 //structs
 typedef struct pair{
@@ -144,7 +144,7 @@ void generateDISM(FILE *fp) {
     codeGenExprs(mainExprs, 0, 0);
 
     //MAIN END
-    //fprintf(fout, "ptn 6\n"); //debug
+    fprintf(fout, "ptn 6\n"); //debug
     fprintf(fout, "#END: hlt 0  ;END OF PROGRAM\n");
 
     //setup methods
@@ -554,10 +554,10 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
                        fprintf(fout, "mov 0 0  ;NEW-START\n");
                        type = getObjType(t->children->data->idVal);
                        n = numFields(type);
-                       if(!(HP + temp + 1 < SP)) {
-                            printf("\nError, ran out of memory HP >= SP\n");
-                            exit(-1);
-                       }
+                       // if(!(HP + temp + 1 < MAX_DISM_ADDR)) {
+                       //      printf("\nError, ran out of memory HP >= SP\n");
+                       //      exit(-1);
+                       // }
                        fprintf(fout, "mov 1 1  ;new-set-1\n");
                        temp = 0;
                        while(temp < n) {
@@ -671,6 +671,7 @@ void genVT() {
     /* gen vtable */
 
     //get sub class counts
+    int **vt;
     int i, j;
     int *subClassCounts = (int*)malloc(sizeof(int)*numClasses);
     memset(subClassCounts, 0, sizeof(int)*numClasses);

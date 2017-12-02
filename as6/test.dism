@@ -96,7 +96,14 @@ mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-mov 1 1  ;arlist-mov-count
+mov 0 0    ;NATLIT-START
+mov 1 1    ;natlit-set
+str 6 0 1  ;NATLIT-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 2  ;arlist-mov-count
 str 6 0 1  ;arglist-push-arg-count
 mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
@@ -106,6 +113,7 @@ jmp 0 #VTABLE
 #METHRET0: mov 0 0  ;METH-DOT-END
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
+ptn 6
 #END: hlt 0  ;END OF PROGRAM
 #Class1Method0: mov 0 0  ;c1m0-setup
 mov 0 0  ;PROLOGUE-START
@@ -119,7 +127,7 @@ mov 1 6
 add 1 1 6
 mov 2 0
 add 1 1 2
-mov 2 1
+mov 2 2
 add 1 1 2
 add 7 1 0
 mov 0 0    ;ASSIGN-START
@@ -161,6 +169,21 @@ mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
+mov 1 5
+sub 1 7 1
+lod 1 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
 mov 2 1
 sub 1 7 2
 lod 1 1 0
