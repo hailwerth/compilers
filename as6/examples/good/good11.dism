@@ -1,0 +1,447 @@
+#INITPTRS: mov 0 0
+mov 5 0  ;sets HP
+mov 6 65535  ;sets SP
+mov 7 65535  ;sets FP
+
+#INITMAIN: mov 0 0
+str 6 0 0  ;sets main var 0 to zero
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+str 6 0 0  ;sets main var 1 to zero
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+#MAINEXPRS: mov 0 0
+mov 0 0  ;NEW-START
+mov 1 1  ;new-set-1
+str 5 0 0  ;new-alloc-0
+add 5 5 1  ;new-incHP-0
+mov 2 1    ;new-r2=type
+str 5 0 2  ;new-store-type
+str 6 0 5  ;new-push-stack
+add 5 5 1  ;new-incHP
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0  ;NEW-END
+mov 0 0    ;ASSIGN-START
+mov 1 65534    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 5    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 2    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 6    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;TIMES-START
+lod 1 6 2  ;times-load e1
+lod 2 6 1  ;times-load e2
+mul 1 1 2  ;times-times e1+e2
+str 6 2 1  ;TIMES-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 5    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 2    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 6    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;TIMES-START
+lod 1 6 2  ;times-load e1
+lod 2 6 1  ;times-load e2
+mul 1 1 2  ;times-times e1+e2
+str 6 2 1  ;TIMES-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 5    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 2    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 6    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;TIMES-START
+lod 1 6 2  ;times-load e1
+lod 2 6 1  ;times-load e2
+mul 1 1 2  ;times-times e1+e2
+str 6 2 1  ;TIMES-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 6    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 3    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+lod 1 6 2           ;LESS-START-load-e1
+lod 2 6 1           ;less-load-e2
+blt 1 2 #LESS0      ;less-cond-check
+str 6 2 0           ;less-stores-zero
+jmp 0 #LESSEND0     ;less-jmp-to-end
+#LESS0: mov 1 1     ;less-sets-1
+str 6 2 1           ;less-store-1
+#LESSEND0: mov 0 0  ;less-end-noop
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO1    ;and-check-1
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 2    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+lod 1 6 1            ;NOT-START-load-expr
+beq 1 0 #NOT0        ;not-cond
+str 6 1 0            ;not-set-zero
+jmp 0 #NOTEND0       ;not-jmp-end
+#NOT0: mov 1 1       ;not-set-r1=1
+str 6 1 1            ;not-set-1
+#NOTEND0: mov 0 0    ;NOT-END
+mov 0 0    ;NATLIT-START
+mov 1 3    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO1    ;and-check-1
+str 6 1 2            ;and-set-1
+jmp 0 #ANDEND1       ;and-jmp-end
+#ANDZERO1: str 6 1 0 ;and-set-zero
+#ANDEND1: mov 0 0    ;AND-END
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO0    ;and-check-1
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0  ;DOT-ID-START
+mov 0 0    ;ID-START-LOCAL
+mov 1 65534    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+lod 1 6 1  ;dot-id-null-check
+beq 1 0 #END  ;dot-id-halt-if-null
+mov 2 1  ;dot-id-sub-num
+sub 1 1 2  ;dot-id-heap-address2read
+lod 1 1 0   ;dot-id-loads-val
+str 6 1 1  ;dot-id-push-val-stack
+mov 0 0  ;DOT-ID-END
+lod 1 6 1            ;NOT-START-load-expr
+beq 1 0 #NOT1        ;not-cond
+str 6 1 0            ;not-set-zero
+jmp 0 #NOTEND1       ;not-jmp-end
+#NOT1: mov 1 1       ;not-set-r1=1
+str 6 1 1            ;not-set-1
+#NOTEND1: mov 0 0    ;NOT-END
+mov 0 0    ;NATLIT-START
+mov 1 3    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+lod 1 6 1            ;NOT-START-load-expr
+beq 1 0 #NOT2        ;not-cond
+str 6 1 0            ;not-set-zero
+jmp 0 #NOTEND2       ;not-jmp-end
+#NOT2: mov 1 1       ;not-set-r1=1
+str 6 1 1            ;not-set-1
+#NOTEND2: mov 0 0    ;NOT-END
+mov 0 0    ;TIMES-START
+lod 1 6 2  ;times-load e1
+lod 2 6 1  ;times-load e2
+mul 1 1 2  ;times-times e1+e2
+str 6 2 1  ;TIMES-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO2    ;and-check-1
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 1    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 3    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PLUS-START
+lod 1 6 2  ;plus-load e1
+lod 2 6 1  ;plus-load e2
+add 1 1 2  ;plus-add e1+e2
+str 6 2 1  ;PLUS-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;NATLIT-START
+mov 1 4    ;natlit-set
+str 6 0 1  ;NATLIT-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+lod 1 6 2            ;EQUAL-START-load-e1
+lod 2 6 1            ;equal-load-e2
+beq 1 2 #EQUAL0      ;equal-cond-check
+str 6 2 0            ;equal-stores-zero
+jmp 0 #EQUALEND0     ;equal-jmp-to-end
+#EQUAL0: mov 1 1     ;equal-sets-1
+str 6 2 1            ;equal-store-1
+#EQUALEND0: mov 0 0  ;equal-end-noop
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO2    ;and-check-1
+str 6 1 2            ;and-set-1
+jmp 0 #ANDEND2       ;and-jmp-end
+#ANDZERO2: str 6 1 0 ;and-set-zero
+#ANDEND2: mov 0 0    ;AND-END
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+lod 1 6 1            ;AND-START-load-e1
+mov 2 1              ;and-mov-1-into-r3
+blt 1 2 #ANDZERO0    ;and-check-1
+str 6 1 2            ;and-set-1
+jmp 0 #ANDEND0       ;and-jmp-end
+#ANDZERO0: str 6 1 0 ;and-set-zero
+#ANDEND0: mov 0 0    ;AND-END
+mov 0 0    ;ASSIGN-START
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+
+ptn 6
+#END: hlt 0  ;END OF PROGRAM

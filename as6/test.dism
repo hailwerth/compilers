@@ -1,35 +1,409 @@
 #INITPTRS: mov 0 0
-mov 5 0  ;sets HP
+mov 5 1  ;sets HP
 mov 6 65535  ;sets SP
 mov 7 65535  ;sets FP
-
 #INITMAIN: mov 0 0
 str 6 0 0  ;sets main var 0 to zero
 mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-
 str 6 0 0  ;sets main var 1 to zero
 mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-
 #MAINEXPRS: mov 0 0
+mov 0 0    ;ASSIGN-START
 mov 0 0  ;NEW-START
-str 6 0 0  ;new-push-0
+mov 1 1  ;new-set-1
+str 5 0 0  ;new-alloc-0
+add 5 5 1  ;new-incHP-0
+str 5 0 0  ;new-alloc-1
+add 5 5 1  ;new-incHP-1
+str 5 0 0  ;new-alloc-2
+add 5 5 1  ;new-incHP-2
+str 5 0 0  ;new-alloc-3
+add 5 5 1  ;new-incHP-3
+str 5 0 0  ;new-alloc-4
+add 5 5 1  ;new-incHP-4
+mov 2 2    ;new-r2=type
+str 5 0 2  ;new-store-type
+str 6 0 5  ;new-push-stack
+add 5 5 1  ;new-incHP
 mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-
 mov 0 0  ;NEW-END
-mov 0 0    ;ASSIGN-START
 mov 1 65534    ;assign-dest-address
 lod 2 6 1  ;assign-expr-load
 str 1 0 2  ;ASSIGN-END
-
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
-
+mov 0 0    ;ASSIGN-START
+mov 0 0    ;NATLIT-START
+mov 1 666    ;natlit-set
+str 6 0 1  ;NATLIT-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 65535    ;assign-dest-address
+lod 2 6 1  ;assign-expr-load
+str 1 0 2  ;ASSIGN-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;METH-DOT-START
+mov 0 0    ;ID-START-LOCAL
+mov 1 65534    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+lod 2 6 1  ;meth-dot-load-var-addr
+beq 0 2 #END  ;meth-dot-null-check
+mov 1 #METHRET0  ;meth-dot-mov-ra
+str 6 0 1  ;meth-dot-push-ra
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+str 6 0 2  ;meth-dot-push-caller-addr
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 1
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0    ;ID-START-LOCAL
+mov 1 65535    ;id-load-stack-location
+lod 1 1 0  ;id-load-from-stack
+str 6 0 1  ;ID-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 1  ;arlist-mov-count
+str 6 0 1  ;arglist-push-arg-count
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+jmp 0 #VTABLE
+#METHRET0: mov 0 0  ;METH-DOT-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+#END: hlt 0  ;END OF PROGRAM
+#Class1Method0: mov 0 0  ;c1m0-setup
+mov 0 0  ;PROLOGUE-START
+mov 0 0  ;PROLOGUE-END
+str 6 0 7
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 6
+add 1 1 6
+mov 2 0
+add 1 1 2
+mov 2 1
+add 1 1 2
+add 7 1 0
+mov 0 0    ;ASSIGN-START
+mov 0 0  ;NEW-START
+mov 1 1  ;new-set-1
+str 5 0 0  ;new-alloc-0
+add 5 5 1  ;new-incHP-0
+str 5 0 0  ;new-alloc-1
+add 5 5 1  ;new-incHP-1
+str 5 0 0  ;new-alloc-2
+add 5 5 1  ;new-incHP-2
+str 5 0 0  ;new-alloc-3
+add 5 5 1  ;new-incHP-3
+mov 2 1    ;new-r2=type
+str 5 0 2  ;new-store-type
+str 6 0 5  ;new-push-stack
+add 5 5 1  ;new-incHP
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0  ;NEW-END
+mov 2 1
+sub 1 7 2
+lod 1 1 0
+mov 2 4
+sub 1 1 2
+lod 2 6 1
+str 1 0 2
+mov 0 0    ;ASSIGN-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;DOT-ASSIGN-START
+mov 1 4
+sub 1 7 1
+lod 1 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 2 1
+sub 1 7 2
+lod 1 1 0
+mov 2 4
+sub 1 1 2
+lod 1 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+lod 1 6 1  ;dot-assign-null-check
+beq 1 0 #END  ;dot-assign-halt-if-null
+lod 2 6 2  ;dot-assign-load-value2store
+mov 3 1    ;dot-assign-offset
+sub 1 1 3  ;dot-assign-heap-address2store
+str 1 0 2  ;dot-assign-store-val
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;DOT-ASSIGN-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;DOT-ID-START
+mov 2 1
+sub 1 7 2
+lod 1 1 0
+mov 2 4
+sub 1 1 2
+lod 1 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+lod 1 6 1  ;dot-id-null-check
+beq 1 0 #END  ;dot-id-halt-if-null
+mov 2 1  ;dot-id-sub-num
+sub 1 1 2  ;dot-id-heap-address2read
+lod 1 1 0   ;dot-id-loads-val
+str 6 1 1  ;dot-id-push-val-stack
+mov 0 0  ;DOT-ID-END
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;METH-CALL-START
+mov 1 1
+sub 1 7 1
+lod 2 1 0
+mov 1 #METHRET1  ;meth-dot-mov-ra
+str 6 0 1  ;meth-dot-push-ra
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+str 6 0 2  ;meth-dot-push-caller-addr
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 0
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 1
+str 6 0 1
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 0  ;arlist-mov-count
+str 6 0 1  ;arglist-push-arg-count
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+jmp 0 #Class1Method1
+#METHRET1: mov 0 0  ;METH-DOT-END
+mov 0 0  ;METH-CALL-END
+mov 0 0  ;EPILOGUE-START
+lod 1 6 1
+lod 2 6 2
+lod 3 7 0
+str 7 0 1
+sub 6 6 6
+add 6 7 0
+sub 7 7 7
+add 7 2 0
+jmp 3 0  ;EPILOGUE-END
+#Class1Method1: mov 0 0  ;c1m1-setup
+mov 0 0  ;PROLOGUE-START
+mov 0 0  ;PROLOGUE-END
+str 6 0 7
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 6
+add 1 1 6
+mov 2 0
+add 1 1 2
+mov 2 0
+add 1 1 2
+add 7 1 0
+mov 0 0  ;DOT-ASSIGN-START
+mov 0 0    ;NATLIT-START
+mov 1 1337    ;natlit-set
+str 6 0 1  ;NATLIT-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0  ;THIS-START
+mov 1 1
+sub 1 7 1
+lod 2 1 0
+str 6 0 2
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0  ;THIS-END
+lod 1 6 1  ;dot-assign-null-check
+beq 1 0 #END  ;dot-assign-halt-if-null
+lod 2 6 2  ;dot-assign-load-value2store
+mov 3 1    ;dot-assign-offset
+sub 1 1 3  ;dot-assign-heap-address2store
+str 1 0 2  ;dot-assign-store-val
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;DOT-ASSIGN-END
+mov 1 1    ;INCSP-START
+add 6 6 1  ;INCSP-END
+mov 0 0  ;DOT-ID-START
+mov 0 0  ;THIS-START
+mov 1 1
+sub 1 7 1
+lod 2 1 0
+str 6 0 2
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0  ;THIS-END
+lod 1 6 1  ;dot-id-null-check
+beq 1 0 #END  ;dot-id-halt-if-null
+mov 2 1  ;dot-id-sub-num
+sub 1 1 2  ;dot-id-heap-address2read
+lod 1 1 0   ;dot-id-loads-val
+str 6 1 1  ;dot-id-push-val-stack
+mov 0 0  ;DOT-ID-END
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+mov 0 0  ;EPILOGUE-START
+lod 1 6 1
+lod 2 6 2
+lod 3 7 0
+str 7 0 1
+sub 6 6 6
+add 6 7 0
+sub 7 7 7
+add 7 2 0
+jmp 3 0  ;EPILOGUE-END
+#Class2Method0: mov 0 0  ;c2m0-setup
+mov 0 0  ;PROLOGUE-START
+mov 0 0  ;PROLOGUE-END
+str 6 0 7
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 1 6
+add 1 1 6
+mov 2 0
+add 1 1 2
+mov 2 0
+add 1 1 2
+add 7 1 0
+mov 0 0    ;NATLIT-START
+mov 1 2222    ;natlit-set
+str 6 0 1  ;NATLIT-END
+mov 1 1       ;DECSP-START
+sub 6 6 1     ;decsp-sub
+blt 6 5 #END  ;decsp-memcheck
+beq 6 5 #END  ;DECSP-END
+mov 0 0    ;PRINT-START
+lod 1 6 1  ;print-ready
+ptn 1      ;PRINT-END
+mov 0 0  ;EPILOGUE-START
+lod 1 6 1
+lod 2 6 2
+lod 3 7 0
+str 7 0 1
+sub 6 6 6
+add 6 7 0
+sub 7 7 7
+add 7 2 0
+jmp 3 0  ;EPILOGUE-END
+#VTABLE: mov 0 0 ;VTABLE-START
+add 4 6 0
+mov 1 1
+add 4 4 1
+lod 1 4 0
+add 4 4 1
+lod 3 4 1
+lod 2 4 2
+lod 1 4 3
+lod 1 1 0
+mov 4 1
+beq 2 4 #VTCLASS1  ;vt-class-branch
+mov 4 2
+beq 2 4 #VTCLASS2  ;vt-class-branch
+mov 4 777  ;vt-class-dne
+ptn 4
+jmp 0 #END
+#VTCLASS1: mov 0 0
+mov 4 0
+beq 3 4 #VTCLASS1METH0
+mov 4 1
+beq 3 4 #VTCLASS1METH1
+#VTCLASS2: mov 0 0
+mov 4 0
+beq 3 4 #VTCLASS2METH0
+mov 4 777  ;vt-class-dne
+ptn 4
+jmp 0 #END  ;vt-meth-dne
+#VTCLASS1METH0: mov 0 0 
+mov 4 1
+beq 1 4 #Class1Method0
+mov 4 2
+beq 1 4 #Class1Method0
+#VTCLASS1METH1: mov 0 0 
+mov 4 1
+beq 1 4 #Class1Method1
+mov 4 2
+beq 1 4 #Class2Method0
+#VTCLASS2METH0: mov 0 0 
+mov 4 2
+beq 1 4 #Class2Method0
+mov 4 777  ;vt-class-dne
+ptn 4
+jmp 0 #END
