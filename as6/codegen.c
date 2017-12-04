@@ -115,6 +115,7 @@ pair methCallClass(char *meth, int c) {
     }
     cm.meth = -4;
     cm.submeth = -4;
+    return cm;
 }
 
 void generateDISM(FILE *fp) {
@@ -516,6 +517,7 @@ void codeGenExpr(ASTree *t, int classNumber, int methodNumber) {
                        fprintf(fout, "#NOT%d: mov 1 1       ;not-set-r1=1\n", temp);
                        fprintf(fout, "str 6 1 1            ;not-set-1\n");
                        fprintf(fout, "#NOTEND%d: mov 0 0    ;NOT-END\n", temp);
+                       //decSP();
                        break;
 
         case IF_THEN_ELSE_EXPR: temp = ifCount++;

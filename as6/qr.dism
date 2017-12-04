@@ -741,8 +741,6 @@ str 5 0 0  ;new-alloc-0
 add 5 5 1  ;new-incHP-0
 str 5 0 0  ;new-alloc-1
 add 5 5 1  ;new-incHP-1
-str 5 0 0  ;new-alloc-2
-add 5 5 1  ;new-incHP-2
 mov 2 2    ;new-r2=type
 str 5 0 2  ;new-store-type
 str 6 0 5  ;new-push-stack
@@ -817,25 +815,14 @@ jmp 0 #VTABLE
 #METHRET1: mov 0 0  ;METH-DOT-END
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
-mov 0 0  ;DOT-ID-START
 mov 0 0    ;ID-START-LOCAL
-mov 1 65526    ;id-load-stack-location
+mov 1 65535    ;id-load-stack-location
 lod 1 1 0  ;id-load-from-stack
 str 6 0 1  ;ID-END
 mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-lod 1 6 1  ;dot-id-null-check
-beq 1 0 #END  ;dot-id-halt-if-null
-mov 2 2  ;dot-id-sub-num
-sub 1 1 2  ;dot-id-heap-address2read
-lod 1 1 0   ;dot-id-loads-val
-str 6 1 1  ;dot-id-push-val-stack
-mov 0 0  ;DOT-ID-END
-mov 0 0    ;PRINT-START
-lod 1 6 1  ;print-ready
-ptn 1      ;PRINT-END
 lod 1 6 1
 str 6 2 1
 mov 1 1    ;INCSP-START
@@ -843,6 +830,7 @@ add 6 6 1  ;INCSP-END
 #IFEND0: mov 0 0 ;IF-END
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
+ptn 6
 #END: hlt 0  ;END OF PROGRAM
 #Class1Method0: mov 0 0  ;c1m0-setup
 mov 0 0  ;PROLOGUE-START
@@ -969,30 +957,8 @@ add 1 1 2
 mov 2 2
 add 1 1 2
 add 7 1 0
-mov 0 0    ;ASSIGN-START
 mov 1 4
 sub 1 7 1
-lod 1 1 0
-str 6 0 1
-mov 1 1       ;DECSP-START
-sub 6 6 1     ;decsp-sub
-blt 6 5 #END  ;decsp-memcheck
-beq 6 5 #END  ;DECSP-END
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
-lod 2 6 1
-str 1 0 2
-mov 0 0    ;ASSIGN-END
-mov 1 1    ;INCSP-START
-add 6 6 1  ;INCSP-END
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
 lod 1 1 0
 str 6 0 1
 mov 1 1       ;DECSP-START
@@ -1026,11 +992,8 @@ mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
+mov 1 4
+sub 1 7 1
 lod 1 1 0
 str 6 0 1
 mov 1 1       ;DECSP-START
@@ -1048,12 +1011,12 @@ str 6 2 1           ;less-store-1
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 lod 1 6 1            ;NOT-START-load-expr
-beq 1 0 #NOT2        ;not-cond
+beq 1 0 #NOT3        ;not-cond
 str 6 1 0            ;not-set-zero
-jmp 0 #NOTEND2       ;not-jmp-end
-#NOT2: mov 1 1       ;not-set-r1=1
+jmp 0 #NOTEND3       ;not-jmp-end
+#NOT3: mov 1 1       ;not-set-r1=1
 str 6 1 1            ;not-set-1
-#NOTEND2: mov 0 0    ;NOT-END
+#NOTEND3: mov 0 0    ;NOT-END
 lod 1 6 1            ;AND-START-load-e1
 mov 2 1              ;and-mov-1-into-r3
 blt 1 2 #ANDZERO3    ;and-check-1
@@ -1067,11 +1030,8 @@ mov 1 1       ;DECSP-START
 sub 6 6 1     ;decsp-sub
 blt 6 5 #END  ;decsp-memcheck
 beq 6 5 #END  ;DECSP-END
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
+mov 1 4
+sub 1 7 1
 lod 1 1 0
 str 6 0 1
 mov 1 1       ;DECSP-START
@@ -1089,12 +1049,12 @@ str 6 2 1            ;equal-store-1
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 lod 1 6 1            ;NOT-START-load-expr
-beq 1 0 #NOT3        ;not-cond
+beq 1 0 #NOT4        ;not-cond
 str 6 1 0            ;not-set-zero
-jmp 0 #NOTEND3       ;not-jmp-end
-#NOT3: mov 1 1       ;not-set-r1=1
+jmp 0 #NOTEND4       ;not-jmp-end
+#NOT4: mov 1 1       ;not-set-r1=1
 str 6 1 1            ;not-set-1
-#NOTEND3: mov 0 0    ;NOT-END
+#NOTEND4: mov 0 0    ;NOT-END
 lod 1 6 1            ;AND-START-load-e1
 mov 2 1              ;and-mov-1-into-r3
 blt 1 2 #ANDZERO3    ;and-check-1
@@ -1102,6 +1062,13 @@ str 6 1 2            ;and-set-1
 jmp 0 #ANDEND3       ;and-jmp-end
 #ANDZERO3: str 6 1 0 ;and-set-zero
 #ANDEND3: mov 0 0    ;AND-END
+lod 1 6 1            ;NOT-START-load-expr
+beq 1 0 #NOT2        ;not-cond
+str 6 1 0            ;not-set-zero
+jmp 0 #NOTEND2       ;not-jmp-end
+#NOT2: mov 1 1       ;not-set-r1=1
+str 6 1 1            ;not-set-1
+#NOTEND2: mov 0 0    ;NOT-END
 mov 1 1               ;while-cond-start
 lod 2 6 1             ;while-load-conditional-outcome
 blt 2 1 #LOOPEND2     ;while-cond-end
@@ -1162,11 +1129,8 @@ mov 0 0  ;DOT-ASSIGN-END
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 mov 0 0    ;ASSIGN-START
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
+mov 1 4
+sub 1 7 1
 lod 1 1 0
 str 6 0 1
 mov 1 1       ;DECSP-START
@@ -1188,11 +1152,8 @@ sub 1 1 2  ;minus-minus e1+e2
 str 6 2 1  ;MINUS-END
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
+mov 1 4
+sub 1 7 1
 lod 2 6 1
 str 1 0 2
 mov 0 0    ;ASSIGN-END
@@ -1203,11 +1164,8 @@ jmp 0 #LOOP2          ;loop-jmp-end
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 mov 0 0  ;DOT-ASSIGN-START
-mov 2 1
-sub 1 7 2
-lod 1 1 0
-mov 2 3
-sub 1 1 2
+mov 1 4
+sub 1 7 1
 lod 1 1 0
 str 6 0 1
 mov 1 1       ;DECSP-START
@@ -1233,29 +1191,6 @@ str 1 0 2  ;dot-assign-store-val
 mov 1 1    ;INCSP-START
 add 6 6 1  ;INCSP-END
 mov 0 0  ;DOT-ASSIGN-END
-mov 1 1    ;INCSP-START
-add 6 6 1  ;INCSP-END
-mov 0 0  ;DOT-ID-START
-mov 0 0  ;THIS-START
-mov 1 1
-sub 1 7 1
-lod 2 1 0
-str 6 0 2
-mov 1 1       ;DECSP-START
-sub 6 6 1     ;decsp-sub
-blt 6 5 #END  ;decsp-memcheck
-beq 6 5 #END  ;DECSP-END
-mov 0 0  ;THIS-END
-lod 1 6 1  ;dot-id-null-check
-beq 1 0 #END  ;dot-id-halt-if-null
-mov 2 1  ;dot-id-sub-num
-sub 1 1 2  ;dot-id-heap-address2read
-lod 1 1 0   ;dot-id-loads-val
-str 6 1 1  ;dot-id-push-val-stack
-mov 0 0  ;DOT-ID-END
-mov 0 0    ;PRINT-START
-lod 1 6 1  ;print-ready
-ptn 1      ;PRINT-END
 mov 0 0  ;EPILOGUE-START
 lod 1 6 1
 lod 2 6 2
